@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/onProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/tran80_w"
+        android:visibility="gone">
+        <!--<com.wang.avi.AVLoadingIndicatorView-->
+        <!--android:id="@+id/avi"-->
+        <!--style="@style/AVLoadingIndicatorView"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:visibility="visible"-->
+        <!--app:indicatorColor="@color/White"-->
+        <!--app:indicatorName="LineSpinFadeLoaderIndicator" />-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_transparent"
+            android:paddingBottom="@dimen/MarginSpace4XL"
+            android:paddingEnd="@dimen/MarginSpaceXL"
+            android:paddingStart="@dimen/MarginSpaceXL"
+            android:paddingTop="@dimen/MarginSpace4XL">
+
+            <ImageView
+                android:id="@+id/gifFile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gifFile"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/MarginSpaceL"
+                android:text="@string/progress_loading"
+                android:textColor="@color/White"
+                android:textSize="@dimen/FontSizeL" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

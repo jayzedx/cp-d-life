@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="@dimen/MarginSpaceL"
+        android:background="@drawable/bg_dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextTitle20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/MarginSpace"
+            android:text="@string/dialog_refresh" />
+
+        <TextView
+            style="@style/TextCaption17"
+            android:id="@+id/tv_detail"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:paddingBottom="@dimen/MarginSpaceL"
+            android:paddingLeft="@dimen/MarginSpaceL"
+            android:paddingRight="@dimen/MarginSpaceL"
+            android:text="@string/dialog_refresh_repeat" />
+
+
+
+        <ImageView
+            android:id="@+id/btn_ok"
+            style="@style/TextCaption17"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="@dimen/MarginSpace"
+            android:layout_marginLeft="@dimen/MarginSpace"
+            android:layout_below="@+id/tv_detail"
+            android:layout_centerHorizontal="true"
+            android:background="@color/tran00"
+            android:src="@drawable/ic_refresh"
+            android:tint="@color/warm_grey_four"
+            android:text="OK" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

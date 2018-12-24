@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="Margin10dp">10dp</dimen>
+    <dimen name="Margin15dp">15dp</dimen>
+    <dimen name="Margin144dp">144dp</dimen>
+    <dimen name="Margin124dp">124dp</dimen>
+    <dimen name="Margin30dp">30dp</dimen>
+    <dimen name="Margin40dp">40dp</dimen>
+    <dimen name="dimen_list_calendar">80dp</dimen>
+
+    <dimen name="FontSize10XL">38sp</dimen>
+    <dimen name="FontSize12XL">42sp</dimen>
+    <dimen name="FontSize14XL">44sp</dimen>
+    <dimen name="FontSize16XL">50sp</dimen>
+    <dimen name="FontSize18XL">54sp</dimen>
+    <dimen name="FontSize20XL">58sp</dimen>
+    <dimen name="FontSize5S">6sp</dimen>
+    <dimen name="FontSize5XL">28sp</dimen>
+    <dimen name="FontSize6XL">30sp</dimen>
+    <dimen name="FontSize8XL">34sp</dimen>
+    <dimen name="FontSizeL">18sp</dimen>
+    <dimen name="FontSizeM">16sp</dimen>
+    <dimen name="FontSizeS">14sp</dimen>
+    <dimen name="FontSizeSS">12sp</dimen>
+    <dimen name="FontSizeSSS">10sp</dimen>
+    <dimen name="FontSizeXL">20sp</dimen>
+    <dimen name="FontSizeXXL">22sp</dimen>
+    <dimen name="FontSizeXXXL">24sp</dimen>
+    <dimen name="MarginSpace">8dp</dimen>
+    <dimen name="MarginSpace10XL">63dp</dimen>
+    <dimen name="MarginSpace12XL">73dp</dimen>
+    <dimen name="MarginSpace14XL">83dp</dimen>
+    <dimen name="MarginSpace16XL">93dp</dimen>
+    <dimen name="MarginSpace18XL">103dp</dimen>
+    <dimen name="MarginSpace20XL">113dp</dimen>
+    <dimen name="MarginSpace3XL">28dp</dimen>
+    <dimen name="MarginSpace4XL">33dp</dimen>
+    <dimen name="MarginSpace6XL">43dp</dimen>
+    <dimen name="MarginSpace8XL">53dp</dimen>
+    <dimen name="MarginSpaceL">13dp</dimen>
+    <dimen name="MarginSpaceS">3dp</dimen>
+    <dimen name="MarginSpaceSS">1dp</dimen>
+    <dimen name="MarginSpaceXL">18dp</dimen>
+    <dimen name="MarginSpaceXXL">23dp</dimen>
+
+    <dimen name="PaddingSpace">5dp</dimen>
+    <dimen name="PaddingSpace10XL">60dp</dimen>
+    <dimen name="PaddingSpace12XL">70dp</dimen>
+    <dimen name="PaddingSpace14XL">80dp</dimen>
+    <dimen name="PaddingSpace16XL">90dp</dimen>
+    <dimen name="PaddingSpace18XL">100dp</dimen>
+    <dimen name="PaddingSpace20XL">110dp</dimen>
+    <dimen name="PaddingSpace3XL">25dp</dimen>
+    <dimen name="PaddingSpace4XL">30dp</dimen>
+    <dimen name="PaddingSpace6XL">40dp</dimen>
+    <dimen name="PaddingSpace8XL">50dp</dimen>
+    <dimen name="PaddingSpaceL">10dp</dimen>
+    <dimen name="PaddingSpaceS">3dp</dimen>
+    <dimen name="PaddingSpaceSS">2dp</dimen>
+    <dimen name="PaddingSpaceXL">15dp</dimen>
+    <dimen name="PaddingSpaceXXL">20dp</dimen>
+
+
+    <dimen name="text_size_caption">17sp</dimen>
+    <dimen name="text_size_sub">16sp</dimen>
+    <dimen name="text_size_body">15sp</dimen>
+    <dimen name="text_size_sub_heading">12sp</dimen>
+    <dimen name="text_size_date">14sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_timestamp">24sp</dimen>
+    <dimen name="text_size_headline">20sp</dimen>
+    <dimen name="text_size_head">22sp</dimen>
+</resources>

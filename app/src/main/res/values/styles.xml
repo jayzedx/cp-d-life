@@ -1,0 +1,121 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/font_color_register</item>
+        <item name="colorPrimaryDark">@color/font_color_register</item>
+        <item name="colorAccent">@color/font_color_register</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:fontFamily">font</item>
+    </style>
+    <style name="AppBarTheme" parent="android:Theme.Holo.Light">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="TextToolbar20" parent="TextWhite">
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+
+
+    <!--<style name="TextInputLayoutStyle" parent="Widget.Design.TextInputLayout">-->
+
+        <!--<item name="android:textColorHint">@color/hint_text</item>-->
+        <!--<item name="colorControlNormal">@color/line_hint_text</item>-->
+        <!--<item name="colorControlActivated">@color/font_color_register</item>-->
+    <!--</style>-->
+    <!--<style name="TabLayout" parent="android:Widget">-->
+        <!--<item name="tabIndicatorColor">?attr/colorAccent</item>-->
+        <!--<item name="tabIndicatorHeight">2dp</item>-->
+        <!--<item name="tabPaddingStart">12dp</item>-->
+        <!--<item name="tabPaddingEnd">12dp</item>-->
+        <!--<item name="colorAccent">#FF4081</item>-->
+        <!--<item name="colorPrimary">#FF4081</item>-->
+        <!--<item name="tabBackground">?attr/selectableItemBackground</item>-->
+        <!--<item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>-->
+        <!--<item name="tabSelectedTextColor">?android:textColorPrimary</item>-->
+    <!--</style>-->
+    <!--<style name="Edittext_Style" parent="android:Widget.EditText">-->
+        <!--<item name="android:layout_marginStart">@dimen/MarginSpace3XL</item>-->
+        <!--<item name="android:layout_marginEnd">@dimen/MarginSpace3XL</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/MarginSpaceL</item>-->
+        <!--<item name="android:background">@drawable/bg_btn_soft_gray</item>-->
+        <!--<item name="android:padding">@dimen/MarginSpaceS</item>-->
+        <!--<item name="android:paddingStart">@dimen/MarginSpace</item>-->
+        <!--<item name="android:textSize">@dimen/text_size_caption</item>-->
+    <!--</style>-->
+    <!--<style name="Edittext_Style_No_Bg" parent="android:Widget.EditText">-->
+        <!--<item name="android:layout_marginStart">@dimen/MarginSpace3XL</item>-->
+        <!--<item name="android:layout_marginEnd">@dimen/MarginSpace3XL</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/MarginSpaceL</item>-->
+        <!--<item name="android:padding">@dimen/MarginSpaceS</item>-->
+        <!--<item name="android:paddingStart">@dimen/MarginSpace</item>-->
+        <!--<item name="android:textSize">@dimen/text_size_caption</item>-->
+
+    <!--</style>-->
+    <!--<style name="Spinner_Style" parent="Base.Widget.AppCompat.Spinner">-->
+        <!--<item name="android:layout_marginStart">@dimen/MarginSpace3XL</item>-->
+        <!--<item name="android:layout_marginEnd">@dimen/MarginSpace3XL</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/MarginSpaceL</item>-->
+        <!--<item name="android:padding">@dimen/MarginSpaceS</item>-->
+        <!--<item name="android:paddingStart">@dimen/MarginSpace</item>-->
+        <!--<item name="android:textSize">@dimen/text_size_caption</item>-->
+    <!--</style>-->
+    <!--<style name="CardViewStyle" parent="CardView">-->
+        <!--<item name="cardCornerRadius">4dp</item>-->
+        <!--<item name="cardElevation">4dp</item>-->
+    <!--</style>-->
+
+
+    <style name="TextWhite">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="TextTitle15" parent="TextWhite">
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+    <style name="TextTitle17" parent="TextWhite">
+        <item name="android:textSize">@dimen/text_size_caption</item>
+    </style>
+    <style name="TextTitle20" parent="TextWhite">
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+    <style name="TextTitle22" parent="TextWhite">
+        <item name="android:textSize">@dimen/text_size_head</item>
+    </style>
+
+
+
+    <style name="TextBlack">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="TextCaption15" parent="TextBlack">
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+    <style name="TextCaption17" parent="TextBlack">
+        <item name="android:textSize">@dimen/text_size_caption</item>
+    </style>
+    <style name="TextCaption20" parent="TextBlack">
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+    <style name="TextCaption22" parent="TextBlack">
+        <item name="android:textSize">@dimen/text_size_head</item>
+    </style>
+
+
+
+    <!--Custom-->
+    <style name="MyAlertDialogTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+        <item name="android:windowIsFloating">true</item>
+        <!-- If you don't want your own button bar style use
+                @android:style/Holo.Light.ButtonBar.AlertDialog
+                and
+                ?android:attr/borderlessButtonStyle
+             instead of @style/MyButtonBar and @style/MyBorderlessButton -->
+    </style>
+
+
+</resources>

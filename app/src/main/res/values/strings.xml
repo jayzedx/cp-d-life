@@ -1,0 +1,21 @@
+<resources>
+    <!--A-->
+    <string name="app_name">cpfit_android</string>
+    <!--C-->
+    <string name="cancel">ยกเลิก</string>
+    <string name="call">โทร</string>
+
+    <!--D-->
+    <string name="dialog_refresh">เชื่อมต่อล้มเหลว</string>
+    <string name="dialog_refresh_repeat">กรุณากดปุ่ม "Refresh" เพื่อส่งข้อมูลใหม่อีกครั้ง</string>
+
+
+    <!-- F -->
+    <string name="fill_input">กรอกข้อมูล</string>
+    <!-- G -->
+    <string name="google_maps_key">AIzaSyAA_yaaQ2v0SV7kPctCvn6R0hJsNQJFRc4</string>
+
+    <!-- P -->
+    <string name="progress_loading">กำลังโหลดข้อมูล...</string>
+
+</resources>
