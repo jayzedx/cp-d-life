@@ -15,7 +15,19 @@
     <!-- G -->
     <string name="google_maps_key">AIzaSyAA_yaaQ2v0SV7kPctCvn6R0hJsNQJFRc4</string>
 
+    <!--L-->
+    <string name="login">Sign In</string>
+    <string name="login_title">Connected to society of  CP Gruop</string>
+    <string name="login_telephone_tint">Telephone</string>
+    <string name="login_company_tint">Company</string>
+
+    <!--O-->
+    <string name="otp_verify">Verifying your number</string>
+    <string name="otp_verify_title">Please enter the validation code that get from sms</string>
+    <string name="otp_resend">Resend OTP</string>
     <!-- P -->
     <string name="progress_loading">กำลังโหลดข้อมูล...</string>
+    <!-- S -->
+
 
 </resources>

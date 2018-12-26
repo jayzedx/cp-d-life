@@ -1,54 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="Pool_Blue">#ebf9f8</color>
-    <color name="Pool_Blue_Dark">#d8f3f3</color>
-    <color name="Storms_May_Sweep">#4DB6AC</color>
-    <color name="Storms_May_Sweep_Dark">#3A8C84</color>
-    <color name="indicator_unselected">#4D000000</color>
-    <color name="line_list">#AABCBB</color>
-    <color name="font_color_register">#62A815</color>
-    <color name="register_name">#417505</color>
-    <color name="send_otp_btn">#007AFF</color>
-    <color name="font_txt_otp">#9B9B9B</color>
-    <color name="bg_theme">#73B653</color>
-    <color name="txt_header">#030303</color>
-    <color name="txt_descrip">#8F8E94</color>
-    <color name="txt_subtitle">#817A7A</color>
-    <color name="ratting">#FFF100</color>
-    <color name="ratting_parrent">#A69F23</color>
-    <color name="result">#74D449</color>
-    <color name="bg_dialog">#FCFCFC</color>
-    <color name="line_dialog">#CBCBCB</color>
-    <color name="WhiteTran30">#30FFFFFF</color>
-    <color name="WhiteTran">#CCFFFFFF</color>
-    <color name="WhiteTran80">#BBFFFFFF</color>
-    <color name="line_color">#ECF3E5</color>
-    <color name="btn_delete">#C83737</color>
-    <color name="waiting">#F27F4F</color>
-    <color name="progress">#3397CE</color>
-    <color name="pending">#E72A7A</color>
-    <color name="payout">#7D8AE9</color>
 
-    <color name="rating">#46C826</color>
-    <color name="finish_status">#1A8623</color>
-    <color name="finish">#FF0000</color>
-    <color name="request">#AD2396</color>
-    <color name="confirm">#46C826</color>
-    <color name="complete">#FFCC33</color>
-    <color name="line_center">#AAAAAA</color>
-    <color name="calendar_selete">#477B0F</color>
-    <color name="hint_text">#D8D8D8</color>
-    <color name="line_hint_text">#979797</color>
-    <color name="line_tap">#F0F0F0</color>
-    <color name="warm_grey_four">#979797</color>
-
-
-
-    <color name="bg_title_tran">#AAECF3E4</color>
-    <color name="bg_title">#ECF3E4</color>
-    <color name="cancel">#EE3E0E</color>
-    <color name="btn_dialog">#007AFF</color>
     <color name="Algae_Green">#64e986</color>
     <color name="AliceBlue">#F0F8FF</color>
     <color name="Alien_Green">#6CC417</color>
@@ -402,5 +355,23 @@
     <color name="tranAB_w">#adFFFFFF</color>
     <color name="tranDA_W">#DAFFFFFF</color>
     <color name="tranEE_W">#EEFFFFFF</color>
+
+
+
+    <color name="dialog_line">#CBCBCB</color>
+    <color name="dialog_tint">#979797</color>
+    <color name="dialog_bg">#979797</color>
+
+
+    <color name="toolbar_bg">@color/Ocean_Blue</color>ฃ
+
+    <color name="gold_theme">#F5A623</color>
+    <color name="blue_theme">#4A90E2</color>
+    <color name="gray_theme">#807D7D</color>
+    <color name="blue_pin_code">#84A1E6</color>
+
+
+
+
 
 </resources>

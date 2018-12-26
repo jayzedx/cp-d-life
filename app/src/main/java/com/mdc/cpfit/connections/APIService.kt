@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit
 /**
  * Created by suphadate_noy on 3/29/18.
  */
-class APIService private constructor() {
+open class APIService {
     init {
         println("This ($this) is a singleton")
     }

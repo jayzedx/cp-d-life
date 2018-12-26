@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/font_color_register</item>
-        <item name="colorPrimaryDark">@color/font_color_register</item>
-        <item name="colorAccent">@color/font_color_register</item>
+        <item name="colorPrimary">@color/blue_theme</item>
+        <item name="colorPrimaryDark">@color/blue_theme</item>
+        <item name="colorAccent">@color/blue_theme</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:fontFamily">font</item>
@@ -70,6 +70,9 @@
     <style name="TextWhite">
         <item name="android:textColor">@android:color/white</item>
     </style>
+    <style name="TextTitle12" parent="TextWhite">
+        <item name="android:textSize">@dimen/text_size_sub_heading</item>
+    </style>
     <style name="TextTitle15" parent="TextWhite">
         <item name="android:textSize">@dimen/text_size_body</item>
     </style>
@@ -102,6 +105,64 @@
     </style>
 
 
+    <style name="TextGold">
+        <item name="android:textColor">@color/gold_theme</item>
+    </style>s
+    <style name="TextHead15" parent="TextGold">
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+    <style name="TextHead17" parent="TextGold">
+        <item name="android:textSize">@dimen/text_size_caption</item>
+    </style>
+    <style name="TextHead20" parent="TextGold">
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+    <style name="TextHead22" parent="TextGold">
+        <item name="android:textSize">@dimen/text_size_head</item>
+    </style>
+
+
+    <style name="TextGray">
+        <item name="android:textColor">@color/gray_theme</item>
+    </style>
+    <style name="TextSub12" parent="TextGray">
+        <item name="android:textSize">@dimen/text_size_sub_heading</item>
+    </style>
+    <style name="TextSub15" parent="TextGray">
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+    <style name="TextSub17" parent="TextGray">
+        <item name="android:textSize">@dimen/text_size_caption</item>
+    </style>
+    <style name="TextSub20" parent="TextGray">
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+    <style name="TextSub22" parent="TextGray">
+        <item name="android:textSize">@dimen/text_size_head</item>
+    </style>
+
+
+    <style name="TextBlue">
+        <item name="android:textColor">@color/blue_theme</item>
+    </style>
+    <style name="TextBlue12" parent="TextBlue">
+        <item name="android:textSize">@dimen/text_size_sub_heading</item>
+    </style>
+    <style name="TextBlue15" parent="TextBlue">
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+    <style name="TextBlue17" parent="TextBlue">
+        <item name="android:textSize">@dimen/text_size_caption</item>
+    </style>
+    <style name="TextBlue20" parent="TextBlue">
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+    <style name="TextBlue22" parent="TextBlue">
+        <item name="android:textSize">@dimen/text_size_head</item>
+    </style>
+
+
+
 
     <!--Custom-->
     <style name="MyAlertDialogTheme">
@@ -117,5 +178,25 @@
              instead of @style/MyButtonBar and @style/MyBorderlessButton -->
     </style>
 
+
+
+
+
+    <style name="BackgroundTheme">
+        <item name="android:background">@color/blue_theme</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <style name="EditTextPinCode" parent="TextWhite">
+        <item name="android:background">@color/blue_pin_code</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginLeft">@dimen/MarginSpaceL</item>
+    </style>
+
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="backgroundTint">@color/dialog_line</item>
+        <item name="android:textColor">@color/gray_theme</item>
+    </style>
 
 </resources>

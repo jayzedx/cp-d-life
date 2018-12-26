@@ -51,8 +51,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity android:name=".activity.PersonnelActivity" />-->
-        <!--<activity android:name=".activity.OTPActivity" />-->
+        <activity android:name="com.mdc.cpfit.activity.PersonalActivity" />
+        <activity android:name="com.mdc.cpfit.activity.OTPActivity" />
+        <activity android:name="com.mdc.cpfit.activity.MainContainActivity" />
+
         <!--<activity android:name="com.mdc.cpfit.activity.TabOneContainActivity"></activity>-->
         <!--<activity android:name="com.mdc.cpfit.activity.TabTwoContainActivity"></activity>-->
 
@@ -69,6 +71,15 @@
             </intent-filter>
         </service>
 
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="default_channel_id" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
 
     </application>
 

@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:paddingBottom="@dimen/MarginSpaceL"
-        android:background="@drawable/bg_dialog"
+        android:background="@drawable/dialog_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
             android:layout_centerHorizontal="true"
             android:background="@color/tran00"
             android:src="@drawable/ic_refresh"
-            android:tint="@color/warm_grey_four"
+            android:tint="@color/dialog_tint"
             android:text="OK" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

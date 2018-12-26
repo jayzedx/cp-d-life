@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.widget.ImageView
 import com.mdc.cpfit.R
 import com.mdc.cpfit.adapter.MainViewPagerAdapter
+import com.mdc.cpfit.screen.tab1.PersonalScreen
 import com.mdc.cpfit.util.ActivityUnit
 import com.mdc.cpfit.util.Contextor
 import com.mdc.cpfit.util.Logging
@@ -55,23 +56,17 @@ class MainContainActivity : ActivityUnit() {
         for (i in 0 until tabCount) {
             val tab = iconTablayout.getTabAt(i)
             if (tab != null) {
-                val myCustomIcon = LayoutInflater.from(iconTablayout.context).inflate(R.id.tabView, null) as ImageView
+                val myCustomIcon = LayoutInflater.from(iconTablayout.context).inflate(R.layout.view_tab, null) as ImageView
                 when (i) {
                     0 ->
                         myCustomIcon.setImageResource(R.drawable.ic_refresh)
                     1 ->
                         myCustomIcon.setImageResource(R.drawable.ic_refresh)
-                    2 ->
-                        myCustomIcon.setImageResource(R.drawable.ic_refresh)
-
-                    3 ->
-                        myCustomIcon.setImageResource(R.drawable.ic_refresh)
-
-                    4 -> myCustomIcon.setImageResource(R.drawable.ic_refresh)
 
                 }
 
-                /*Here is where to set image if doing it dynamically
+                /*
+                Here is where to set image if doing it dynamically
                 myCustomIcon.setImageBitmap(bitmap);
                 */
 
@@ -82,22 +77,12 @@ class MainContainActivity : ActivityUnit() {
     private fun setupViewPager(pager: ViewPager?) {
         runOnUiThread {
             val adapter = MainViewPagerAdapter(supportFragmentManager)
-//            val f1 = MapAllPersonnelScreen.newInstance("One")
+            val f1 = PersonalScreen.newInstance()
+            adapter.addFragment(f1, "TAB 1")
 //
-//            adapter.addFragment(f1, "TAB 1")
-//
-//            val f2 = ScheduleServiceListScreen.newInstance("Two")
-//            adapter.addFragment(f2, "TAB 2")
-//
-//            val f3 = PatienListInfoScreen.newInstance("Three")
-//            adapter.addFragment(f3, "TAB 3")
-//
-//            val f4 = ChatListScreen.newInstance("Four")
-//            adapter.addFragment(f4, "TAB 4")
-//
-//
-//            val f5 = NavigationScreen.newInstance("five")
-//            adapter.addFragment(f5, "TAB 5")
+            val f2 = PersonalScreen.newInstance()
+            adapter.addFragment(f2, "TAB 2")
+
 
             pager?.adapter = adapter
 
