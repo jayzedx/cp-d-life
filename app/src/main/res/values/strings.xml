@@ -2,8 +2,8 @@
     <!--A-->
     <string name="app_name">cpfit_android</string>
     <!--C-->
-    <string name="cancel">ยกเลิก</string>
-    <string name="call">โทร</string>
+    <string name="cancel">Cancel</string>
+    <string name="call">Tel</string>
 
     <!--D-->
     <string name="dialog_refresh">เชื่อมต่อล้มเหลว</string>
@@ -17,9 +17,10 @@
 
     <!--L-->
     <string name="login">Sign In</string>
-    <string name="login_title">Connected to society of  CP Gruop</string>
+    <string name="login_title">Connected to society of  CP Group</string>
     <string name="login_telephone_tint">Telephone</string>
     <string name="login_company_tint">Company</string>
+    <string name="login_select_company">Select Company</string>
 
     <!--O-->
     <string name="otp_verify">Verifying your number</string>

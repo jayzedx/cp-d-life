@@ -195,8 +195,10 @@
     </style>
 
     <style name="EditText" parent="Widget.AppCompat.EditText">
-        <item name="backgroundTint">@color/dialog_line</item>
+        <item name="backgroundTint">@color/bg_tint</item>
         <item name="android:textColor">@color/gray_theme</item>
+        <item name="android:textSize">@dimen/FontSizeM</item>
     </style>
+
 
 </resources>

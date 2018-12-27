@@ -32,7 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        style="@style/TextHead17"
+        style="@style/TextHead20"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,31 +53,33 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/MarginSpace4XL"
-        android:paddingStart="@dimen/PaddingSpace10XL"
-        android:paddingEnd="@dimen/PaddingSpace10XL"
+        android:layout_marginEnd="@dimen/MarginSpace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/tvTitlePhone"
             style="@style/TextBlue12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/MarginSpace3XL"
+            android:layout_marginBottom="@dimen/MarginSpace"
             android:text="@string/login_telephone_tint"
-            app:layout_constraintStart_toStartOf="@+id/imvPhone" />
+            app:layout_constraintBottom_toTopOf="@+id/edtPhone"
+            app:layout_constraintStart_toStartOf="@+id/imvCompany" />
 
         <ImageView
             android:id="@+id/imvPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/MarginSpace"
-            android:src="@drawable/ic_refresh"
+            android:layout_marginBottom="@dimen/MarginSpace"
+            android:layout_marginStart="@dimen/MarginSpace4XL"
+            android:layout_marginTop="@dimen/MarginSpace"
+            android:src="@drawable/ic_phone"
             app:layout_constraintBottom_toBottomOf="@+id/edtPhone"
-            app:layout_constraintEnd_toStartOf="@+id/edtPhone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/edtPhone" />
 
@@ -86,56 +89,83 @@
             style="@style/EditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/MarginSpace4XL"
             android:layout_marginStart="@dimen/MarginSpace"
+            android:layout_marginTop="@dimen/MarginSpace8XL"
             android:text="01234567890"
-            android:textSize="@dimen/FontSizeXXL"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/imvPhone"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitlePhone" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
             android:id="@+id/tvTitleCompany"
             style="@style/TextBlue12"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/MarginSpace3XL"
+            android:layout_height="0dp"
+            android:layout_marginBottom="4dp"
             android:text="@string/login_company_tint"
-            app:layout_constraintStart_toStartOf="@+id/imvCompany"
-            app:layout_constraintTop_toBottomOf="@+id/edtPhone" />
-
+            app:layout_constraintBottom_toTopOf="@+id/spnCompany"
+            app:layout_constraintStart_toStartOf="@+id/imvCompany" />
 
         <ImageView
             android:id="@+id/imvCompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="@dimen/MarginSpace"
-            android:src="@drawable/ic_refresh"
-            app:layout_constraintBottom_toBottomOf="@+id/edtSpinner"
-            app:layout_constraintEnd_toEndOf="@+id/imvPhone"
-            app:layout_constraintStart_toStartOf="@+id/imvPhone"
-            app:layout_constraintTop_toTopOf="@+id/edtSpinner" />
+            android:layout_marginEnd="@dimen/MarginSpace"
+            android:src="@drawable/ic_company"
+            app:layout_constraintBottom_toBottomOf="@+id/spnCompany"
+            app:layout_constraintEnd_toStartOf="@+id/spnCompany"
+            app:layout_constraintTop_toTopOf="@+id/spnCompany"
+            app:layout_constraintVertical_bias="0.421" />
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/edtSpinner"
-            style="@style/EditText"
+
+        <!--<android.support.v7.widget.AppCompatEditText-->
+            <!--android:id="@+id/edtSpinner"-->
+            <!--style="@style/EditText"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/MarginSpace6XL"-->
+            <!--android:text="FreewillSolution Co., Ltd"-->
+            <!--android:textSize="@dimen/FontSizeM"-->
+            <!--app:layout_constraintEnd_toEndOf="@+id/edtPhone"-->
+            <!--app:layout_constraintHorizontal_bias="0.0"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/edtPhone"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/edtPhone" />-->
+
+        <com.mdc.cpfit.dialog.SearchableSpinner
+            android:id="@+id/spnCompany"
+            android:paddingTop="@dimen/PaddingSpaceXXL"
+            android:paddingBottom="@dimen/PaddingSpaceXXL"
+            android:textColor="@color/gray_theme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="FreewillSolution Co., Ltd"
-            android:textSize="@dimen/FontSizeS"
+            android:layout_marginTop="@dimen/MarginSpace6XL"
+            android:paddingStart="@dimen/PaddingSpaceL"
             app:layout_constraintEnd_toEndOf="@+id/edtPhone"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/edtPhone"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleCompany" />
+            app:layout_constraintTop_toBottomOf="@+id/edtPhone" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/bg_tint"
+            app:layout_constraintBottom_toBottomOf="@+id/spnCompany"
+            app:layout_constraintEnd_toEndOf="@+id/spnCompany"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/spnCompany" />
+
 
         <ImageView
             android:id="@+id/imvSubmit"
+            android:src="@drawable/btn_submit_blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/MarginSpace4XL"
-            android:src="@drawable/ic_refresh"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

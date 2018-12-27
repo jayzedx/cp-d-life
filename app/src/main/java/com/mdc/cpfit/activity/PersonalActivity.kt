@@ -3,6 +3,7 @@ package com.mdc.cpfit.activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.bumptech.glide.Glide
 import com.mdc.cpfit.R
@@ -21,8 +22,9 @@ class PersonalActivity : ActivityUnit() {
     lateinit var dialog: DialogBase
     lateinit var onProgress: View
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
         containView = R.id.contian_view
         dialog = DialogBase(this)
 
@@ -41,7 +43,7 @@ class PersonalActivity : ActivityUnit() {
     private fun onLogin() {
         val phoneNumber = ConfigShare.getShareConfig(ConfigShare.phoneNumber) as String
 
-        //mockup
+        //Mockup
         val i = Intent(baseContext, OTPActivity::class.java)
         startActivity(i)
        //Remove activity

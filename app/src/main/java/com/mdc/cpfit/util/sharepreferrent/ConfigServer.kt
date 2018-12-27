@@ -1,5 +1,6 @@
 package com.mdc.cpfit.util.sharepreferrent
 
+import com.mdc.cpfit.model.BodyCompany
 
 
 class ConfigServer {
@@ -23,8 +24,19 @@ class ConfigServer {
 
     var arrayProvince: ArrayList<BodyProvince> = ArrayList()
     var arraySex: ArrayList<DataSex> = ArrayList()
-
     */
+
+
+    var arrCompany: ArrayList<BodyCompany> = ArrayList()
+
+    init {
+        //company
+        var data = BodyCompany(0, "Freewill Solutions")
+        arrCompany.add(data)
+        var data2 = BodyCompany(0, "CPF")
+        arrCompany.add(data2)
+    }
+
 
     private object Holder {
         val INSTANCE = ConfigServer()

@@ -23,11 +23,18 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        intnitData()
+        initData()
 
     }
 
-    private fun intnitData() {
+    private fun initData() {
+
+
+        //Mockup
+        val i = Intent(applicationContext, PersonalActivity::class.java)
+        startActivity(i)
+        finish()
+        /*
         val background = object : Thread() {
             override fun run() {
                 try {
@@ -36,6 +43,7 @@ class SplashActivity : AppCompatActivity() {
 //                    onGetProvice()
                     // After 5 seconds redirect to another intent
                     //Remove activity
+
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -46,6 +54,7 @@ class SplashActivity : AppCompatActivity() {
         }
         // start thread
         background.start()
+        */
     }
 
     public override fun onDestroy() {

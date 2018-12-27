@@ -1,19 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.mdc.cpfit">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>-->
-    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>-->
-    <!--<uses-permission android:name="android.permission.CAMERA" />-->
+    <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> -->
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!--<uses-permission android:name="android.permission.CALL_PHONE" />-->
 
+    <!-- <uses-permission android:name="android.permission.CALL_PHONE" /> -->
     <application
-        android:name="com.mdc.cpfit.application.ApplicationMain"
+        android:name=".application.ApplicationMain"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,17 +22,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
-        <!--Google Map V2-->
-        <!--<meta-data-->
-        <!--android:name="com.google.android.gms.version"-->
-        <!--android:value="@integer/google_play_services_version" />-->
+        <!-- Google Map V2 -->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.gms.version" -->
+        <!-- android:value="@integer/google_play_services_version" /> -->
 
 
         <!-- The API key for Google Maps-based APIs. -->
-        <!--<meta-data-->
-        <!--android:name="com.google.android.geo.API_KEY"-->
-        <!--android:value="@string/google_maps_key" />-->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.geo.API_KEY" -->
+        <!-- android:value="@string/google_maps_key" /> -->
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -45,27 +45,26 @@
                 tools:replace="android:resource" />
         </provider>
 
-        <activity android:name="com.mdc.cpfit.activity.SplashActivity">
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.mdc.cpfit.activity.PersonalActivity" />
-        <activity android:name="com.mdc.cpfit.activity.OTPActivity" />
-        <activity android:name="com.mdc.cpfit.activity.MainContainActivity" />
+        <activity android:name=".activity.PersonalActivity" />
+        <activity android:name=".activity.OTPActivity" />
+        <activity android:name=".activity.MainContainActivity" />
 
-        <!--<activity android:name="com.mdc.cpfit.activity.TabOneContainActivity"></activity>-->
-        <!--<activity android:name="com.mdc.cpfit.activity.TabTwoContainActivity"></activity>-->
+        <!-- <activity android:name="com.mdc.cpfit.activity.TabOneContainActivity"></activity> -->
+        <!-- <activity android:name="com.mdc.cpfit.activity.TabTwoContainActivity"></activity> -->
 
-
-        <service android:name="com.mdc.cpfit.connections.firebase.MyFirebaseMessagingService">
+        <service android:name=".connections.firebase.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <service android:name="com.mdc.cpfit.connections.firebase.MyFirebaseInstanceIDService">
+        <service android:name=".connections.firebase.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
@@ -84,5 +83,3 @@
     </application>
 
 </manifest>
-
-

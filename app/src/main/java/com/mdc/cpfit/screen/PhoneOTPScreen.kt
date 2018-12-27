@@ -4,24 +4,28 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.mdc.cpfit.R
 import com.mdc.cpfit.dialog.DialogBase
+import com.mdc.cpfit.dialog.SearchableSpinner
+import com.mdc.cpfit.model.BodyCompany
+import com.mdc.cpfit.model.CompanyModel
 import com.mdc.cpfit.util.ScreenUnit
 import com.mdc.cpfit.util.listener.iNetwork
+import com.mdc.cpfit.util.sharepreferrent.ConfigServer
+import com.mdc.cpfit.util.sharepreferrent.ConfigShare
+import kotlinx.android.synthetic.main.sc_login.*
 
 
 class PhoneOTPScreen : ScreenUnit() {
 
     val TAG = PhoneOTPScreen::class.java.simpleName
     var rootView: View? = null
-    var type: String = ""
-    lateinit var header: TextView
-    lateinit var phoneEdt: EditText
-    lateinit var sendOtpBtn: ImageView
     lateinit var dialog: DialogBase
+
+    var arrCompanyName = ArrayList<String>()
+    var arrCompany = ArrayList<BodyCompany>()
+    var companyId  = -1
 
     companion object {
         fun newInstance(): PhoneOTPScreen {
@@ -42,11 +46,7 @@ class PhoneOTPScreen : ScreenUnit() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        rootView = inflater?.inflate(R.layout.sc_phone_otp, container, false)
-
-
-
-
+        rootView = inflater?.inflate(R.layout.sc_login, container, false)
         return rootView
     }
 
@@ -56,6 +56,7 @@ class PhoneOTPScreen : ScreenUnit() {
 
 
         dialog = DialogBase(context)
+
         NetworkCheckStatus(object : iNetwork {
             override fun CannotUseInternet() {
 
@@ -74,15 +75,50 @@ class PhoneOTPScreen : ScreenUnit() {
             }
         })
 
+        setComponents()
 
-//        phoneEdt = rootView?.findViewById(R.id.phoneEdt)!!
-//        sendOtpBtn = rootView!!.findViewById(R.id.sendOTPBtn)
-//
-//        sendOtpBtn.setOnClickListener{
-//            ConfigShare.addShareConfig(ConfigShare.phoneNumber, phoneEdt.text.toString())
-//            GetLogin()
-//        }
+        imvSubmit.setOnClickListener{
+            ConfigShare.addShareConfig(ConfigShare.phoneNumber, edtPhone.text.toString())
+            GetLogin()
+            //Mockup
+            IntentFragment(PinOTPScreen.newInstance())
 
+        }
+
+    }
+
+    private fun setComponents() {
+        initSpinner()
+    }
+
+    private fun initSpinner() {
+        spnCompany.setTitle(getString(R.string.login_select_company))
+        spnCompany.setPositiveButton(getString(R.string.cancel))
+
+        ConfigServer.instance.arrCompany?.let {
+            var companys = it
+            //arrCompanyName.add(0, getString(R.string.login_select_company))
+            for (i in 0 until companys.size) {
+                arrCompanyName.add(companys[i].companyName)
+            }
+            var adapterProvince = ArrayAdapter<String>(context, R.layout.spinner_item_company, arrCompanyName)
+            spnCompany.adapter = adapterProvince
+        }
+
+        spnCompany.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(position: AdapterView<*>?) {
+            }
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+                if (position > 0) {
+                    companyId = arrCompany?.let {
+                        if (it.size > 0) it[position - 1].companyId
+                        else 0
+                    }
+                } else {
+                    companyId = -1
+                }
+            }
+        }
     }
 
 
