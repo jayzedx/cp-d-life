@@ -5,13 +5,13 @@ import android.inputmethodservice.Keyboard
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
+import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.TextView
 import com.mdc.cpfit.R
+import com.mdc.cpfit.activity.MainContainActivity
 import com.mdc.cpfit.util.KeyboardUtil
 import com.mdc.cpfit.util.ScreenUnit
 import kotlinx.android.synthetic.main.sc_phone_otp.*
@@ -56,6 +56,24 @@ class PinOTPScreen : ScreenUnit() {
         nextChangeOfcusEditext(edtPin1, edtPin2)
         nextChangeOfcusEditext(edtPin2, edtPin3)
         nextChangeOfcusEditext(edtPin3, edtPin4)
+        nextChangeOfcusEditext(edtPin4, edtPin1)
+
+
+        edtPin4.setOnEditorActionListener(object : TextView.OnEditorActionListener {
+            override fun onEditorAction(p0: TextView?, actionId: Int, p2: KeyEvent?): Boolean {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    imvSubmit.performClick()
+                }
+                return false;  // Focus will change according to the actionId
+            }
+        })
+
+        imvSubmit.setOnClickListener {
+            UpdateUI {
+                requestVerifyOTPAPI()
+            }
+        }
+
     }
 
 
@@ -80,6 +98,10 @@ class PinOTPScreen : ScreenUnit() {
                         editNow.setText(char[0].toString())
                     }
                 }
+                if (edtPin1.text.length + edtPin2.text.length  + edtPin3.text.length + edtPin4.text.length  == 4) {
+                    imvSubmit.performClick()
+                }
+
 
             }
         })
@@ -107,6 +129,12 @@ class PinOTPScreen : ScreenUnit() {
 
             }
         })
+    }
+
+
+    private fun requestVerifyOTPAPI() {
+        activityMain.startActivityUnit(MainContainActivity::class.java, null)
+        activityMain.finish()
     }
 
 

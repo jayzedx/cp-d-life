@@ -23,40 +23,39 @@
         android:id="@+id/tvHeaderCaption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MarginSpace4XL"
+        android:layout_marginBottom="16dp"
         android:text="@string/otp_verify"
         android:textAlignment="center"
         android:textColor="@color/White"
         android:textSize="@dimen/FontSizeXL"
+        app:layout_constraintBottom_toTopOf="@+id/tvHeaderCaption2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/viewHeader" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvHeaderCaption2"
+        style="@style/TextTitle12"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MarginSpace"
+        android:layout_marginBottom="33dp"
         android:text="@string/otp_verify_title"
         android:textAlignment="center"
         android:textColor="@color/White"
-        style="@style/TextTitle12"
+        app:layout_constraintBottom_toTopOf="@+id/viewPin"
         app:layout_constraintEnd_toEndOf="@+id/tvHeaderCaption"
-        app:layout_constraintStart_toStartOf="@+id/tvHeaderCaption"
-        app:layout_constraintTop_toBottomOf="@+id/tvHeaderCaption" />
+        app:layout_constraintStart_toStartOf="@+id/tvHeaderCaption" />
 
     <RelativeLayout
         android:id="@+id/viewPin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/MarginSpace4XL"
-        android:layout_marginTop="@dimen/MarginSpace4XL"
+        android:layout_marginBottom="33dp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/tvResendPinCode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHeaderCaption2">
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
             android:id="@+id/edtPin1"
@@ -64,8 +63,7 @@
             android:layout_width="42dp"
             android:layout_height="37dp"
             android:digits="1234567890"
-            android:inputType="number"
-            />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/edtPin2"
@@ -74,8 +72,7 @@
             android:layout_height="37dp"
             android:layout_toEndOf="@+id/edtPin1"
             android:digits="1234567890"
-            android:inputType="number"
-             />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/edtPin3"
@@ -84,8 +81,7 @@
             android:layout_height="37dp"
             android:layout_toEndOf="@+id/edtPin2"
             android:digits="1234567890"
-            android:inputType="number"
-            />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/edtPin4"
@@ -94,8 +90,7 @@
             android:layout_height="37dp"
             android:layout_toEndOf="@+id/edtPin3"
             android:digits="1234567890"
-            android:inputType="number"
-            />
+            android:inputType="number" />
 
     </RelativeLayout>
 
@@ -104,7 +99,7 @@
         android:id="@+id/tvResendPinCode"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
-        android:layout_marginBottom="@dimen/MarginSpace3XL"
+        android:layout_marginBottom="33dp"
         android:layout_marginEnd="@dimen/MarginSpace"
         android:layout_marginStart="@dimen/MarginSpace"
         android:text="@string/otp_resend"
@@ -119,6 +114,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.43" />
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/imvSubmit"
+        android:src="@drawable/btn_submit_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/MarginSpace4XL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
