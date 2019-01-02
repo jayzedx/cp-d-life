@@ -108,5 +108,8 @@ dependencies {
 
     //    implementation 'com.github.stfalcon:chatkit:0.3.1'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    //sdp for scale dp
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
 }
 apply plugin: 'com.google.gms.google-services'

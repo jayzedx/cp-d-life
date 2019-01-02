@@ -363,6 +363,8 @@
     <color name="dialog_bg">#979797</color>
 
 
+
+
     <color name="toolbar_bg">@color/Ocean_Blue</color>ฃ
 
     <color name="gold_theme">#F5A623</color>
@@ -372,6 +374,7 @@
 
     <color name="bg_tint">#CBCBCB</color>
 
+    <color name="bg_head">#EAEAEA</color>
 
 
 

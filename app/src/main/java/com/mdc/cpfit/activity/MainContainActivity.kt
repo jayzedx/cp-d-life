@@ -59,9 +59,9 @@ class MainContainActivity : ActivityUnit() {
                 val myCustomIcon = LayoutInflater.from(iconTablayout.context).inflate(R.layout.view_tab, null) as ImageView
                 when (i) {
                     0 ->
-                        myCustomIcon.setImageResource(R.drawable.ic_refresh)
+                        myCustomIcon.setImageResource(R.drawable.ic_white_user)
                     1 ->
-                        myCustomIcon.setImageResource(R.drawable.ic_refresh)
+                        myCustomIcon.setImageResource(R.drawable.ic_white_trophy)
 
                 }
 

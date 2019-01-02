@@ -91,6 +91,9 @@
     <style name="TextBlack">
         <item name="android:textColor">@android:color/black</item>
     </style>
+    <style name="TextCaption12" parent="TextBlack">
+        <item name="android:textSize">@dimen/text_size_sub_heading</item>
+    </style>
     <style name="TextCaption15" parent="TextBlack">
         <item name="android:textSize">@dimen/text_size_body</item>
     </style>

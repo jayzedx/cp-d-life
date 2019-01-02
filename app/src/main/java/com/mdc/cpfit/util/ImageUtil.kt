@@ -35,8 +35,8 @@ class ImageUtil {
             return RequestOptions()
                     .centerCrop()
                     .apply(RequestOptions.circleCropTransform())
-                    .placeholder(R.drawable.ic_launcher_background)
-                    .error(R.drawable.ic_launcher_background)
+                    .placeholder(R.drawable.ic_personal_profile)
+                    .error(R.drawable.ic_personal_profile)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .priority(Priority.HIGH)
 
