@@ -8,7 +8,7 @@ import android.widget.*
 import com.mdc.cpfit.R
 import com.mdc.cpfit.dialog.DialogBase
 import com.mdc.cpfit.dialog.SearchableSpinner
-import com.mdc.cpfit.model.BodyCompany
+import com.mdc.cpfit.model.CompanyBody
 import com.mdc.cpfit.model.CompanyModel
 import com.mdc.cpfit.util.ScreenUnit
 import com.mdc.cpfit.util.listener.iNetwork
@@ -24,7 +24,7 @@ class PhoneOTPScreen : ScreenUnit() {
     lateinit var dialog: DialogBase
 
     var arrCompanyName = ArrayList<String>()
-    var arrCompany = ArrayList<BodyCompany>()
+    var arrCompany = ArrayList<CompanyBody>()
     var companyId  = -1
 
     companion object {

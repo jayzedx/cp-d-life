@@ -10,7 +10,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
         android:paddingBottom="@dimen/PaddingSpaceL"
         android:paddingStart="@dimen/PaddingSpaceXL"
         android:paddingEnd="@dimen/PaddingSpaceXL"
@@ -108,7 +107,7 @@
                 style="@style/TextCaption12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="@dimen/MarginSpaceS"
                 android:text="Step"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/separatorProfile"
@@ -131,7 +130,7 @@
                 style="@style/TextCaption12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="@dimen/MarginSpaceS"
                 android:text="Distance : km"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -141,8 +140,8 @@
                 android:id="@+id/separatorProfile"
                 android:layout_width="@dimen/_3sdp"
                 android:layout_height="@dimen/_30sdp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginEnd="@dimen/MarginSpace"
+                android:layout_marginStart="@dimen/MarginSpace"
                 android:background="@color/bg_head"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -173,8 +172,7 @@
     <!--Record Activity-->
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0">
+        android:layout_height="wrap_content">
 
         <View
             android:id="@+id/separatorTop2"
@@ -190,7 +188,7 @@
             android:id="@+id/imvStep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/MarginSpace"
             android:src="@drawable/ic_step_button"
             app:layout_constraintEnd_toStartOf="@+id/separatorTop2"
             app:layout_constraintStart_toStartOf="parent"
@@ -201,7 +199,7 @@
             style="@style/TextBlue20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/MarginSpace"
             android:text="2,270 / 6,000"
             android:textAlignment="center"
             app:layout_constraintEnd_toStartOf="@+id/separatorTop2"
@@ -213,7 +211,7 @@
             style="@style/TextCaption12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/MarginSpaceS"
             android:text="Challenge Step"
             android:paddingBottom="@dimen/PaddingSpaceL"
             app:layout_constraintEnd_toStartOf="@+id/separatorTop2"
@@ -221,23 +219,22 @@
             app:layout_constraintTop_toBottomOf="@+id/tvStepChallenge" />
 
 
-
         <ImageView
             android:id="@+id/imvKm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:src="@drawable/ic_distance_button"
+            app:layout_constraintBottom_toTopOf="@+id/tvStepChallenge"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/separatorTop2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/imvStep" />
 
 
         <TextView
             android:id="@+id/tvKmChallenge"
             style="@style/TextBlue20"
             android:layout_width="wrap_content"
-            android:layout_height="28dp"
+            android:layout_height="wrap_content"
             android:text="1.1 / 9,000"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
@@ -248,8 +245,8 @@
             style="@style/TextCaption12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginEnd="@dimen/MarginSpace"
+            android:layout_marginTop="@dimen/MarginSpaceS"
             android:text="Challenge Distance : km"
             android:paddingBottom="@dimen/PaddingSpaceL"
             app:layout_constraintEnd_toEndOf="parent"
@@ -279,9 +276,9 @@
 
     <!--Recycler View-->
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recHistory"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="13">
+        android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
 

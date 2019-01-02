@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="@dimen/PaddingSpaceXXL"
+    android:paddingRight="@dimen/PaddingSpaceL"
+    android:paddingTop="@dimen/PaddingSpaceL"
+    android:paddingBottom="@dimen/PaddingSpaceL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imvWalkingHistory"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/tvMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imvWalkingHistory"
+        style="@style/TextBlue15"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/MarginSpace"
+        android:layout_marginLeft="@dimen/MarginSpaceXL"
+        android:text="January"
+        />
+    <TextView
+        android:id="@+id/tvDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imvWalkingHistory"
+        style="@style/TextSub12"
+        android:layout_below="@+id/tvMonth"
+        android:layout_alignLeft="@+id/tvMonth"
+        android:text="Weight : 75 kg  |  BMI : 23.7"
+        />
+    <TextView
+        android:id="@+id/tvStatusBmi"
+        style="@style/TextSub12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tvMonth"
+        android:text="Over weight"
+        android:textStyle="bold"
+        android:textColor="#F27181"
+        />
+
+</RelativeLayout>

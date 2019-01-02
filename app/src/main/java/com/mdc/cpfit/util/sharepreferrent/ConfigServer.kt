@@ -1,6 +1,6 @@
 package com.mdc.cpfit.util.sharepreferrent
 
-import com.mdc.cpfit.model.BodyCompany
+import com.mdc.cpfit.model.CompanyBody
 
 
 class ConfigServer {
@@ -27,13 +27,13 @@ class ConfigServer {
     */
 
 
-    var arrCompany: ArrayList<BodyCompany> = ArrayList()
+    var arrCompany: ArrayList<CompanyBody> = ArrayList()
 
     init {
         //company
-        var data = BodyCompany(0, "Freewill Solutions")
+        var data = CompanyBody(0, "Freewill Solutions")
         arrCompany.add(data)
-        var data2 = BodyCompany(0, "CPF")
+        var data2 = CompanyBody(0, "CPF")
         arrCompany.add(data2)
     }
 
