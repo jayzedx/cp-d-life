@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imvWalkingHistory"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         />
     <TextView
         android:id="@+id/tvMonth"
@@ -19,7 +19,6 @@
         android:layout_toRightOf="@+id/imvWalkingHistory"
         style="@style/TextBlue15"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/MarginSpace"
         android:layout_marginLeft="@dimen/MarginSpaceXL"
         android:text="January"
         />

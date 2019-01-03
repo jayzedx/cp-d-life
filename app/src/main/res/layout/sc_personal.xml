@@ -94,7 +94,7 @@
 
             <TextView
                 android:id="@+id/tvStepDistance"
-                style="@style/TextBlue20"
+                style="@style/TextBlue17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2,270"
@@ -116,7 +116,7 @@
 
             <TextView
                 android:id="@+id/tvKmDistance"
-                style="@style/TextBlue20"
+                style="@style/TextBlue17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1.1"
@@ -184,74 +184,157 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imvStep"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/MarginSpace"
-            android:src="@drawable/ic_step_button"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/separatorTop2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvStepChallenge"
-            style="@style/TextBlue20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/MarginSpace"
-            android:text="2,270 / 6,000"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toStartOf="@+id/separatorTop2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imvStep" />
+            <ImageView
+                android:id="@+id/imvStep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/MarginSpace"
+                android:src="@drawable/ic_step_button" />
 
+            <TextView
+                android:id="@+id/tvStepChallenge"
+                style="@style/TextBlue17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imvStep"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/MarginSpace"
+                android:text="2,270 / 6,000"
+                android:textAlignment="center" />
 
-        <TextView
-            style="@style/TextCaption12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/MarginSpaceS"
-            android:text="Challenge Step"
-            android:paddingBottom="@dimen/PaddingSpaceL"
-            app:layout_constraintEnd_toStartOf="@+id/separatorTop2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvStepChallenge" />
+            <TextView
+                style="@style/TextCaption12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvStepChallenge"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/MarginSpaceS"
+                android:paddingBottom="@dimen/PaddingSpaceL"
+                android:text="Challenge Step" />
+        </RelativeLayout>
 
-
-        <ImageView
-            android:id="@+id/imvKm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_distance_button"
-            app:layout_constraintBottom_toTopOf="@+id/tvStepChallenge"
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/separatorTop2"
-            app:layout_constraintTop_toTopOf="@+id/imvStep" />
+            app:layout_constraintStart_toEndOf="@+id/relativeLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imvKm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/MarginSpaceXL"
+                android:src="@drawable/ic_distance_button" />
+
+                <TextView
+                    android:id="@+id/tvKmChallenge"
+                    style="@style/TextBlue17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.1 / 9,000"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/imvKm"
+                    android:textAlignment="center" />
+
+                <TextView
+                    style="@style/TextCaption12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/MarginSpace"
+                    android:layout_marginTop="@dimen/MarginSpaceS"
+                    android:text="Challenge Distance : km"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tvKmChallenge"
+                    android:paddingBottom="@dimen/PaddingSpaceL" />
 
 
-        <TextView
-            android:id="@+id/tvKmChallenge"
-            style="@style/TextBlue20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1.1 / 9,000"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/separatorTop2"
-            app:layout_constraintTop_toTopOf="@+id/tvStepChallenge" />
 
-        <TextView
-            style="@style/TextCaption12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/MarginSpace"
-            android:layout_marginTop="@dimen/MarginSpaceS"
-            android:text="Challenge Distance : km"
-            android:paddingBottom="@dimen/PaddingSpaceL"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/separatorTop2"
-            app:layout_constraintTop_toBottomOf="@+id/tvKmChallenge" />
+
+
+        </RelativeLayout>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imvStep"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ic_step_button"-->
+            <!--android:layout_marginTop="@dimen/MarginSpace"-->
+            <!--app:layout_constraintEnd_toStartOf="@+id/separatorTop2"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvStepChallenge"-->
+            <!--style="@style/TextBlue17"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/MarginSpace"-->
+            <!--android:text="2,270 / 6,000"-->
+            <!--android:textAlignment="center"-->
+            <!--app:layout_constraintEnd_toStartOf="@+id/separatorTop2"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/imvStep" />-->
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/textView2"-->
+            <!--style="@style/TextCaption12"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/MarginSpaceS"-->
+            <!--android:paddingBottom="@dimen/PaddingSpaceL"-->
+            <!--android:text="Challenge Step"-->
+            <!--app:layout_constraintEnd_toStartOf="@+id/separatorTop2"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/tvStepChallenge" />-->
+
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imvKm"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ic_distance_button"-->
+            <!--app:layout_constraintBottom_toTopOf="@+id/tvStepChallenge"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/separatorTop2"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/imvStep" />-->
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvKmChallenge"-->
+            <!--style="@style/TextBlue17"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="1.1 / 9,000"-->
+            <!--android:textAlignment="center"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/separatorTop2"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/tvStepChallenge" />-->
+
+        <!--<TextView-->
+            <!--style="@style/TextCaption12"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="@dimen/MarginSpace"-->
+            <!--android:layout_marginTop="@dimen/MarginSpaceS"-->
+            <!--android:text="Challenge Distance : km"-->
+            <!--android:paddingBottom="@dimen/PaddingSpaceL"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/separatorTop2"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/tvKmChallenge" />-->
 
 
 

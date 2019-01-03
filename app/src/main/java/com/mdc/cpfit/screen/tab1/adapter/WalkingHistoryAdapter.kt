@@ -1,6 +1,8 @@
 package com.mdc.cpfit.screen.tab1.adapter
 
 import android.content.Context
+import android.graphics.Color
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -42,7 +44,15 @@ class WalkingHistoryAdapter(var context: Context) : RecyclerView.Adapter<Walking
         Glide.with(context).load(R.drawable.ic_personal_profile)
                 .apply(ImageUtil.getImageCirclePersonnalProfile())
                 .into(holder.imvWalkingHistory!!)
+
+
+        if(position %2 == 1) {
+            holder?.itemView?.setBackgroundColor(ContextCompat.getColor(context, R.color.bg_head))
+        } else {
+            holder?.itemView?.setBackgroundColor(ContextCompat.getColor(context, R.color.tran00))
+        }
     }
+
 
     fun updateArray(array: ArrayList<WalkingHistoryBody>) {
         this.array = array
