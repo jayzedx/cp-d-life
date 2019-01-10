@@ -44,7 +44,7 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="menu"
-            android:textColor="@color/White"
+            android:textColor="@color/Black"
             android:layout_marginRight="@dimen/Margin15dp"
             />
     </RelativeLayout>

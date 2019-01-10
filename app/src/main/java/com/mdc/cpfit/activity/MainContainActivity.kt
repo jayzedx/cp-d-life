@@ -79,7 +79,6 @@ class MainContainActivity : ActivityUnit() {
             val adapter = MainViewPagerAdapter(supportFragmentManager)
             val f1 = PersonalScreen.newInstance()
             adapter.addFragment(f1, "TAB 1")
-//
             val f2 = PersonalScreen.newInstance()
             adapter.addFragment(f2, "TAB 2")
 

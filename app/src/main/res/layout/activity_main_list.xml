@@ -5,21 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:id="@+id/appBarLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+    <!--</android.support.design.widget.AppBarLayout>-->
 
 
-    </android.support.design.widget.AppBarLayout>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <!--<android.support.design.widget.TabLayout-->
+
+        <!--android:id="@+id/tabView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_below="@+id/toolbar"-->
+        <!--android:background="@color/blue_theme"-->
+        <!--app:tabIndicatorColor="@color/White"-->
+        <!--app:tabIndicatorHeight="2dp" />-->
 
     <android.support.design.widget.TabLayout
 
         android:id="@+id/tabView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_below="@+id/appBarLayout"
+        android:layout_height="40dp"
+        android:layout_below="@+id/toolbar"
         android:background="@color/blue_theme"
         app:tabIndicatorColor="@color/White"
         app:tabIndicatorHeight="2dp" />

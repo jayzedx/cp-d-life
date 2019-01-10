@@ -23,10 +23,7 @@
             android:gravity="center_horizontal"
             android:text="@string/app_name"
             style="@style/TextToolbar20"
-
             />
-
-
 
     </RelativeLayout>
 

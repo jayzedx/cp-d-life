@@ -24,7 +24,7 @@
 
     <!--O-->
     <string name="otp_verify">Verifying your number</string>
-    <string name="otp_verify_title">Please enter the validation code that get from sms</string>
+    <string name="otp_verify_title">Please enter the validation code \nthat get from sms</string>
     <string name="otp_resend">Resend OTP</string>
     <!-- P -->
     <string name="progress_loading">กำลังโหลดข้อมูล...</string>

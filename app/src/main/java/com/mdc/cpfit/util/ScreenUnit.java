@@ -49,6 +49,10 @@ public class ScreenUnit extends Fragment {
             Glide.with(this).asGif().load(R.drawable.progress).into(gifFile);
     }
 
+    public void setCurrentFragment(ScreenUnit scr) {
+        currentScreen = scr;
+    }
+
     public ActivityUnit getActivityMain() {
         return (ActivityUnit) activity;
     }
@@ -138,6 +142,26 @@ public class ScreenUnit extends Fragment {
                         R.anim.translate_from_top, R.anim.translate_to_bottom
                 );
                 transaction.add(containView, Screen, FragmentName);
+                transaction.setTransition(FragmentTransaction.TRANSIT_NONE);
+                transaction.addToBackStack(FragmentName);
+                transaction.commit();
+            }
+        }
+    }
+
+    public synchronized void IntentScreen(ScreenUnit Screen) {
+        if (Screen != null) {
+            if (currentIntentScreen == null || !currentIntentScreen.getClass().getSimpleName().equals(Screen.getClass().getSimpleName())) {
+                HideCurrentFragment();
+                String FragmentName = System.currentTimeMillis() + "";
+
+                FragmentManager Manager = getChildFragmentManager();
+                FragmentTransaction transaction = Manager.beginTransaction();
+                transaction.setCustomAnimations(
+                        R.anim.translate_from_bottom, R.anim.translate_to_top,
+                        R.anim.translate_from_top, R.anim.translate_to_bottom
+                );
+                transaction.add(Screen, FragmentName);
                 transaction.setTransition(FragmentTransaction.TRANSIT_NONE);
                 transaction.addToBackStack(FragmentName);
                 transaction.commit();

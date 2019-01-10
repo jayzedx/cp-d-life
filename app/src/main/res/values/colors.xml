@@ -365,12 +365,12 @@
 
 
 
-    <color name="toolbar_bg">@color/Ocean_Blue</color>ฃ
+    <color name="toolbar_bg">@color/White</color>ฃ
 
     <color name="gold_theme">#F5A623</color>
     <color name="blue_theme">#4A90E2</color>
     <color name="gray_theme">#807D7D</color>
-    <color name="blue_pin_code">#84A1E6</color>
+    <color name="blue_pin_code">#62A1E6 </color>
 
     <color name="bg_tint">#CBCBCB</color>
 
