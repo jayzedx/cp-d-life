@@ -254,7 +254,7 @@
         <item name="android:layout_marginLeft">@dimen/MarginSpaceL</item>
     </style>
 
-    <style name="EditText" parent="Widget.AppCompat.EditText">
+    <style name="EditTextStyle" parent="android:Widget.EditText">
         <item name="backgroundTint">@color/bg_tint</item>
         <item name="android:textColor">@color/gray_theme</item>
         <item name="android:textSize">@dimen/FontSizeS</item>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07"
+        app:layout_constraintTop_toBottomOf="@+id/viewHeader" />
+
+    <TextView
+        android:id="@+id/tvSignUp"
+        style="@style/TextHead16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/MarginSpace4XL"
+        android:text="@string/signup"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/TextSub12"
+        android:textSize="@dimen/FontSizeSS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MarginSpaceS"
+        android:text="@string/login_title"
+        app:layout_constraintStart_toStartOf="@+id/tvSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/tvSignUp" />
+
+
+    <TextView
+        android:id="@+id/tvTitleCompany"
+        style="@style/TextTint12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_company_tint"
+        android:layout_marginBottom="@dimen/MarginSpaceS"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintBottom_toTopOf="@+id/spnCompany" />
+
+
+    <ImageView
+        android:id="@+id/imvCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_company"
+        app:layout_constraintBottom_toBottomOf="@+id/spnCompany"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleCompany"
+        app:layout_constraintTop_toTopOf="@+id/spnCompany" />
+
+    <com.mdc.cpfit.dialog.SearchableSpinner
+        android:id="@+id/spnCompany"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/MarginSpace4XL"
+        android:layout_marginStart="@dimen/MarginSpace"
+        android:layout_marginTop="@dimen/MarginSpace8XL"
+        android:textColor="@color/gray_theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imvCompany"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginEnd="@dimen/MarginSpaceS"
+        android:layout_marginStart="@dimen/MarginSpaceS"
+        android:background="@color/bg_tint"
+        app:layout_constraintEnd_toEndOf="@+id/spnCompany"
+        app:layout_constraintStart_toStartOf="@+id/spnCompany"
+        app:layout_constraintTop_toBottomOf="@+id/spnCompany" />
+
+
+    <!--First Name-->
+    <TextView
+        android:id="@+id/tvTitleFirstName"
+        style="@style/TextTint12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/MarginSpaceS"
+        android:text="@string/signup_firstname_tint"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleCompany"
+        app:layout_constraintBottom_toTopOf="@+id/edtFirstName" />
+
+
+    <ImageView
+        android:id="@+id/imvFirstName"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="@dimen/MarginSpace"
+        android:src="@drawable/ic_pencil"
+        app:layout_constraintBottom_toBottomOf="@+id/edtFirstName"
+        app:layout_constraintEnd_toStartOf="@+id/edtFirstName"
+        app:layout_constraintTop_toTopOf="@+id/edtFirstName" />
+
+    <EditText
+        android:id="@+id/edtFirstName"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MarginSpace6XL"
+        android:hint="@string/signup_firstname_tint"
+        app:layout_constraintEnd_toEndOf="@+id/spnCompany"
+        app:layout_constraintStart_toStartOf="@+id/spnCompany"
+        app:layout_constraintTop_toBottomOf="@+id/spnCompany" />
+
+
+    <!--Last Name-->
+    <TextView
+        android:id="@+id/tvTitleLastName"
+        style="@style/TextTint12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/MarginSpaceS"
+        android:text="@string/signup_lastname_tint"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleCompany"
+        app:layout_constraintBottom_toTopOf="@+id/edtLastName" />
+
+
+    <ImageView
+        android:id="@+id/imvLastName"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="@dimen/MarginSpace"
+        android:src="@drawable/ic_pencil"
+        app:layout_constraintBottom_toBottomOf="@+id/edtLastName"
+        app:layout_constraintEnd_toStartOf="@+id/edtLastName"
+        app:layout_constraintTop_toTopOf="@+id/edtLastName" />
+
+    <EditText
+        android:id="@+id/edtLastName"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MarginSpace4XL"
+        android:hint="@string/signup_lastname_tint"
+        app:layout_constraintEnd_toEndOf="@+id/spnCompany"
+        app:layout_constraintStart_toStartOf="@+id/spnCompany"
+        app:layout_constraintTop_toBottomOf="@+id/edtFirstName" />
+
+
+
+    <!--Email-->
+    <TextView
+        android:id="@+id/tvTitleEmail"
+        style="@style/TextTint12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/MarginSpaceS"
+        android:text="@string/signup_email_tint"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleCompany"
+        app:layout_constraintBottom_toTopOf="@+id/edtEmail" />
+
+
+    <ImageView
+        android:id="@+id/imvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/MarginSpace"
+        android:src="@drawable/ic_email"
+        app:layout_constraintBottom_toBottomOf="@+id/edtEmail"
+        app:layout_constraintEnd_toStartOf="@+id/edtEmail"
+        app:layout_constraintTop_toTopOf="@+id/edtEmail" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MarginSpace4XL"
+        android:hint="@string/signup_email_tint"
+        app:layout_constraintEnd_toEndOf="@+id/spnCompany"
+        app:layout_constraintStart_toStartOf="@+id/spnCompany"
+        app:layout_constraintTop_toBottomOf="@+id/edtLastName" />
+
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/tvTitleCheckbox"-->
+        <!--style="@style/TextTint12"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:text="@string/signup_autofill"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/checkbox"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/checkbox"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/checkbox" />-->
+
+    <!--<CheckBox-->
+        <!--android:id="@+id/checkbox"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/MarginSpaceL"-->
+        <!--app:layout_constraintEnd_toEndOf="@+id/edtEmail"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/edtEmail" />-->
+    <CheckedTextView
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MarginSpaceL"
+        android:text="@string/signup_autofill"
+        style="@style/TextTint12"
+        android:gravity="center_vertical"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+        app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        style="@style/TextTitle14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/MarginSpace8XL"
+        android:background="@drawable/btn_right"
+        android:text="@string/signup_create_account"
+        android:paddingLeft="@dimen/_40sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvBack"
+        style="@style/TextTint12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/MarginSpaceXL"
+        android:layout_marginStart="@dimen/MarginSpaceXL"
+        android:text="@string/signup_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

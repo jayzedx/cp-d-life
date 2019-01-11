@@ -1,6 +1,7 @@
 <resources>
     <!--A-->
     <string name="app_name">cpfit_android</string>
+    <!--B-->
     <!--C-->
     <string name="cancel">Cancel</string>
     <string name="call">Tel</string>
@@ -26,8 +27,8 @@
     <string name="login_password_tint">Password</string>
     <string name="login_password_hint">your email password</string>
     <string name="login_forgot_password_tint">Forgot password?</string>
-    <string name="login_sign_in">Sign in</string>
-    <string name="login_sign_up">Sign up</string>
+    <string name="login_signin">Sign in</string>
+    <string name="login_signup">Sign up</string>
 
 
     <!--O-->
@@ -37,6 +38,13 @@
     <!-- P -->
     <string name="progress_loading">Loading...</string>
     <!-- S -->
+    <string name="signup">Sign up</string>
+    <string name="signup_firstname_tint">First Name</string>
+    <string name="signup_lastname_tint">Last Name</string>
+    <string name="signup_email_tint">Email</string>
+    <string name="signup_autofill">Auto fill</string>
+    <string name="signup_back">Back</string>
+    <string name="signup_create_account">Create Account</string>
 
 
 </resources>

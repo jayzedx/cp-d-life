@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.OTPActivity"
-    tools:layout_editor_absoluteY="25dp">
+    tools:context=".activity.LoginActivity">
 
 
     <android.support.constraint.Guideline
@@ -43,13 +42,13 @@
     <!-- Email -->
 
     <TextView
-        android:id="@+id/tvTitlePhone"
+        android:id="@+id/tvTitleEmail"
         style="@style/TextTint12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/MarginSpaceS"
         android:text="@string/login_email_tint"
-        app:layout_constraintBottom_toTopOf="@+id/edtPhone"
+        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
         app:layout_constraintStart_toStartOf="@+id/tvTitle" />
 
 
@@ -58,13 +57,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_email"
-        app:layout_constraintBottom_toBottomOf="@+id/edtPhone"
-        app:layout_constraintStart_toStartOf="@+id/tvTitlePhone"
-        app:layout_constraintTop_toTopOf="@+id/edtPhone" />
+        app:layout_constraintBottom_toBottomOf="@+id/edtEmail"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleEmail"
+        app:layout_constraintTop_toTopOf="@+id/edtEmail" />
 
     <EditText
-        android:id="@+id/edtPhone"
-        style="@style/EditText"
+        android:id="@+id/edtEmail"
+        style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/MarginSpace4XL"
@@ -84,10 +83,10 @@
         style="@style/TextTint12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/MarginSpaceS"
         android:text="@string/login_password_tint"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleEmail"
         app:layout_constraintBottom_toTopOf="@+id/edtPassword"
-        app:layout_constraintStart_toStartOf="@+id/imvPassword" />
+       />
 
     <ImageView
         android:id="@+id/imvPassword"
@@ -101,16 +100,16 @@
 
     <EditText
         android:id="@+id/edtPassword"
-        style="@style/EditText"
+        style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/MarginSpace4XL"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/edtPhone"
+        app:layout_constraintEnd_toEndOf="@+id/edtEmail"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtPhone"
-        app:layout_constraintTop_toBottomOf="@+id/edtPhone" />
+        app:layout_constraintStart_toStartOf="@+id/edtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
 
     <TextView
@@ -129,9 +128,9 @@
         style="@style/TextTitle14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="@dimen/MarginSpace8XL"
         android:background="@drawable/btn_left"
-        android:text="@string/login_sign_in"
+        android:text="@string/login_signin"
         android:paddingRight="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -141,9 +140,9 @@
         style="@style/TextTint12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/login_sign_up"
+        android:layout_marginBottom="@dimen/MarginSpaceXL"
+        android:layout_marginEnd="@dimen/MarginSpaceXL"
+        android:text="@string/login_signup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

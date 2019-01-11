@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/main_theme"/>
+            <size android:height="@dimen/MarginSpace8XL" android:width="@dimen/_160sdp" />
+            <corners
+                android:topLeftRadius="@dimen/MarginSpace4XL"
+                android:bottomLeftRadius="@dimen/MarginSpace4XL" />
+        </shape>
+    </item>
+    <!--<item-->
+    <!--android:gravity="center_vertical|right"-->
+    <!--android:right="10dp"-->
+    <!--android:drawable="@drawable/ic_user_login" />-->
+    <item android:left="10dp">
+        <bitmap
+            android:gravity="center_vertical|left"
+            android:src="@drawable/ic_user_login" />
+
+    </item>
+</layer-list>

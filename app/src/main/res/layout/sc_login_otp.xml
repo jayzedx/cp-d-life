@@ -86,7 +86,7 @@
 
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/edtPhone"
-            style="@style/EditText"
+            style="@style/EditTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/MarginSpace4XL"
@@ -149,7 +149,7 @@
 
         <View
             android:layout_width="0dp"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:layout_marginBottom="10dp"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
