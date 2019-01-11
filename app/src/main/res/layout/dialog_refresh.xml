@@ -30,7 +30,7 @@
             android:text="@string/dialog_refresh" />
 
         <TextView
-            style="@style/TextCaption17"
+            style="@style/TextCaption16"
             android:id="@+id/tv_detail"
             android:gravity="center"
             android:layout_width="match_parent"
@@ -45,7 +45,7 @@
 
         <ImageView
             android:id="@+id/btn_ok"
-            style="@style/TextCaption17"
+            style="@style/TextCaption16"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginRight="@dimen/MarginSpace"

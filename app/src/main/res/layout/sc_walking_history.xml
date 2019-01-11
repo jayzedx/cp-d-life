@@ -15,7 +15,7 @@
         android:layout_height="48dp">
         <TextView
             android:id="@+id/tvMonth"
-            style="@style/TextTitle17"
+            style="@style/TextTitle16"
             android:layout_marginLeft="@dimen/MarginSpaceL"
             android:text="January"
             android:gravity="center_vertical"

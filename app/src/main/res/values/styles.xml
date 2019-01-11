@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/blue_theme</item>
-        <item name="colorPrimaryDark">@color/blue_theme</item>
-        <item name="colorAccent">@color/blue_theme</item>
+        <item name="colorPrimary">@color/main_theme</item>
+        <item name="colorPrimaryDark">@color/main_theme</item>
+        <item name="colorAccent">@color/main_theme</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:fontFamily">font</item>
@@ -14,7 +14,7 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
     <style name="TextToolbar20" parent="TextBlack">
-        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textSize">@dimen/FontSizeXL</item>
     </style>
 
 
@@ -70,98 +70,155 @@
     <style name="TextWhite">
         <item name="android:textColor">@android:color/white</item>
     </style>
-    <style name="TextTitle12" parent="TextWhite">
-        <item name="android:textSize">@dimen/text_size_sub_heading</item>
-    </style>
-    <style name="TextTitle15" parent="TextWhite">
-        <item name="android:textSize">@dimen/text_size_body</item>
-    </style>
-    <style name="TextTitle17" parent="TextWhite">
-        <item name="android:textSize">@dimen/text_size_caption</item>
-    </style>
-    <style name="TextTitle20" parent="TextWhite">
-        <item name="android:textSize">@dimen/text_size_title</item>
-    </style>
-    <style name="TextTitle22" parent="TextWhite">
-        <item name="android:textSize">@dimen/text_size_head</item>
-    </style>
-
-
-
     <style name="TextBlack">
         <item name="android:textColor">@android:color/black</item>
     </style>
-    <style name="TextCaption12" parent="TextBlack">
-        <item name="android:textSize">@dimen/text_size_sub_heading</item>
+
+
+    <style name="TextTitle">
+        <item name="android:textColor">@android:color/white</item>
     </style>
-    <style name="TextCaption15" parent="TextBlack">
-        <item name="android:textSize">@dimen/text_size_body</item>
+    <style name="TextTitle12" parent="TextTitle">
+        <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
+        <item name="android:textSize">@dimen/_12sdp</item>
     </style>
-    <style name="TextCaption17" parent="TextBlack">
-        <item name="android:textSize">@dimen/text_size_caption</item>
+    <style name="TextTitle14" parent="TextTitle">
+        <!--<item name="android:textSize">@dimen/FontSizeS</item>-->
+        <item name="android:textSize">@dimen/_14sdp</item>
     </style>
-    <style name="TextCaption20" parent="TextBlack">
-        <item name="android:textSize">@dimen/text_size_title</item>
+    <style name="TextTitle16" parent="TextTitle">
+        <!--<item name="android:textSize">@dimen/FontSizeM</item>-->
+        <item name="android:textSize">@dimen/_16sdp</item>
     </style>
-    <style name="TextCaption22" parent="TextBlack">
-        <item name="android:textSize">@dimen/text_size_head</item>
+    <style name="TextTitle18" parent="TextTitle">
+        <!--<item name="android:textSize">@dimen/FontSize18XL</item>-->
+        <item name="android:textSize">@dimen/_18sdp</item>
+    </style>
+    <style name="TextTitle20" parent="TextTitle">
+        <!--<item name="android:textSize">@dimen/FontSizeXL</item>-->
+        <item name="android:textSize">@dimen/_20sdp</item>
+    </style>
+    <style name="TextTitle22" parent="TextTitle">
+        <!--<item name="android:textSize">@dimen/FontSizeXXL</item>-->
+        <item name="android:textSize">@dimen/_22sdp</item>
     </style>
 
 
-    <style name="TextGold">
+
+    <style name="TextCaption">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="TextCaption12" parent="TextCaption">
+        <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
+        <item name="android:textSize">@dimen/_12sdp</item>
+
+    </style>
+    <style name="TextCaption14" parent="TextCaption">
+        <!--<item name="android:textSize">@dimen/FontSizeS</item>-->
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+    <style name="TextCaption16" parent="TextCaption">
+        <!--<item name="android:textSize">@dimen/FontSizeM</item>-->
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+    <style name="TextCaption18" parent="TextCaption">
+        <!--<item name="android:textSize">@dimen/FontSize18XL</item>-->
+        <item name="android:textSize">@dimen/_18sdp</item>
+    </style>
+    <style name="TextCaption20" parent="TextCaption">
+        <!--<item name="android:textSize">@dimen/FontSizeXL</item>-->
+        <item name="android:textSize">@dimen/_20sdp</item>
+    </style>
+    <style name="TextCaption22" parent="TextCaption">
+        <!--<item name="android:textSize">@dimen/FontSizeXXL</item>-->
+        <item name="android:textSize">@dimen/_22sdp</item>
+    </style>
+
+
+    <style name="TextHead">
         <item name="android:textColor">@color/gold_theme</item>
-    </style>s
-    <style name="TextHead15" parent="TextGold">
-        <item name="android:textSize">@dimen/text_size_body</item>
     </style>
-    <style name="TextHead17" parent="TextGold">
-        <item name="android:textSize">@dimen/text_size_caption</item>
+    <style name="TextHead12" parent="TextHead">
+        <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
+        <item name="android:textSize">@dimen/_12sdp</item>
     </style>
-    <style name="TextHead20" parent="TextGold">
-        <item name="android:textSize">@dimen/text_size_title</item>
+    <style name="TextHead14" parent="TextHead">
+        <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
+        <item name="android:textSize">@dimen/_14sdp</item>
     </style>
-    <style name="TextHead22" parent="TextGold">
-        <item name="android:textSize">@dimen/text_size_head</item>
+    <style name="TextHead16" parent="TextHead">
+        <!--<item name="android:textSize">@dimen/FontSizeS</item>-->
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+    <style name="TextHead18" parent="TextHead">
+        <!--<item name="android:textSize">@dimen/FontSize18XL</item>-->
+        <item name="android:textSize">@dimen/_18sdp</item>
+    </style>
+    <style name="TextHead20" parent="TextHead">
+        <!--<item name="android:textSize">@dimen/FontSizeXL</item>-->
+        <item name="android:textSize">@dimen/_20sdp</item>
+    </style>
+    <style name="TextHead22" parent="TextHead">
+        <!--<item name="android:textSize">@dimen/FontSizeXXL</item>-->
+        <item name="android:textSize">@dimen/_22sdp</item>
     </style>
 
 
-    <style name="TextGray">
+    <style name="TextSub">
         <item name="android:textColor">@color/gray_theme</item>
     </style>
-    <style name="TextSub12" parent="TextGray">
-        <item name="android:textSize">@dimen/text_size_sub_heading</item>
+    <style name="TextSub12" parent="TextSub">
+        <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
+        <item name="android:textSize">@dimen/_12sdp</item>
     </style>
-    <style name="TextSub15" parent="TextGray">
-        <item name="android:textSize">@dimen/text_size_body</item>
+    <style name="TextSub14" parent="TextSub">
+        <!--<item name="android:textSize">@dimen/FontSizeS</item>-->
+        <item name="android:textSize">@dimen/_14sdp</item>
     </style>
-    <style name="TextSub17" parent="TextGray">
-        <item name="android:textSize">@dimen/text_size_caption</item>
+    <style name="TextSub16" parent="TextSub">
+        <!--<item name="android:textSize">@dimen/FontSizeM</item>-->
+        <item name="android:textSize">@dimen/_16sdp</item>
     </style>
-    <style name="TextSub20" parent="TextGray">
-        <item name="android:textSize">@dimen/text_size_title</item>
+    <style name="TextSub18" parent="TextSub">
+        <!--<item name="android:textSize">@dimen/FontSize18XL</item>-->
+        <item name="android:textSize">@dimen/_18sdp</item>
     </style>
-    <style name="TextSub22" parent="TextGray">
-        <item name="android:textSize">@dimen/text_size_head</item>
+    <style name="TextSub20" parent="TextSub">
+        <!--<item name="android:textSize">@dimen/FontSizeXL</item>-->
+        <item name="android:textSize">@dimen/_20sdp</item>
+    </style>
+    <style name="TextSub22" parent="TextSub">
+        <!--<item name="android:textSize">@dimen/FontSizeXXL</item>-->
+        <item name="android:textSize">@dimen/_22sdp</item>
     </style>
 
 
-    <style name="TextBlue">
-        <item name="android:textColor">@color/blue_theme</item>
+    <style name="TextTint">
+        <item name="android:textColor">@color/main_theme</item>
     </style>
-    <style name="TextBlue12" parent="TextBlue">
-        <item name="android:textSize">@dimen/text_size_sub_heading</item>
+    <style name="TextTint12" parent="TextTint">
+        <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
+        <item name="android:textSize">@dimen/_12sdp</item>
     </style>
-    <style name="TextBlue15" parent="TextBlue">
-        <item name="android:textSize">@dimen/text_size_body</item>
+    <style name="TextTint14" parent="TextTint">
+        <!--<item name="android:textSize">@dimen/FontSizeS</item>-->
+        <item name="android:textSize">@dimen/_14sdp</item>
     </style>
-    <style name="TextBlue17" parent="TextBlue">
-        <item name="android:textSize">@dimen/text_size_caption</item>
+    <style name="TextTint16" parent="TextTint">
+        <!--<item name="android:textSize">@dimen/FontSizeM</item>-->
+        <item name="android:textSize">@dimen/_16sdp</item>
     </style>
-    <style name="TextBlue20" parent="TextBlue">
-        <item name="android:textSize">@dimen/text_size_title</item>
+    <style name="TextTint18" parent="TextTint">
+        <!--<item name="android:textSize">@dimen/FontSize18XL</item>-->
+        <item name="android:textSize">@dimen/_18sdp</item>
     </style>
-    <style name="TextBlue22" parent="TextBlue">
-        <item name="android:textSize">@dimen/text_size_head</item>
+    <style name="TextTint20" parent="TextTint">
+        <!--<item name="android:teหxtSize">@dimen/FontSizeXL</item>-->
+        <item name="android:textSize">@dimen/_20sdp</item>
+    </style>
+    <style name="TextTint22" parent="TextTint">
+        <!--<item name="android:textSize">@dimen/FontSizeXXL</item>-->
+        <item name="android:textSize">@dimen/_22sdp</item>
     </style>
 
 
@@ -186,7 +243,7 @@
 
 
     <style name="BackgroundTheme">
-        <item name="android:background">@color/blue_theme</item>
+        <item name="android:background">@color/main_theme</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 
@@ -200,8 +257,7 @@
     <style name="EditText" parent="Widget.AppCompat.EditText">
         <item name="backgroundTint">@color/bg_tint</item>
         <item name="android:textColor">@color/gray_theme</item>
-        <item name="android:textSize">@dimen/FontSizeM</item>
+        <item name="android:textSize">@dimen/FontSizeS</item>
     </style>
-
 
 </resources>

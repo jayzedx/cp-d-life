@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="FontSize5S">36sp</dimen>
+    <dimen name="FontSize5XL">58sp</dimen>
+    <dimen name="FontSizeL">48sp</dimen>
+    <dimen name="FontSizeM">46sp</dimen>
+    <dimen name="FontSizeS">44sp</dimen>
+    <dimen name="FontSizeSS">42sp</dimen>
+    <dimen name="FontSizeSSS">40sp</dimen>
+    <dimen name="FontSizeXL">50sp</dimen>
+    <dimen name="FontSizeXXL">52sp</dimen>
+    <dimen name="FontSizeXXXL">54sp</dimen>
+    <dimen name="MarginSpace">33dp</dimen>
+    <dimen name="MarginSpaceL">38dp</dimen>
+    <dimen name="MarginSpaceS">28dp</dimen>
+    <dimen name="MarginSpaceSS">23dp</dimen>
+    <dimen name="MarginSpaceXL">43dp</dimen>
+    <dimen name="MarginSpaceXXL">48dp</dimen>
+    <dimen name="PaddingSpace">30dp</dimen>
+    <dimen name="PaddingSpace3XL">50dp</dimen>
+    <dimen name="PaddingSpace4XL">55dp</dimen>
+    <dimen name="PaddingSpaceL">35dp</dimen>
+    <dimen name="PaddingSpaceS">23dp</dimen>
+    <dimen name="PaddingSpaceSS">15dp</dimen>
+    <dimen name="PaddingSpaceXL">40dp</dimen>
+    <dimen name="PaddingSpaceXXL">45dp</dimen>
+</resources>

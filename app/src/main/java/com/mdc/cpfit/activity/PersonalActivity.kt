@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.mdc.cpfit.R
 import com.mdc.cpfit.connections.APIService
 import com.mdc.cpfit.dialog.DialogBase
+import com.mdc.cpfit.screen.PhoneOTPScreen
 import com.mdc.cpfit.util.ActivityUnit
 import com.mdc.cpfit.util.sharepreferrent.ConfigShare
 import io.reactivex.disposables.Disposable
@@ -44,9 +45,10 @@ class PersonalActivity : ActivityUnit() {
         val phoneNumber = ConfigShare.getShareConfig(ConfigShare.phoneNumber) as String
 
         //Mockup
-        val i = Intent(baseContext, OTPActivity::class.java)
+//        val i = Intent(baseContext, OTPActivity::class.java)
+//        startActivity(i)
+        val i = Intent(baseContext, LoginActivity::class.java)
         startActivity(i)
-       //Remove activity
         finish()
 
 

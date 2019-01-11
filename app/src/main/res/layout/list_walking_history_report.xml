@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imvWalkingHistory"
-        style="@style/TextBlue15"
+        style="@style/TextTint16"
         android:textStyle="bold"
         android:layout_marginLeft="@dimen/MarginSpaceXL"
         android:text="January"

@@ -53,7 +53,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.PersonalActivity" />
-        <activity android:name=".activity.OTPActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.MainContainActivity" />
 
          <activity android:name="com.mdc.cpfit.activity.TabOneContainActivity"></activity>

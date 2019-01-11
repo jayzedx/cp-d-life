@@ -7,14 +7,12 @@ import android.view.ViewGroup
 import android.widget.*
 import com.mdc.cpfit.R
 import com.mdc.cpfit.dialog.DialogBase
-import com.mdc.cpfit.dialog.SearchableSpinner
 import com.mdc.cpfit.model.CompanyBody
-import com.mdc.cpfit.model.CompanyModel
 import com.mdc.cpfit.util.ScreenUnit
 import com.mdc.cpfit.util.listener.iNetwork
 import com.mdc.cpfit.util.sharepreferrent.ConfigServer
 import com.mdc.cpfit.util.sharepreferrent.ConfigShare
-import kotlinx.android.synthetic.main.sc_login.*
+import kotlinx.android.synthetic.main.sc_login_otp.*
 
 
 class PhoneOTPScreen : ScreenUnit() {
@@ -46,7 +44,7 @@ class PhoneOTPScreen : ScreenUnit() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        rootView = inflater?.inflate(R.layout.sc_login, container, false)
+        rootView = inflater?.inflate(R.layout.sc_login_otp, container, false)
         return rootView
     }
 

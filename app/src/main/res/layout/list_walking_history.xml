@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imvWalkingHistory"
-        style="@style/TextCaption15"
+        style="@style/TextCaption16"
         android:layout_marginLeft="@dimen/MarginSpaceXL"
         android:text="2,270 step | 1.0 km"
         />

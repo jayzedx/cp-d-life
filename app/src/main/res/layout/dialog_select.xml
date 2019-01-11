@@ -29,7 +29,7 @@
             android:text="@string/fill_input" />
 
         <TextView
-            style="@style/TextCaption17"
+            style="@style/TextCaption16"
             android:gravity="center"
             android:id="@+id/tv_detail"
             android:layout_width="match_parent"
@@ -67,7 +67,7 @@
 
             <Button
                 android:id="@+id/btn_ok"
-                style="@style/TextCaption17"
+                style="@style/TextCaption16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -80,7 +80,7 @@
 
             <Button
                 android:id="@+id/btn_cancel"
-                style="@style/TextCaption17"
+                style="@style/TextCaption16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"

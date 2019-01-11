@@ -96,7 +96,7 @@
 
             <TextView
                 android:id="@+id/tvStepDistance"
-                style="@style/TextBlue17"
+                style="@style/TextTint16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2,270"
@@ -118,12 +118,12 @@
 
             <TextView
                 android:id="@+id/tvKmDistance"
-                style="@style/TextBlue17"
+                style="@style/TextTint16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1.1"
                 android:textAlignment="center"
-                android:textColor="@color/blue_theme"
+                android:textColor="@color/main_theme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/separatorProfile"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -165,7 +165,7 @@
         android:layout_height="wrap_content"
         android:background="@color/bg_head">
         <TextView
-            android:textColor="@color/blue_theme"
+            android:textColor="@color/main_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Record Activity" />
@@ -205,7 +205,7 @@
 
             <TextView
                 android:id="@+id/tvStepChallenge"
-                style="@style/TextBlue17"
+                style="@style/TextTint16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imvStep"
@@ -244,7 +244,7 @@
 
                 <TextView
                     android:id="@+id/tvKmChallenge"
-                    style="@style/TextBlue17"
+                    style="@style/TextTint16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1.1 / 9,000"
@@ -354,7 +354,7 @@
         android:background="@color/bg_head">
 
         <TextView
-            android:textColor="@color/blue_theme"
+            android:textColor="@color/main_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Month Report" />

@@ -6,12 +6,12 @@
     <string name="call">Tel</string>
 
     <!--D-->
-    <string name="dialog_refresh">เชื่อมต่อล้มเหลว</string>
+    <string name="dialog_refresh">Connection Refused</string>
     <string name="dialog_refresh_repeat">กรุณากดปุ่ม "Refresh" เพื่อส่งข้อมูลใหม่อีกครั้ง</string>
 
 
     <!-- F -->
-    <string name="fill_input">กรอกข้อมูล</string>
+    <string name="fill_input">Fill Input</string>
     <!-- G -->
     <string name="google_maps_key">AIzaSyAA_yaaQ2v0SV7kPctCvn6R0hJsNQJFRc4</string>
 
@@ -20,14 +20,22 @@
     <string name="login_title">Connected to society of  CP Group</string>
     <string name="login_telephone_tint">Telephone</string>
     <string name="login_company_tint">Company</string>
-    <string name="login_select_company">Select Company</string>
+    <string name="login_select_company">Select Compandy</string>
+    <string name="login_email_tint">Email</string>
+    <string name="login_email_hint">myemail@domain.com</string>
+    <string name="login_password_tint">Password</string>
+    <string name="login_password_hint">your email password</string>
+    <string name="login_forgot_password_tint">Forgot password?</string>
+    <string name="login_sign_in">Sign in</string>
+    <string name="login_sign_up">Sign up</string>
+
 
     <!--O-->
     <string name="otp_verify">Verifying your number</string>
     <string name="otp_verify_title">Please enter the validation code \nthat get from sms</string>
     <string name="otp_resend">Resend OTP</string>
     <!-- P -->
-    <string name="progress_loading">กำลังโหลดข้อมูล...</string>
+    <string name="progress_loading">Loading...</string>
     <!-- S -->
 
 
