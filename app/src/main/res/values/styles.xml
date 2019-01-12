@@ -108,6 +108,10 @@
     <style name="TextCaption">
         <item name="android:textColor">@android:color/black</item>
     </style>
+    <style name="TextCaption10" parent="TextCaption">
+        <!--<item name="android:textSize">@dimen/FontSizeSSS</item>-->
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
     <style name="TextCaption12" parent="TextCaption">
         <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
         <item name="android:textSize">@dimen/_12sdp</item>
@@ -167,6 +171,10 @@
     <style name="TextSub">
         <item name="android:textColor">@color/gray_theme</item>
     </style>
+    <style name="TextSub10" parent="TextSub">
+        <!--<item name="android:textSize">@dimen/FontSizeSSS</item>-->
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
     <style name="TextSub12" parent="TextSub">
         <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
         <item name="android:textSize">@dimen/_12sdp</item>
@@ -195,6 +203,10 @@
 
     <style name="TextTint">
         <item name="android:textColor">@color/main_theme</item>
+    </style>
+    <style name="TextTint10" parent="TextTint">
+        <!--<item name="android:textSize">@dimen/FontSizeSSS</item>-->
+        <item name="android:textSize">@dimen/_10sdp</item>
     </style>
     <style name="TextTint12" parent="TextTint">
         <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->

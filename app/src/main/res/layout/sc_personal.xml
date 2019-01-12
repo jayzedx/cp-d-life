@@ -17,33 +17,6 @@
         android:paddingEnd="@dimen/PaddingSpaceXL"
         android:paddingTop="@dimen/PaddingSpaceXL">
 
-        <!--<RelativeLayout-->
-            <!--android:id="@+id/viewImvProfile"-->
-            <!--android:background="@drawable/border_round"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content">-->
-            <!--<ImageView-->
-                <!--android:id="@+id/imvProfile"-->
-                <!--android:layout_centerInParent="true"-->
-                <!--android:layout_width="@dimen/_75sdp"-->
-                <!--android:layout_height="@dimen/_75sdp" />-->
-        <!--</RelativeLayout>-->
-
-        <ImageView
-            android:id="@+id/imvProfile"
-            android:layout_marginLeft="@dimen/_30sdp"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp" />
-
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/MarginSpaceXXL"
-            android:layout_marginBottom="@dimen/MarginSpace"
-            android:layout_toRightOf="@+id/imvProfile"
-            android:text="Firstname Surname" />
-
         <ImageView
             android:id="@+id/imvEditProfile"
             android:src="@drawable/ic_edit_pencil"
@@ -51,52 +24,88 @@
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp" />
 
-        <TextView
-            android:id="@+id/tvWeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tvName"
-            android:layout_marginRight="@dimen/MarginSpaceL"
-            android:layout_marginBottom="@dimen/MarginSpace"
-            android:layout_below="@+id/tvName"
-            android:text="Weight: 75" />
+        <RelativeLayout
+            android:id="@+id/viewProfileContent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvHeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvName"
-            android:layout_toRightOf="@+id/tvWeight"
-            android:text="Height: 178" />
+            <!--<RelativeLayout-->
+            <!--android:id="@+id/viewImvProfile"-->
+            <!--android:background="@drawable/border_round"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<ImageView-->
+            <!--android:id="@+id/imvProfile"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_width="@dimen/_75sdp"-->
+            <!--android:layout_height="@dimen/_75sdp" />-->
+            <!--</RelativeLayout>-->
 
-        <TextView
-            android:id="@+id/tvBmi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tvName"
-            android:layout_marginRight="@dimen/MarginSpaceL"
-            android:layout_marginBottom="@dimen/MarginSpace"
-            android:layout_below="@+id/tvWeight"
-            android:text="BMI: 23.7" />
+            <ImageView
+                android:id="@+id/imvProfile"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp" />
 
-        <TextView
-            android:id="@+id/tvBmiStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvHeight"
-            android:layout_alignLeft="@+id/tvHeight"
-            android:layout_alignTop="@+id/tvBmi"
-            android:text="Over weight" />
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/MarginSpaceXXL"
+                android:layout_marginBottom="@dimen/MarginSpaceS"
+                android:layout_toRightOf="@+id/imvProfile"
+                android:text="Firstname Surname" />
+
+
+            <TextView
+                android:id="@+id/tvWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tvName"
+                android:layout_marginRight="@dimen/MarginSpaceL"
+                android:layout_marginBottom="@dimen/MarginSpaceS"
+                android:layout_below="@+id/tvName"
+                android:text="Weight: 75" />
+
+            <TextView
+                android:id="@+id/tvHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvName"
+                android:layout_toRightOf="@+id/tvWeight"
+                android:text="Height: 178" />
+
+            <TextView
+                android:id="@+id/tvBmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tvName"
+                android:layout_marginRight="@dimen/MarginSpaceL"
+                android:layout_marginBottom="@dimen/MarginSpaceS"
+                android:layout_below="@+id/tvWeight"
+                android:text="BMI: 23.7" />
+
+            <TextView
+                android:id="@+id/tvBmiStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvHeight"
+                android:layout_alignLeft="@+id/tvHeight"
+                android:layout_alignTop="@+id/tvBmi"
+                android:text="Over weight" />
+        </RelativeLayout>
+
 
         <android.support.constraint.ConstraintLayout
             android:layout_marginTop="@dimen/MarginSpace"
-            android:layout_below="@+id/imvProfile"
+            android:layout_below="@+id/viewProfileContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tvStepDistance"
-                style="@style/TextTint16"
+                style="@style/TextTint14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2,270"
@@ -106,10 +115,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                style="@style/TextCaption12"
+                style="@style/TextCaption10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/MarginSpaceS"
+                android:layout_marginTop="@dimen/MarginSpaceSS"
                 android:text="Step"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/separatorProfile"
@@ -118,7 +127,7 @@
 
             <TextView
                 android:id="@+id/tvKmDistance"
-                style="@style/TextTint16"
+                style="@style/TextTint14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1.1"
@@ -129,10 +138,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                style="@style/TextCaption12"
+                style="@style/TextCaption10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/MarginSpaceS"
+                android:layout_marginTop="@dimen/MarginSpaceSS"
                 android:text="Distance : km"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -151,9 +160,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
 
-
-
     </RelativeLayout>
+
+
+
 
     <!--Head Seperator-->
     <RelativeLayout
@@ -168,10 +178,19 @@
             android:textColor="@color/main_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/TextTint10"
             android:text="Record Activity" />
     </RelativeLayout>
 
+
+
+
     <!--Record Activity-->
+    <FrameLayout
+        android:id="@+id/viewActivityContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -181,6 +200,8 @@
             android:layout_width="@dimen/_3sdp"
             android:layout_height="0dp"
             android:background="@color/bg_head"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginBottom="@dimen/_13sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -190,158 +211,95 @@
             android:id="@+id/viewStepBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:paddingTop="@dimen/PaddingSpaceL"
+            android:paddingBottom="@dimen/PaddingSpaceL"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/separatorTop2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/imvStep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/MarginSpace"
-                android:src="@drawable/ic_step_button" />
-
             <TextView
                 android:id="@+id/tvStepChallenge"
-                style="@style/TextTint16"
+                style="@style/TextSub22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imvStep"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/MarginSpace"
-                android:text="2,270 / 6,000"
+                android:layout_alignRight="@+id/tvStepChallengeTotal"
+                android:text="12,345"
                 android:textAlignment="center" />
 
             <TextView
-                style="@style/TextCaption12"
+                android:id="@+id/tvStepChallengeTotal"
+                style="@style/TextSub12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvStepChallenge"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/MarginSpaceS"
-                android:paddingBottom="@dimen/PaddingSpaceL"
-                android:text="Challenge Step" />
+                android:text="/ 41,000,000"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/tvStepUnit"
+                style="@style/TextHead12"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tvStepChallengeTotal"
+                android:text="step"
+                android:layout_marginTop="@dimen/MarginSpaceL"
+                android:textAlignment="center" />
+
         </RelativeLayout>
+
 
         <RelativeLayout
             android:id="@+id/viewDistanceBtn"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:paddingTop="@dimen/PaddingSpaceL"
+            android:paddingBottom="@dimen/PaddingSpaceL"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/viewStepBtn"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/imvKm"
+
+            <TextView
+                android:id="@+id/tvKmChallenge"
+                style="@style/TextSub22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/tvKmChallengeTotal"
+                android:text="9.4"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/tvKmChallengeTotal"
+                style="@style/TextSub12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/MarginSpaceXL"
-                android:src="@drawable/ic_distance_button" />
+                android:layout_below="@+id/tvKmChallenge"
+                android:text="/ 1,360,000"
+                android:textAlignment="center"/>
 
-                <TextView
-                    android:id="@+id/tvKmChallenge"
-                    style="@style/TextTint16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.1 / 9,000"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/imvKm"
-                    android:textAlignment="center" />
-
-                <TextView
-                    style="@style/TextCaption12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/MarginSpace"
-                    android:layout_marginTop="@dimen/MarginSpaceS"
-                    android:text="Challenge Distance : km"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/tvKmChallenge"
-                    android:paddingBottom="@dimen/PaddingSpaceL" />
-
-
-
-
-
+            <TextView
+                android:id="@+id/tvKmUnit"
+                style="@style/TextHead12"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tvKmChallengeTotal"
+                android:text="km"
+                android:layout_marginTop="@dimen/MarginSpaceL"
+                android:textAlignment="center" />
         </RelativeLayout>
-
-        <!--<ImageView-->
-            <!--android:id="@+id/imvStep"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:src="@drawable/ic_step_button"-->
-            <!--android:layout_marginTop="@dimen/MarginSpace"-->
-            <!--app:layout_constraintEnd_toStartOf="@+id/separatorTop2"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toTopOf="parent" />-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/tvStepChallenge"-->
-            <!--style="@style/TextBlue17"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="@dimen/MarginSpace"-->
-            <!--android:text="2,270 / 6,000"-->
-            <!--android:textAlignment="center"-->
-            <!--app:layout_constraintEnd_toStartOf="@+id/separatorTop2"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/imvStep" />-->
-
-
-        <!--<TextView-->
-            <!--android:id="@+id/textView2"-->
-            <!--style="@style/TextCaption12"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="@dimen/MarginSpaceS"-->
-            <!--android:paddingBottom="@dimen/PaddingSpaceL"-->
-            <!--android:text="Challenge Step"-->
-            <!--app:layout_constraintEnd_toStartOf="@+id/separatorTop2"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/tvStepChallenge" />-->
-
-
-        <!--<ImageView-->
-            <!--android:id="@+id/imvKm"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:src="@drawable/ic_distance_button"-->
-            <!--app:layout_constraintBottom_toTopOf="@+id/tvStepChallenge"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toEndOf="@+id/separatorTop2"-->
-            <!--app:layout_constraintTop_toTopOf="@+id/imvStep" />-->
-
-
-        <!--<TextView-->
-            <!--android:id="@+id/tvKmChallenge"-->
-            <!--style="@style/TextBlue17"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="1.1 / 9,000"-->
-            <!--android:textAlignment="center"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="@+id/separatorTop2"-->
-            <!--app:layout_constraintTop_toTopOf="@+id/tvStepChallenge" />-->
-
-        <!--<TextView-->
-            <!--style="@style/TextCaption12"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginEnd="@dimen/MarginSpace"-->
-            <!--android:layout_marginTop="@dimen/MarginSpaceS"-->
-            <!--android:text="Challenge Distance : km"-->
-            <!--android:paddingBottom="@dimen/PaddingSpaceL"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="@+id/separatorTop2"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/tvKmChallenge" />-->
-
-
-
     </android.support.constraint.ConstraintLayout>
+
+
+
+
 
     <!--Head Seperator-->
     <RelativeLayout
@@ -357,7 +315,8 @@
             android:textColor="@color/main_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Month Report" />
+            style="@style/TextTint10"
+            android:text="Submit Record" />
     </RelativeLayout>
 
     <!--Recycler View-->
