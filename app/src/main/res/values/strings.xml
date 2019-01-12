@@ -5,6 +5,13 @@
     <!--C-->
     <string name="cancel">Cancel</string>
     <string name="call">Tel</string>
+    <string name="change_password">Change Password</string>
+    <string name="change_password_title">it’s good idea to use strong password</string>
+    <string name="change_password_old_tint">Old password</string>
+    <string name="change_password_new_tint">New password</string>
+    <string name="change_password_confirm_tint">Confirm password</string>
+    <string name="change_password_confirm">Send</string>
+
 
     <!--D-->
     <string name="dialog_refresh">Connection Refused</string>
@@ -13,6 +20,8 @@
 
     <!-- F -->
     <string name="fill_input">Fill Input</string>
+    <string name="forgot_title">Please enter your email to request a password reset</string>
+    <string name="forgot_send">Send</string>
     <!-- G -->
     <string name="google_maps_key">AIzaSyAA_yaaQ2v0SV7kPctCvn6R0hJsNQJFRc4</string>
 
@@ -39,12 +48,13 @@
     <string name="progress_loading">Loading...</string>
     <!-- S -->
     <string name="signup">Sign up</string>
+    <string name="signup_title">Plese enter your personal info</string>
     <string name="signup_firstname_tint">First Name</string>
     <string name="signup_lastname_tint">Last Name</string>
     <string name="signup_email_tint">Email</string>
     <string name="signup_autofill">Auto fill</string>
     <string name="signup_back">Back</string>
-    <string name="signup_create_account">Create Account</string>
+    <string name="signup_create_account">Create</string>
 
 
 </resources>

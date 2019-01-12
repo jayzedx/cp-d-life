@@ -9,21 +9,20 @@ import com.mdc.cpfit.R
 import com.mdc.cpfit.activity.MainContainActivity
 import com.mdc.cpfit.dialog.DialogBase
 import com.mdc.cpfit.util.ScreenUnit
-import kotlinx.android.synthetic.main.sc_signup.*
+import com.mdc.cpfit.util.view.MyPasswordTransformationMethod
+import kotlinx.android.synthetic.main.sc_chage_password.*
 
 
+class ChangePasswordScreen : ScreenUnit() {
 
-
-class SignUpScreen : ScreenUnit() {
-
-    val TAG = SignUpScreen::class.java.simpleName
+    val TAG = ChangePasswordScreen::class.java.simpleName
     var rootView: View? = null
     lateinit var dialog: DialogBase
 
 
     companion object {
-        fun newInstance(): SignUpScreen {
-            val fragment = SignUpScreen()
+        fun newInstance(): ChangePasswordScreen {
+            val fragment = ChangePasswordScreen()
             val args = Bundle()
 //            args.putString(MsgProperties.PERSON_TYPE, typeBd)
             fragment.setArguments(args)
@@ -33,14 +32,14 @@ class SignUpScreen : ScreenUnit() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setFrangment(SignUpScreen::class.simpleName.toString(), rootView)
+        setFrangment(ChangePasswordScreen::class.simpleName.toString(), rootView)
         setValue()
 
 
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        rootView = inflater?.inflate(R.layout.sc_signup, container, false)
+        rootView = inflater?.inflate(R.layout.sc_chage_password, container, false)
         return rootView
     }
 
@@ -54,29 +53,30 @@ class SignUpScreen : ScreenUnit() {
     }
 
     private fun setComponents() {
-        tvSignUp.setTypeface(null, Typeface.BOLD)
+        tvChangePassword.setTypeface(null, Typeface.BOLD)
         tvTitle.setTypeface(null, Typeface.BOLD)
 //        tvTitleCompany.setTypeface(null, Typeface.BOLD)
 //        tvTitleFirstName.setTypeface(null, Typeface.BOLD)
 //        tvTitleLastName.setTypeface(null, Typeface.BOLD)
 //        tvTitleEmail.setTypeface(null, Typeface.BOLD)
-        checkbox.setTypeface(null, Typeface.BOLD)
         tvBack.setTypeface(null, Typeface.BOLD)
 
-        btnSignUp.setAllCaps(false)
+        btnSend.setAllCaps(false)
 
-        btnSignUp.setOnClickListener {
-            IntentFragment(ChangePasswordScreen.newInstance())
+        edtOldPassword.setTransformationMethod(MyPasswordTransformationMethod())
+        edtPassword.setTransformationMethod(MyPasswordTransformationMethod())
+        edtConfirmPassword.setTransformationMethod(MyPasswordTransformationMethod())
+
+
+
+        btnSend.setOnClickListener {
+            activityMain.startActivityUnit(MainContainActivity::class.java, null)
+            activityMain.finish()
         }
         tvBack.setOnClickListener {
             goback(false)
         }
-        checkbox.setOnClickListener {
-            checkbox.isChecked = !checkbox.isChecked
-        }
-
     }
-
 
 
 }

@@ -69,8 +69,13 @@ class LoginScreen : ScreenUnit() {
             activityMain.startActivityUnit(MainContainActivity::class.java, null)
             activityMain.finish()
         }
+
+        //setting button
         tvSignUp.setOnClickListener {
             IntentFragment(SignUpScreen.newInstance())
+        }
+        tvForgotPassword.setOnClickListener {
+            IntentFragment(ForgotPasswordScreen.newInstance())
         }
     }
 
