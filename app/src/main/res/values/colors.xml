@@ -370,6 +370,7 @@
     <color name="gold_theme">#F5A623</color>
     <color name="main_theme">#0DA97D</color>
     <color name="gray_theme">#807D7D</color>
+    <color name="blue_theme">#4A90E2</color>
     <color name="blue_pin_code">#62A1E6 </color>
 
     <color name="bg_tint">#CBCBCB</color>

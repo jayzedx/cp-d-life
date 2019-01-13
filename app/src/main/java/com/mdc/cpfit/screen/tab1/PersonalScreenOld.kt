@@ -16,7 +16,7 @@ import com.mdc.cpfit.screen.PinOTPScreen
 import com.mdc.cpfit.screen.tab1.adapter.WalkingHistoryReportAdapter
 import com.mdc.cpfit.util.ImageUtil
 import com.mdc.cpfit.util.ScreenUnit
-import kotlinx.android.synthetic.main.sc_personal.*
+import kotlinx.android.synthetic.main.sc_personal_old.*
 import retrofit2.Response
 
 

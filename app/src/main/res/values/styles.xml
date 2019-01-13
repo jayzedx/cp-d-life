@@ -142,6 +142,10 @@
     <style name="TextHead">
         <item name="android:textColor">@color/gold_theme</item>
     </style>
+    <style name="TextHead10" parent="TextHead">
+        <!--<item name="android:textSize">@dimen/FontSizeSSS</item>-->
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
     <style name="TextHead12" parent="TextHead">
         <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
         <item name="android:textSize">@dimen/_12sdp</item>
@@ -198,6 +202,10 @@
     <style name="TextSub22" parent="TextSub">
         <!--<item name="android:textSize">@dimen/FontSizeXXL</item>-->
         <item name="android:textSize">@dimen/_22sdp</item>
+    </style>
+    <style name="TextSub44" parent="TextSub">
+        <!--<item name="android:textSize">@dimen/FontSize14XL</item>-->
+        <item name="android:textSize">@dimen/_44sdp</item>
     </style>
 
 
@@ -271,5 +279,12 @@
         <item name="android:textColor">@color/gray_theme</item>
         <item name="android:textSize">@dimen/FontSizeS</item>
     </style>
+
+    <style name="EditTextBlueStyle" parent="android:Widget.EditText">
+        <item name="backgroundTint">@color/blue_theme</item>
+        <item name="android:textColor">@color/gray_theme</item>
+        <item name="android:textSize">@dimen/FontSizeS</item>
+    </style>
+
 
 </resources>

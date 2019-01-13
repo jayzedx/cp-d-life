@@ -46,6 +46,7 @@
     <string name="otp_resend">Resend OTP</string>
     <!-- P -->
     <string name="progress_loading">Loading...</string>
+    <string name="personal_send">Send</string>
     <!-- S -->
     <string name="signup">Sign up</string>
     <string name="signup_title">Plese enter your personal info</string>
