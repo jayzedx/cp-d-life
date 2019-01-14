@@ -14,30 +14,34 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-
         <!--Personal Profile-->
+        <!--<FrameLayout-->
+            <!--android:id="@+id/profileContainer"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+        <!--</FrameLayout>-->
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/PaddingSpaceL"
-            android:paddingStart="@dimen/PaddingSpaceXL"
             android:paddingEnd="@dimen/PaddingSpaceXL"
+            android:paddingStart="@dimen/PaddingSpaceXL"
             android:paddingTop="@dimen/PaddingSpaceXL">
 
-            <ImageView
-                android:id="@+id/imvEditProfile"
-                android:src="@drawable/ic_edit_pencil"
-                android:layout_alignParentRight="true"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp" />
+            <!--<ImageView-->
+                <!--android:id="@+id/imvEditProfile"-->
+                <!--android:layout_width="@dimen/_20sdp"-->
+                <!--android:layout_height="@dimen/_20sdp"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:src="@drawable/ic_edit_pencil" />-->
 
             <RelativeLayout
                 android:id="@+id/viewProfileContent"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal">
 
                 <!--<RelativeLayout-->
                 <!--android:id="@+id/viewImvProfile"-->
@@ -53,16 +57,16 @@
 
                 <ImageView
                     android:id="@+id/imvProfile"
-                    android:src="@drawable/ic_personal_profile"
                     android:layout_width="@dimen/_60sdp"
-                    android:layout_height="@dimen/_60sdp" />
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/ic_personal_profile" />
 
                 <TextView
                     android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/MarginSpaceXXL"
                     android:layout_marginBottom="@dimen/MarginSpaceS"
+                    android:layout_marginLeft="@dimen/MarginSpaceXXL"
                     android:layout_toRightOf="@+id/imvProfile"
                     android:text="Firstname Surname" />
 
@@ -72,9 +76,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/tvName"
-                    android:layout_marginRight="@dimen/MarginSpaceL"
-                    android:layout_marginBottom="@dimen/MarginSpaceS"
                     android:layout_below="@+id/tvName"
+                    android:layout_marginBottom="@dimen/MarginSpaceS"
+                    android:layout_marginRight="@dimen/MarginSpaceL"
                     android:text="Weight: 75" />
 
                 <TextView
@@ -90,27 +94,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/tvName"
-                    android:layout_marginRight="@dimen/MarginSpaceL"
-                    android:layout_marginBottom="@dimen/MarginSpaceS"
                     android:layout_below="@+id/tvWeight"
+                    android:layout_marginBottom="@dimen/MarginSpaceS"
+                    android:layout_marginRight="@dimen/MarginSpaceL"
                     android:text="BMI: 23.7" />
 
                 <TextView
                     android:id="@+id/tvBmiStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvHeight"
                     android:layout_alignLeft="@+id/tvHeight"
                     android:layout_alignTop="@+id/tvBmi"
+                    android:layout_below="@+id/tvHeight"
                     android:text="Over weight" />
             </RelativeLayout>
 
 
             <android.support.constraint.ConstraintLayout
-                android:layout_marginTop="@dimen/MarginSpace"
-                android:layout_below="@+id/viewProfileContent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewProfileContent"
+                android:layout_marginTop="@dimen/MarginSpace">
 
                 <TextView
                     android:id="@+id/tvStepDistance"
@@ -156,6 +160,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/separatorProfile"
                     app:layout_constraintTop_toBottomOf="@+id/tvKmDistance" />
+
                 <View
                     android:id="@+id/separatorProfile"
                     android:layout_width="@dimen/_2sdp"
@@ -168,7 +173,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </android.support.constraint.ConstraintLayout>
-
         </RelativeLayout>
 
 

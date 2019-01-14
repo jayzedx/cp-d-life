@@ -3,6 +3,8 @@ package com.mdc.cpfit.activity
 import android.content.res.Configuration
 import android.os.Bundle
 import android.support.design.widget.TabLayout
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
 import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.widget.ImageView
@@ -17,12 +19,12 @@ import java.util.*
 class MainContainActivity : ActivityUnit() {
     lateinit var pager: ViewPager
     lateinit var tabView: TabLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_list)
         containView = R.id.contian_view
         setValue()
-
 
     }
 
@@ -76,17 +78,70 @@ class MainContainActivity : ActivityUnit() {
     }
     private fun setupViewPager(pager: ViewPager?) {
         runOnUiThread {
-            val adapter = MainViewPagerAdapter(supportFragmentManager)
+            var adapter = MainViewPagerAdapter(supportFragmentManager)
             val f1 = PersonalScreen.newInstance()
             adapter.addFragment(f1, "TAB 1")
             val f2 = PersonalScreen.newInstance()
             adapter.addFragment(f2, "TAB 2")
-
-
             pager?.adapter = adapter
 
         }
     }
+
+    /*
+    override fun onBackPressed() {
+        val isFragmentPopped = handleViewPagerBackStack()
+        if (!isFragmentPopped) {
+            super.onBackPressed()
+        }
+    }
+
+    private fun handleViewPagerBackStack(): Boolean {
+        val fragment: Fragment? = getCurrentFragment(supportFragmentManager, pager)
+        return fragment?.let {
+            handleNestedFragmentBackStack(fragment.childFragmentManager)
+        } ?: run {
+            false
+        }
+    }
+
+    private fun getCurrentFragment(fragmentManager: FragmentManager, viewPager: ViewPager): Fragment? {
+        val fragmentList = fragmentManager.fragments
+        val currentSize = fragmentList.size
+        val maxSize = viewPager.adapter?.count ?: 0
+        val lastPosition = if (maxSize > 0) maxSize - 1 else 0
+        val position = viewPager.currentItem
+        val offset = viewPager.offscreenPageLimit
+        return when {
+            maxSize == 0 -> null
+            position <= offset -> fragmentList[position]
+            position == lastPosition -> fragmentList[currentSize - 1]
+            position > lastPosition - offset -> fragmentList[maxSize - offset]
+            currentSize < maxSize -> fragmentList[offset]
+            currentSize >= maxSize -> fragmentList[position]
+            else -> null
+        }
+    }
+
+    private fun handleNestedFragmentBackStack(fragmentManager: FragmentManager): Boolean {
+        val childFragmentList = fragmentManager.fragments
+        if (childFragmentList.size > 0) {
+            for (index in childFragmentList.size - 1 downTo 0) {
+                val fragment = childFragmentList[index]
+                val isPopped = handleNestedFragmentBackStack(fragment.childFragmentManager)
+                return when {
+                    isPopped -> true
+                    fragmentManager.backStackEntryCount > 0 -> {
+                        fragmentManager.popBackStack()
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
+        return false
+    }
+    */
 
 
 }

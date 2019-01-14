@@ -6,6 +6,7 @@ import android.animation.AnimatorSet
 import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +22,7 @@ import com.mdc.cpfit.screen.PinOTPScreen
 import com.mdc.cpfit.screen.tab1.adapter.WalkingHistoryReportAdapter
 import com.mdc.cpfit.util.ImageUtil
 import com.mdc.cpfit.util.ScreenUnit
+import kotlinx.android.synthetic.main.partial_profile.*
 import kotlinx.android.synthetic.main.sc_personal.*
 
 
@@ -42,6 +44,11 @@ class PersonalScreen : ScreenUnit() {
         }
     }
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        rootView = inflater?.inflate(R.layout.sc_personal, container, false)
+        return rootView
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setFrangment(PersonalScreen::class.simpleName.toString(), rootView)
@@ -49,10 +56,6 @@ class PersonalScreen : ScreenUnit() {
 
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        rootView = inflater?.inflate(R.layout.sc_personal, container, false)
-        return rootView
-    }
 
     private fun setValue() {
         val args = arguments
@@ -65,13 +68,9 @@ class PersonalScreen : ScreenUnit() {
         tvKmUnit.setTypeface(null, Typeface.BOLD)
         tvStepUnit2.setTypeface(null, Typeface.BOLD)
 
-        Glide.with(this.context!!).load(R.drawable.ic_personal_profile)
-                .apply(ImageUtil.getImageCirclePersonnalProfile())
-                .into(imvProfile)
 
         viewDistanceContent.setOnClickListener { flipAnimation() }
         viewDistanceContent2.setOnClickListener { flipAnimation() }
-
 
     }
 
