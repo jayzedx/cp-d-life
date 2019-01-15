@@ -3,6 +3,7 @@ package com.mdc.cpfit.screen.tab1
 import android.animation.Animator
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
+import android.app.DatePickerDialog
 import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -24,6 +25,7 @@ import com.mdc.cpfit.util.ImageUtil
 import com.mdc.cpfit.util.ScreenUnit
 import kotlinx.android.synthetic.main.partial_profile.*
 import kotlinx.android.synthetic.main.sc_personal.*
+import java.util.*
 
 
 class PersonalScreen : ScreenUnit() {
@@ -34,6 +36,7 @@ class PersonalScreen : ScreenUnit() {
     lateinit var header: TextView
     lateinit var dialog: DialogBase
     var flagDistanceShow = true
+    var datePicker = ""
 
     companion object {
         fun newInstance(): PersonalScreen {
@@ -71,6 +74,7 @@ class PersonalScreen : ScreenUnit() {
 
         viewDistanceContent.setOnClickListener { flipAnimation() }
         viewDistanceContent2.setOnClickListener { flipAnimation() }
+        tvSelectDate.setOnClickListener { onClickDatePicker() }
 
     }
 
@@ -127,6 +131,38 @@ class PersonalScreen : ScreenUnit() {
 //            animatorSet.playTogether(animSetIn, animSetOut)
 //        }
 //        animatorSet.start()
+    }
+
+
+
+    private fun onClickDatePicker() {
+        val c = Calendar.getInstance()
+        val currentDate = c.get(Calendar.DAY_OF_MONTH).toString() + "-" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.YEAR)
+        val dateArray = currentDate?.split("-")
+        var yearPick = dateArray!![2].toInt()
+        var monthPick = dateArray[1].toInt()
+        var dayPick = dateArray[0].toInt()
+
+        datePicker = currentDate
+
+        var cal = Calendar.getInstance()
+        val dpd = DatePickerDialog(activity, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+            cal.set(Calendar.YEAR, year)
+            cal.set(Calendar.MONTH, monthOfYear)
+            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+            //val myFormat = "dd MMMM yyyy" // mention the format you need
+            //val sdf = SimpleDateFormat(myFormat, Locale.US)
+
+            yearPick = year
+            monthPick = monthOfYear + 1
+            dayPick = dayOfMonth
+            datePicker = "$dayPick-$monthPick-$yearPick"
+            tvSelectDate.setText(datePicker)
+
+        }, yearPick, monthPick, dayPick)
+
+        dpd.show()
     }
 
 }
