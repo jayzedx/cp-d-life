@@ -5,5 +5,5 @@
     android:layout_height="wrap_content"
     android:textSize="@dimen/FontSizeM"
     android:layout_marginLeft="@dimen/MarginSpace3XL"
-    android:text="เลือกบริษัท"
+    android:text="Select Company"
     android:textColor="@color/gray_theme" />

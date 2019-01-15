@@ -30,7 +30,7 @@
     <string name="login_title">Connected to society of  CP Group</string>
     <string name="login_telephone_tint">Telephone</string>
     <string name="login_company_tint">Company</string>
-    <string name="login_select_company">Select Compandy</string>
+    <string name="login_select_company">Select Company</string>
     <string name="login_email_tint">Email</string>
     <string name="login_email_hint">myemail@domain.com</string>
     <string name="login_password_tint">Password</string>

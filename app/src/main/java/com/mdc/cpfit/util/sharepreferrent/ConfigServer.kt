@@ -31,10 +31,13 @@ class ConfigServer {
 
     init {
         //company
+        //Mockup
         var data = CompanyBody(0, "Freewill Solutions")
         arrCompany.add(data)
-        var data2 = CompanyBody(0, "CPF")
+        var data2 = CompanyBody(1, "CPF")
         arrCompany.add(data2)
+        var data3 = CompanyBody(2, "ETC")
+        arrCompany.add(data3)
     }
 
 

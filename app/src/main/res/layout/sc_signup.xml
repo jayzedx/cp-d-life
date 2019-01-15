@@ -60,7 +60,7 @@
     <com.mdc.cpfit.dialog.SearchableSpinner
         android:id="@+id/spnCompany"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="33dp"
         android:layout_marginEnd="@dimen/MarginSpace4XL"
         android:layout_marginStart="@dimen/MarginSpace"
         android:layout_marginTop="@dimen/MarginSpace8XL"
@@ -70,82 +70,156 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <View
+        android:id="@+id/viewLineSpn"
         android:layout_width="0dp"
         android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/MarginSpaceL"
         android:layout_marginEnd="@dimen/MarginSpaceS"
         android:layout_marginStart="@dimen/MarginSpaceS"
         android:background="@color/bg_tint"
+        app:layout_constraintTop_toBottomOf="@+id/spnCompany"
         app:layout_constraintEnd_toEndOf="@+id/spnCompany"
-        app:layout_constraintStart_toStartOf="@+id/spnCompany"
-        app:layout_constraintTop_toBottomOf="@+id/spnCompany" />
+        app:layout_constraintStart_toStartOf="@+id/spnCompany" />
 
 
-    <!--First Name-->
-    <TextView
-        android:id="@+id/tvTitleFirstName"
-        style="@style/TextTint12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/MarginSpaceS"
-        android:text="@string/signup_firstname_tint"
-        app:layout_constraintStart_toStartOf="@+id/tvTitleCompany"
-        app:layout_constraintBottom_toTopOf="@+id/edtFirstName" />
-
-
-    <ImageView
-        android:id="@+id/imvFirstName"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="@dimen/MarginSpace"
-        android:src="@drawable/ic_pencil"
-        app:layout_constraintBottom_toBottomOf="@+id/edtFirstName"
-        app:layout_constraintEnd_toStartOf="@+id/edtFirstName"
-        app:layout_constraintTop_toTopOf="@+id/edtFirstName" />
-
-    <EditText
-        android:id="@+id/edtFirstName"
-        style="@style/EditTextStyle"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/viewInputAutoFill"
+        android:visibility="visible"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MarginSpace6XL"
-        android:hint="@string/signup_firstname_tint"
+        android:layout_marginTop="@dimen/MarginSpace"
         app:layout_constraintEnd_toEndOf="@+id/spnCompany"
-        app:layout_constraintStart_toStartOf="@+id/spnCompany"
-        app:layout_constraintTop_toBottomOf="@+id/spnCompany" />
-
-
-    <!--Last Name-->
-    <TextView
-        android:id="@+id/tvTitleLastName"
-        style="@style/TextTint12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/MarginSpaceS"
-        android:text="@string/signup_lastname_tint"
         app:layout_constraintStart_toStartOf="@+id/tvTitleCompany"
-        app:layout_constraintBottom_toTopOf="@+id/edtLastName" />
+        app:layout_constraintTop_toBottomOf="@+id/viewLineSpn">
+
+        <TextView
+            android:id="@+id/tvTitleFirstName"
+            style="@style/TextTint12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/edtFirstName"
+            android:text="@string/signup_firstname_tint" />
+
+        <ImageView
+            android:id="@+id/imvFirstName"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_pencil"
+            app:layout_constraintBottom_toBottomOf="@+id/edtFirstName"
+            app:layout_constraintTop_toTopOf="@+id/edtFirstName" />
+
+        <EditText
+            android:id="@+id/edtFirstName"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/MarginSpace"
+            android:layout_marginTop="@dimen/MarginSpace4XL"
+
+            android:hint="@string/signup_firstname_tint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imvFirstName"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="22dp" />
 
 
-    <ImageView
-        android:id="@+id/imvLastName"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="@dimen/MarginSpace"
-        android:src="@drawable/ic_pencil"
-        app:layout_constraintBottom_toBottomOf="@+id/edtLastName"
-        app:layout_constraintEnd_toStartOf="@+id/edtLastName"
-        app:layout_constraintTop_toTopOf="@+id/edtLastName" />
+        <TextView
+            android:id="@+id/tvTitleLastName"
+            style="@style/TextTint12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/edtLastName"
+            android:text="@string/signup_lastname_tint" />
 
-    <EditText
-        android:id="@+id/edtLastName"
-        style="@style/EditTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MarginSpace4XL"
-        android:hint="@string/signup_lastname_tint"
-        app:layout_constraintEnd_toEndOf="@+id/spnCompany"
-        app:layout_constraintStart_toStartOf="@+id/spnCompany"
-        app:layout_constraintTop_toBottomOf="@+id/edtFirstName" />
+        <ImageView
+            android:id="@+id/imvLastName"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_pencil"
+            app:layout_constraintBottom_toBottomOf="@+id/edtLastName"
+            app:layout_constraintTop_toTopOf="@+id/edtLastName" />
+
+        <EditText
+            android:id="@+id/edtLastName"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/signup_lastname_tint"
+            android:layout_marginLeft="@dimen/MarginSpace"
+            android:layout_marginTop="@dimen/MarginSpace4XL"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imvLastName"
+            app:layout_constraintTop_toBottomOf="@+id/edtFirstName" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <!--&lt;!&ndash;First Name&ndash;&gt;-->
+    <!--<TextView-->
+        <!--android:id="@+id/tvTitleFirstName"-->
+        <!--style="@style/TextTint12"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="@dimen/MarginSpaceS"-->
+        <!--android:text="@string/signup_firstname_tint"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/tvTitleCompany"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/edtFirstName" />-->
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imvFirstName"-->
+        <!--android:layout_width="20dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:layout_marginEnd="@dimen/MarginSpace"-->
+        <!--android:src="@drawable/ic_pencil"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/edtFirstName"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/edtFirstName"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/edtFirstName" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/edtFirstName"-->
+        <!--style="@style/EditTextStyle"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/MarginSpace6XL"-->
+        <!--android:hint="@string/signup_firstname_tint"-->
+        <!--app:layout_constraintEnd_toEndOf="@+id/spnCompany"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/spnCompany"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/spnCompany" />-->
+
+
+    <!--&lt;!&ndash;Last Name&ndash;&gt;-->
+    <!--<TextView-->
+        <!--android:id="@+id/tvTitleLastName"-->
+        <!--style="@style/TextTint12"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="@dimen/MarginSpaceS"-->
+        <!--android:text="@string/signup_lastname_tint"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/tvTitleCompany"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/edtLastName" />-->
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imvLastName"-->
+        <!--android:layout_width="20dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:layout_marginEnd="@dimen/MarginSpace"-->
+        <!--android:src="@drawable/ic_pencil"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/edtLastName"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/edtLastName"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/edtLastName" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/edtLastName"-->
+        <!--style="@style/EditTextStyle"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/MarginSpace4XL"-->
+        <!--android:hint="@string/signup_lastname_tint"-->
+        <!--app:layout_constraintEnd_toEndOf="@+id/spnCompany"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/spnCompany"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/edtFirstName" />-->
 
 
 
@@ -169,6 +243,7 @@
         android:src="@drawable/ic_email"
         app:layout_constraintBottom_toBottomOf="@+id/edtEmail"
         app:layout_constraintEnd_toStartOf="@+id/edtEmail"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleEmail"
         app:layout_constraintTop_toTopOf="@+id/edtEmail" />
 
     <EditText
@@ -180,7 +255,7 @@
         android:hint="@string/signup_email_tint"
         app:layout_constraintEnd_toEndOf="@+id/spnCompany"
         app:layout_constraintStart_toStartOf="@+id/spnCompany"
-        app:layout_constraintTop_toBottomOf="@+id/edtLastName" />
+        app:layout_constraintTop_toBottomOf="@+id/viewInputAutoFill" />
 
 
 
@@ -210,6 +285,7 @@
         android:text="@string/signup_autofill"
         style="@style/TextTint12"
         android:gravity="center_vertical"
+        android:checked="true"
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
         app:layout_constraintEnd_toEndOf="@+id/edtEmail"
         app:layout_constraintTop_toBottomOf="@+id/edtEmail" />

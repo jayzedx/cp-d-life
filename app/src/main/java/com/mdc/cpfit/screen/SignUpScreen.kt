@@ -1,17 +1,26 @@
 package com.mdc.cpfit.screen
 
+import android.animation.Animator
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import com.mdc.cpfit.R
 import com.mdc.cpfit.activity.MainContainActivity
 import com.mdc.cpfit.dialog.DialogBase
+import com.mdc.cpfit.model.CompanyBody
 import com.mdc.cpfit.util.ScreenUnit
+import com.mdc.cpfit.util.sharepreferrent.ConfigServer
 import kotlinx.android.synthetic.main.sc_signup.*
-
-
+import android.animation.ObjectAnimator
+import android.view.animation.AccelerateDecelerateInterpolator
 
 
 class SignUpScreen : ScreenUnit() {
@@ -20,6 +29,8 @@ class SignUpScreen : ScreenUnit() {
     var rootView: View? = null
     lateinit var dialog: DialogBase
 
+    var arrCompanyName = ArrayList<String>()
+    var companyId  = -1
 
     companion object {
         fun newInstance(): SignUpScreen {
@@ -56,10 +67,6 @@ class SignUpScreen : ScreenUnit() {
     private fun setComponents() {
         tvSignUp.setTypeface(null, Typeface.BOLD)
         tvTitle.setTypeface(null, Typeface.BOLD)
-//        tvTitleCompany.setTypeface(null, Typeface.BOLD)
-//        tvTitleFirstName.setTypeface(null, Typeface.BOLD)
-//        tvTitleLastName.setTypeface(null, Typeface.BOLD)
-//        tvTitleEmail.setTypeface(null, Typeface.BOLD)
         checkbox.setTypeface(null, Typeface.BOLD)
         tvBack.setTypeface(null, Typeface.BOLD)
 
@@ -75,7 +82,85 @@ class SignUpScreen : ScreenUnit() {
             checkbox.isChecked = !checkbox.isChecked
         }
 
+        initSpinner()
     }
+
+    private fun initSpinner() {
+        spnCompany.setTitle(getString(R.string.login_select_company))
+        spnCompany.setPositiveButton(getString(R.string.cancel))
+
+        var companys = ConfigServer.instance.arrCompany
+
+       companys?.let {
+            arrCompanyName.add(0, getString(R.string.login_select_company))
+            for (i in 0 until it.size) {
+                arrCompanyName.add(it[i].companyName)
+            }
+            var adapterProvince = ArrayAdapter<String>(context, R.layout.spinner_item_company, arrCompanyName)
+            spnCompany.adapter = adapterProvince
+        }
+
+        spnCompany.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(position: AdapterView<*>?) {
+            }
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+                var oldCompanyId = companyId
+                if (position > 0) {
+                    companyId = companys?.let {
+                        if (it.size > 0) {
+                            it[position-1].companyId
+                        } else 0
+                    }
+                } else {
+                    companyId = -1
+                }
+                if (position-1 == companys.size-1) hideEditTextAnimation()
+                else if(oldCompanyId == companys.size-1) showEditTextAnimation()
+            }
+        }
+    }
+
+    private fun hideEditTextAnimation() {
+        var animatorSet = AnimatorSet()
+//        animatorSet.setDuration(500)
+        animatorSet.setInterpolator(AccelerateDecelerateInterpolator())
+        animatorSet.addListener (object: Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {}
+            override fun onAnimationCancel(animation: Animator?) {}
+            override fun onAnimationStart(animation: Animator?) {}
+            override fun onAnimationEnd(animation: Animator?) {
+                viewInputAutoFill.visibility = View.GONE
+                checkbox.visibility = View.GONE
+            }
+        })
+        var anim = AnimatorInflater.loadAnimator(context, R.animator.to_right) as AnimatorSet
+        anim.setTarget(viewInputAutoFill)
+        animatorSet.play(anim)
+        animatorSet.start()
+    }
+
+    private fun showEditTextAnimation() {
+        var animatorSet = AnimatorSet()
+//        animatorSet.setDuration(500)
+        animatorSet.setInterpolator(AccelerateDecelerateInterpolator())
+        animatorSet.addListener (object: Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {}
+            override fun onAnimationCancel(animation: Animator?) {}
+            override fun onAnimationStart(animation: Animator?) {
+                viewInputAutoFill.visibility = View.VISIBLE
+                checkbox.visibility = View.VISIBLE
+
+            }
+            override fun onAnimationEnd(animation: Animator?) {}
+        })
+
+        var anim = AnimatorInflater.loadAnimator(context, R.animator.from_right) as AnimatorSet
+        anim.setTarget(viewInputAutoFill)
+        animatorSet.play(anim)
+        animatorSet.start()
+    }
+
+
 
 
 
