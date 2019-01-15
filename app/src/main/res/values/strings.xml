@@ -20,6 +20,7 @@
 
     <!-- F -->
     <string name="fill_input">Fill Input</string>
+    <string name="forgot">Forgot password</string>
     <string name="forgot_title">Please enter your email to request a password reset</string>
     <string name="forgot_send">Send</string>
     <!-- G -->
