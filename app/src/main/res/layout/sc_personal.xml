@@ -125,7 +125,7 @@
                 <TextView
                     android:id="@+id/tvStepUnit"
                     android:textStyle="bold"
-                    android:text="Step"
+                    android:text="@string/personal_step"
                     style="@style/TextHead12"
                     android:layout_marginTop="@dimen/MarginSpace"
                     android:layout_toRightOf="@id/tvStepChallenge"
@@ -163,14 +163,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="Record"
+                    android:text="@string/personal_title_record"
                     android:textStyle="bold"
                     style="@style/TextTint10"
                     android:layout_weight="2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
-                    android:text="Step"
+                    android:text="@string/personal_title_step"
                     style="@style/TextTint10"
                     android:textStyle="bold"
                     android:layout_weight="1"
@@ -178,7 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
-                    android:text="Distance : km"
+                    android:text="@string/personal_title_distance"
                     style="@style/TextTint10"
                     android:textStyle="bold"
                     android:layout_weight="1"
@@ -206,7 +206,7 @@
                         android:id="@+id/tvTitleMyRecord"
                         style="@style/TextTitle"
                         android:textStyle="italic|bold"
-                        android:text="my record"
+                        android:text="@string/personal_title_my_record"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <LinearLayout
@@ -253,7 +253,7 @@
                         android:id="@+id/tvTitleCompanyRecord"
                         style="@style/TextTitle"
                         android:textStyle="italic|bold"
-                        android:text="Company Record"
+                        android:text="@string/personal_title_company_record"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <LinearLayout
@@ -320,7 +320,7 @@
                     <TextView
                         android:id="@+id/tvTitleTotalRecord"
                         style="@style/TextTitle"
-                        android:text="Total Record"
+                        android:text="@string/personal_title_total_record"
                         android:textStyle="italic|bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />

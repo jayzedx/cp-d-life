@@ -48,6 +48,24 @@
     <!-- P -->
     <string name="progress_loading">Loading...</string>
     <string name="personal_send">Send</string>
+
+    <string name="personal_weight">Weight</string>
+    <string name="personal_height">Height</string>
+    <string name="personal_bmi">BMI:</string>
+    <string name="personal_bmi_normal">Normal</string>
+    <string name="personal_bmi_overweight">Over Weight</string>
+    <string name="personal_bmi_fat">Fat</string>
+    <string name="personal_point">Point</string>
+    <string name="personal_step">Step</string>
+    <string name="personal_km">km</string>
+    <string name="personal_title_record">Record</string>
+    <string name="personal_title_step">Step</string>
+    <string name="personal_title_distance">Distance : km</string>
+    <string name="personal_title_my_record">My Record</string>
+    <string name="personal_title_company_record">Company Record</string>
+    <string name="personal_title_total_record">Total Record</string>
+
+
     <!-- S -->
     <string name="signup">Sign up</string>
     <string name="signup_title">Plese enter your personal info</string>
