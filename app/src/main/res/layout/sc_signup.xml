@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.07"
+        app:layout_constraintGuide_percent="0.05"
         />
 
     <TextView
@@ -63,7 +63,7 @@
         android:layout_height="33dp"
         android:layout_marginEnd="@dimen/MarginSpace4XL"
         android:layout_marginStart="@dimen/MarginSpace"
-        android:layout_marginTop="@dimen/MarginSpace8XL"
+        android:layout_marginTop="@dimen/MarginSpace6XL"
         android:textColor="@color/gray_theme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imvCompany"
@@ -258,32 +258,37 @@
         app:layout_constraintTop_toBottomOf="@+id/viewInputAutoFill" />
 
 
+    <TextView
+        android:id="@+id/tvPolicy"
+        style="@style/TextSub10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup_policy"
+        android:layout_marginTop="@dimen/MarginSpace"
+        app:layout_constraintStart_toStartOf="@+id/imvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/cbAutoFill" />
 
-    <!--<TextView-->
-        <!--android:id="@+id/tvTitleCheckbox"-->
-        <!--style="@style/TextTint12"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:gravity="center_vertical"-->
-        <!--android:text="@string/signup_autofill"-->
-        <!--app:layout_constraintBottom_toBottomOf="@+id/checkbox"-->
-        <!--app:layout_constraintEnd_toStartOf="@+id/checkbox"-->
-        <!--app:layout_constraintTop_toTopOf="@+id/checkbox" />-->
 
-    <!--<CheckBox-->
-        <!--android:id="@+id/checkbox"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="@dimen/MarginSpaceL"-->
-        <!--app:layout_constraintEnd_toEndOf="@+id/edtEmail"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/edtEmail" />-->
     <CheckedTextView
-        android:id="@+id/checkbox"
+        android:id="@+id/cbAgree"
+        style="@style/TextSub12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:drawableLeft="?android:attr/listChoiceIndicatorMultiple"
+        android:gravity="center_vertical"
+        android:text="@string/signup_agree"
+        app:layout_constraintStart_toStartOf="@+id/tvPolicy"
+        app:layout_constraintTop_toBottomOf="@+id/tvPolicy" />
+
+
+    <CheckedTextView
+        android:id="@+id/cbAutoFill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/MarginSpaceL"
         android:text="@string/signup_autofill"
-        style="@style/TextTint12"
+        style="@style/TextSub12"
         android:gravity="center_vertical"
         android:checked="true"
         android:drawableRight="?android:attr/listChoiceIndicatorMultiple"

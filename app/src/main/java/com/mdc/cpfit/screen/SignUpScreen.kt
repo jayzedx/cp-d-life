@@ -20,6 +20,7 @@ import com.mdc.cpfit.util.ScreenUnit
 import com.mdc.cpfit.util.sharepreferrent.ConfigServer
 import kotlinx.android.synthetic.main.sc_signup.*
 import android.animation.ObjectAnimator
+import android.support.v4.content.ContextCompat
 import android.view.animation.AccelerateDecelerateInterpolator
 
 
@@ -67,7 +68,7 @@ class SignUpScreen : ScreenUnit() {
     private fun setComponents() {
         tvSignUp.setTypeface(null, Typeface.BOLD)
         tvTitle.setTypeface(null, Typeface.BOLD)
-        checkbox.setTypeface(null, Typeface.BOLD)
+//        cbAutoFill.setTypeface(null, Typeface.BOLD)
         tvBack.setTypeface(null, Typeface.BOLD)
 
         btnSignUp.setAllCaps(false)
@@ -78,8 +79,18 @@ class SignUpScreen : ScreenUnit() {
         tvBack.setOnClickListener {
             goback(false)
         }
-        checkbox.setOnClickListener {
-            checkbox.isChecked = !checkbox.isChecked
+        cbAutoFill.setOnClickListener {
+            cbAutoFill.isChecked = !cbAutoFill.isChecked
+        }
+        cbAgree.setOnClickListener {
+            cbAgree.isChecked = !cbAgree.isChecked
+            if (!cbAgree.isChecked) {
+                btnSignUp.isClickable = false
+                btnSignUp.background = ContextCompat.getDrawable(context!!, R.drawable.btn_create_right_disable)
+            } else {
+                btnSignUp.isClickable = true
+                btnSignUp.background = ContextCompat.getDrawable(context!!, R.drawable.btn_create_right)
+            }
         }
 
         initSpinner()
@@ -130,7 +141,7 @@ class SignUpScreen : ScreenUnit() {
             override fun onAnimationStart(animation: Animator?) {}
             override fun onAnimationEnd(animation: Animator?) {
                 viewInputAutoFill.visibility = View.GONE
-                checkbox.visibility = View.GONE
+                cbAutoFill.visibility = View.GONE
             }
         })
         var anim = AnimatorInflater.loadAnimator(context, R.animator.to_right) as AnimatorSet
@@ -148,7 +159,7 @@ class SignUpScreen : ScreenUnit() {
             override fun onAnimationCancel(animation: Animator?) {}
             override fun onAnimationStart(animation: Animator?) {
                 viewInputAutoFill.visibility = View.VISIBLE
-                checkbox.visibility = View.VISIBLE
+                cbAutoFill.visibility = View.VISIBLE
 
             }
             override fun onAnimationEnd(animation: Animator?) {}

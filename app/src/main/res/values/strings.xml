@@ -10,7 +10,7 @@
     <string name="change_password_old_tint">Old password</string>
     <string name="change_password_new_tint">New password</string>
     <string name="change_password_confirm_tint">Confirm password</string>
-    <string name="change_password_confirm">Send</string>
+    <string name="change_password_confirm">Confirm</string>
 
 
     <!--D-->
@@ -57,6 +57,9 @@
     <string name="signup_autofill">Auto fill</string>
     <string name="signup_back">Back</string>
     <string name="signup_create_account">Create</string>
+    <string name="signup_policy">By signing up, you agree to our \nTerms &amp; Privacy Policy.</string>
+    <string name="signup_agree">I Agree</string>
+
 
 
 </resources>
