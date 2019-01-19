@@ -3,14 +3,13 @@ package com.mdc.cpfit.activity
 import android.content.res.Configuration
 import android.os.Bundle
 import android.support.design.widget.TabLayout
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
 import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.widget.ImageView
 import com.mdc.cpfit.R
 import com.mdc.cpfit.adapter.MainViewPagerAdapter
 import com.mdc.cpfit.screen.tab1.PersonalScreen
+import com.mdc.cpfit.screen.tab1.PersonalScreenOld2
 import com.mdc.cpfit.util.ActivityUnit
 import com.mdc.cpfit.util.Contextor
 import com.mdc.cpfit.util.Logging
@@ -81,7 +80,7 @@ class MainContainActivity : ActivityUnit() {
             var adapter = MainViewPagerAdapter(supportFragmentManager)
             val f1 = PersonalScreen.newInstance()
             adapter.addFragment(f1, "TAB 1")
-            val f2 = PersonalScreen.newInstance()
+            val f2 = PersonalScreenOld2.newInstance()
             adapter.addFragment(f2, "TAB 2")
             pager?.adapter = adapter
 

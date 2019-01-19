@@ -78,6 +78,10 @@
     <style name="TextTitle">
         <item name="android:textColor">@android:color/white</item>
     </style>
+    <style name="TextTitle10" parent="TextTitle">
+        <!--<item name="android:textSize">@dimen/FontSizeSSS</item>-->
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
     <style name="TextTitle12" parent="TextTitle">
         <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
         <item name="android:textSize">@dimen/_12sdp</item>
@@ -240,6 +244,10 @@
         <!--<item name="android:textSize">@dimen/FontSizeXXL</item>-->
         <item name="android:textSize">@dimen/_22sdp</item>
     </style>
+    <style name="TextTint44" parent="TextTint">
+        <!--<item name="android:textSize">@dimen/FontSize14XL</item>-->
+        <item name="android:textSize">@dimen/_44sdp</item>
+    </style>
 
 
 
@@ -286,5 +294,12 @@
         <item name="android:textSize">@dimen/FontSizeS</item>
     </style>
 
-
+    <style name="CardViewStyle" parent="CardView">
+        <item name="cardCornerRadius">4dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+    <style name="CardViewNoElevationStyle" parent="CardView">
+        <item name="cardCornerRadius">4dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
 </resources>
