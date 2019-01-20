@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#EAEAEA" />
+
+    <padding
+        android:bottom="@dimen/MarginSpaceXL"
+        android:left="@dimen/MarginSpaceXL"
+        android:right="@dimen/MarginSpaceXL"
+        android:top="@dimen/MarginSpaceXL"
+        />
+
+    <corners
+        android:bottomRightRadius="@dimen/MarginSpace"
+        android:topRightRadius="@dimen/MarginSpace"
+        android:topLeftRadius="@dimen/MarginSpace"
+        android:bottomLeftRadius="@dimen/MarginSpace"
+        />
+</shape>
