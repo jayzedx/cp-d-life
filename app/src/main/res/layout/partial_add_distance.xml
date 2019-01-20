@@ -8,9 +8,9 @@
 
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
+        android:id="@+id/viewImage"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_130sdp"
         android:layout_marginEnd="@dimen/MarginSpaceXL"
         android:layout_marginStart="@dimen/MarginSpaceXL"
         android:layout_marginTop="@dimen/MarginSpaceXL"
@@ -20,8 +20,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:src="@drawable/ic_gallery" />
     </RelativeLayout>
@@ -32,6 +32,123 @@
         android:layout_marginEnd="8dp"
         android:src="@drawable/ic_plus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/relativeLayout" />
+        app:layout_constraintTop_toTopOf="@+id/viewImage" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/MarginSpaceXL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewImage">
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvSelectUnit"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="@dimen/MarginSpaceL"-->
+            <!--android:text="STEP"-->
+            <!--android:textColor="@color/blue_theme"-->
+            <!--android:textSize="@dimen/_14sdp"-->
+            <!--android:textStyle="bold" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvUnSelectUnit"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_toRightOf="@+id/tvSelectUnit"-->
+            <!--android:text="/km"-->
+            <!--android:textColor="@color/blue_theme"-->
+            <!--android:textSize="@dimen/_14sdp" />-->
+
+        <ImageView
+            android:id="@+id/imvCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tvSelectDate"
+            android:layout_alignBottom="@+id/tvSelectDate"
+            android:layout_marginRight="@dimen/MarginSpaceS"
+            android:src="@drawable/ic_calendar" />
+
+        <TextView
+            android:id="@+id/tvSelectDate"
+            style="@style/EditTextBlueStyle"
+            android:drawableRight="@drawable/ic_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imvCalendar"
+            android:hint="03 May 2018"
+            android:maxLines="1"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/MarginSpace"
+            android:layout_below="@+id/imvCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imvWalking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/MarginSpaceS"
+                android:src="@drawable/ic_walk" />
+
+            <EditText
+                android:id="@+id/edtDistance"
+                style="@style/EditTextBlueStyle"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="1.2"
+                android:maxLines="1"
+                android:layout_marginRight="@dimen/MarginSpaceS"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/tvSelectUnit"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/blue_theme"
+                android:text="STEP"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvUnSelectUnit"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/blue_theme"
+                android:text="/km"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/imgBtnOk"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@color/main_theme"
+        android:src="@drawable/ic_correct"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtnCancel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <ImageButton
+        android:id="@+id/imgBtnCancel"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@color/red_theme"
+        android:src="@drawable/ic_incorrect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnOk"/>
+
+
 
 </android.support.constraint.ConstraintLayout>
