@@ -15,19 +15,19 @@
         android:orientation="vertical">
 
         <!--Personal Profile-->
-        <!--<FrameLayout-->
-            <!--android:id="@+id/profileContainer"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
-        <!--</FrameLayout>-->
-
-        <RelativeLayout
+        <FrameLayout
+            android:id="@+id/profileContainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/PaddingSpaceL"
-            android:paddingEnd="@dimen/PaddingSpaceXL"
-            android:paddingStart="@dimen/PaddingSpaceXL"
-            android:paddingTop="@dimen/PaddingSpaceXL">
+            android:layout_height="wrap_content">
+        </FrameLayout>
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingBottom="@dimen/PaddingSpaceL"-->
+            <!--android:paddingEnd="@dimen/PaddingSpaceXL"-->
+            <!--android:paddingStart="@dimen/PaddingSpaceXL"-->
+            <!--android:paddingTop="@dimen/PaddingSpaceXL">-->
 
             <!--<ImageView-->
                 <!--android:id="@+id/imvEditProfile"-->
@@ -36,144 +36,144 @@
                 <!--android:layout_alignParentRight="true"-->
                 <!--android:src="@drawable/ic_edit_pencil" />-->
 
-            <RelativeLayout
-                android:id="@+id/viewProfileContent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_horizontal">
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/viewProfileContent"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:gravity="center_horizontal">-->
 
-                <!--<RelativeLayout-->
-                <!--android:id="@+id/viewImvProfile"-->
-                <!--android:background="@drawable/border_round"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content">-->
+                <!--&lt;!&ndash;<RelativeLayout&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/viewImvProfile"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:background="@drawable/border_round"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content">&ndash;&gt;-->
+                <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/imvProfile"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_centerInParent="true"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="@dimen/_75sdp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="@dimen/_75sdp" />&ndash;&gt;-->
+                <!--&lt;!&ndash;</RelativeLayout>&ndash;&gt;-->
+
                 <!--<ImageView-->
-                <!--android:id="@+id/imvProfile"-->
-                <!--android:layout_centerInParent="true"-->
-                <!--android:layout_width="@dimen/_75sdp"-->
-                <!--android:layout_height="@dimen/_75sdp" />-->
-                <!--</RelativeLayout>-->
+                    <!--android:id="@+id/imvProfile"-->
+                    <!--android:layout_width="@dimen/_60sdp"-->
+                    <!--android:layout_height="@dimen/_60sdp"-->
+                    <!--android:src="@drawable/ic_personal_profile" />-->
 
-                <ImageView
-                    android:id="@+id/imvProfile"
-                    android:layout_width="@dimen/_60sdp"
-                    android:layout_height="@dimen/_60sdp"
-                    android:src="@drawable/ic_personal_profile" />
-
-                <TextView
-                    android:id="@+id/tvName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/MarginSpaceS"
-                    android:layout_marginLeft="@dimen/MarginSpaceXXL"
-                    android:layout_toRightOf="@+id/imvProfile"
-                    android:text="Firstname Surname" />
+                <!--<TextView-->
+                    <!--android:id="@+id/tvName"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginBottom="@dimen/MarginSpaceS"-->
+                    <!--android:layout_marginLeft="@dimen/MarginSpaceXXL"-->
+                    <!--android:layout_toRightOf="@+id/imvProfile"-->
+                    <!--android:text="Firstname Surname" />-->
 
 
-                <TextView
-                    android:id="@+id/tvWeight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/tvName"
-                    android:layout_below="@+id/tvName"
-                    android:layout_marginBottom="@dimen/MarginSpaceS"
-                    android:layout_marginRight="@dimen/MarginSpaceL"
-                    android:text="Weight: 75" />
+                <!--<TextView-->
+                    <!--android:id="@+id/tvWeight"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignLeft="@+id/tvName"-->
+                    <!--android:layout_below="@+id/tvName"-->
+                    <!--android:layout_marginBottom="@dimen/MarginSpaceS"-->
+                    <!--android:layout_marginRight="@dimen/MarginSpaceL"-->
+                    <!--android:text="Weight: 75" />-->
 
-                <TextView
-                    android:id="@+id/tvHeight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvName"
-                    android:layout_toRightOf="@+id/tvWeight"
-                    android:text="Height: 178" />
+                <!--<TextView-->
+                    <!--android:id="@+id/tvHeight"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/tvName"-->
+                    <!--android:layout_toRightOf="@+id/tvWeight"-->
+                    <!--android:text="Height: 178" />-->
 
-                <TextView
-                    android:id="@+id/tvBmi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/tvName"
-                    android:layout_below="@+id/tvWeight"
-                    android:layout_marginBottom="@dimen/MarginSpaceS"
-                    android:layout_marginRight="@dimen/MarginSpaceL"
-                    android:text="BMI: 23.7" />
+                <!--<TextView-->
+                    <!--android:id="@+id/tvBmi"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignLeft="@+id/tvName"-->
+                    <!--android:layout_below="@+id/tvWeight"-->
+                    <!--android:layout_marginBottom="@dimen/MarginSpaceS"-->
+                    <!--android:layout_marginRight="@dimen/MarginSpaceL"-->
+                    <!--android:text="BMI: 23.7" />-->
 
-                <TextView
-                    android:id="@+id/tvBmiStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/tvHeight"
-                    android:layout_alignTop="@+id/tvBmi"
-                    android:layout_below="@+id/tvHeight"
-                    android:text="Over weight" />
-            </RelativeLayout>
+                <!--<TextView-->
+                    <!--android:id="@+id/tvBmiStatus"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignLeft="@+id/tvHeight"-->
+                    <!--android:layout_alignTop="@+id/tvBmi"-->
+                    <!--android:layout_below="@+id/tvHeight"-->
+                    <!--android:text="Over weight" />-->
+            <!--</RelativeLayout>-->
 
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewProfileContent"
-                android:layout_marginTop="@dimen/MarginSpace">
+            <!--<android.support.constraint.ConstraintLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/viewProfileContent"-->
+                <!--android:layout_marginTop="@dimen/MarginSpace">-->
 
-                <TextView
-                    android:id="@+id/tvStepDistance"
-                    style="@style/TextTint14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2,270"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toStartOf="@+id/separatorProfile"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <!--<TextView-->
+                    <!--android:id="@+id/tvStepDistance"-->
+                    <!--style="@style/TextTint14"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="2,270"-->
+                    <!--android:textAlignment="center"-->
+                    <!--app:layout_constraintEnd_toStartOf="@+id/separatorProfile"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:layout_constraintTop_toTopOf="parent" />-->
 
-                <TextView
-                    style="@style/TextCaption10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/MarginSpaceSS"
-                    android:text="Step"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/separatorProfile"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvStepDistance" />
+                <!--<TextView-->
+                    <!--style="@style/TextCaption10"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="@dimen/MarginSpaceSS"-->
+                    <!--android:text="Step"-->
+                    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--app:layout_constraintEnd_toStartOf="@+id/separatorProfile"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/tvStepDistance" />-->
 
-                <TextView
-                    android:id="@+id/tvKmDistance"
-                    style="@style/TextTint14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.1"
-                    android:textAlignment="center"
-                    android:textColor="@color/main_theme"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/separatorProfile"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <!--<TextView-->
+                    <!--android:id="@+id/tvKmDistance"-->
+                    <!--style="@style/TextTint14"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="1.1"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@color/main_theme"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toEndOf="@+id/separatorProfile"-->
+                    <!--app:layout_constraintTop_toTopOf="parent" />-->
 
-                <TextView
-                    style="@style/TextCaption10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/MarginSpaceSS"
-                    android:text="Distance : km"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/separatorProfile"
-                    app:layout_constraintTop_toBottomOf="@+id/tvKmDistance" />
+                <!--<TextView-->
+                    <!--style="@style/TextCaption10"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="@dimen/MarginSpaceSS"-->
+                    <!--android:text="Distance : km"-->
+                    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toEndOf="@+id/separatorProfile"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/tvKmDistance" />-->
 
-                <View
-                    android:id="@+id/separatorProfile"
-                    android:layout_width="@dimen/_2sdp"
-                    android:layout_height="@dimen/_30sdp"
-                    android:layout_marginEnd="@dimen/MarginSpace"
-                    android:layout_marginStart="@dimen/MarginSpace"
-                    android:background="@color/bg_head"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </android.support.constraint.ConstraintLayout>
-        </RelativeLayout>
+                <!--<View-->
+                    <!--android:id="@+id/separatorProfile"-->
+                    <!--android:layout_width="@dimen/_2sdp"-->
+                    <!--android:layout_height="@dimen/_30sdp"-->
+                    <!--android:layout_marginEnd="@dimen/MarginSpace"-->
+                    <!--android:layout_marginStart="@dimen/MarginSpace"-->
+                    <!--android:background="@color/bg_head"-->
+                    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:layout_constraintTop_toTopOf="parent" />-->
+            <!--</android.support.constraint.ConstraintLayout>-->
+        <!--</RelativeLayout>-->
 
 
         <!--Head Seperator-->

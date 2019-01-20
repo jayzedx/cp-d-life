@@ -47,27 +47,29 @@ class PersonalScreen : ScreenUnit() {
         //setValue()
 
     }
-//
-//
-//    private fun setValue() {
-//        val args = arguments
-//        setComponent()
-//    }
-//
-//    private fun setComponent() {
-//        //set profile
-//        tvStepUnit.setTypeface(null, Typeface.BOLD)
-//        tvKmUnit.setTypeface(null, Typeface.BOLD)
-//        tvStepUnit2.setTypeface(null, Typeface.BOLD)
-//
-//
-//        viewDistanceContent.setOnClickListener { flipAnimation() }
-//        viewDistanceContent2.setOnClickListener { flipAnimation() }
-//        tvSelectDate.setOnClickListener { onClickDatePicker() }
-//
-//    }
-//
-//
+
+
+    private fun setValue() {
+        val args = arguments
+        setComponent()
+    }
+
+    private fun setComponent() {
+        //set bold
+        tvStepUnit.setTypeface(null, Typeface.BOLD)
+        tvTitleRecord.setTypeface(null, Typeface.BOLD)
+        tvTitleStep.setTypeface(null, Typeface.BOLD)
+        tvTitleDistance.setTypeface(null, Typeface.BOLD)
+        tvTitleMyRecord.setTypeface(null, Typeface.BOLD)
+        tvTitleCompanyRecord.setTypeface(null, Typeface.BOLD)
+        tvTitleTotalRecord.setTypeface(null, Typeface.BOLD)
+        tvPoint.setTypeface(null, Typeface.BOLD)
+
+
+
+    }
+
+
 //    private fun onClickDatePicker() {
 //        val c = Calendar.getInstance()
 //        val currentDate = c.get(Calendar.DAY_OF_MONTH).toString() + "-" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.YEAR)

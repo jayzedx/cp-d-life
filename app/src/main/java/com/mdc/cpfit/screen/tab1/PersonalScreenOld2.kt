@@ -3,6 +3,9 @@ package com.mdc.cpfit.screen.tab1
 import android.app.DatePickerDialog
 import android.graphics.Typeface
 import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentTransaction
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,8 +46,8 @@ class PersonalScreenOld2 : ScreenUnit() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setFrangment(PersonalScreenOld2::class.simpleName.toString(), rootView)
+        ReplaceScreen(ProfileFrontScreen.newInstance(), R.id.profileContainer)
         setValue()
-
     }
 
 
@@ -63,6 +66,50 @@ class PersonalScreenOld2 : ScreenUnit() {
         viewDistanceContent.setOnClickListener { flipAnimation() }
         viewDistanceContent2.setOnClickListener { flipAnimation() }
         tvSelectDate.setOnClickListener { onClickDatePicker() }
+
+
+
+        val manager = childFragmentManager
+        val currentFragmentNotFoundAndError = childFragmentManager?.findFragmentById(R.id.profileContainer)
+
+
+        btnSignIn.setOnClickListener {
+            val currentFragment = childFragmentManager?.findFragmentById(R.id.profileContainer)
+            if (currentFragment != null) {
+                if (currentFragment is ProfileFrontScreen) {
+    //                IntentScreen(ProfileBackScreen.newInstance(), R.id.profileContainer)
+                    val transaction = manager.beginTransaction()
+                    transaction.setCustomAnimations(
+                            R.anim.translate_from_bottom, R.anim.translate_to_top,
+                            R.anim.translate_from_top, R.anim.translate_to_bottom
+                    )
+                    transaction.replace(R.id.profileContainer, ProfileBackScreen.newInstance(), "Back")
+                    transaction.setTransition(FragmentTransaction.TRANSIT_NONE)
+
+//                    if (childFragmentManager.findFragmentByTag("Front") == null)
+                        transaction.addToBackStack("Front")
+
+                    transaction.commit()
+                } else {
+    //                IntentScreen(ProfileFrontScreen.newInstance(), R.id.profileContainer)
+                    val transaction = manager.beginTransaction()
+                    transaction.setCustomAnimations(
+                            R.anim.translate_from_bottom, R.anim.translate_to_top,
+                            R.anim.translate_from_top, R.anim.translate_to_bottom
+                    )
+                    transaction.replace(R.id.profileContainer, ProfileFrontScreen.newInstance(), "Front")
+                    transaction.setTransition(FragmentTransaction.TRANSIT_NONE)
+//                    transaction.addToBackStack("Back")
+                    while (childFragmentManager.getBackStackEntryCount() > 0) {
+                        childFragmentManager.popBackStack()
+                        break
+                    }
+                    transaction.commit()
+                }
+
+            }
+
+        }
 
     }
 
@@ -152,5 +199,38 @@ class PersonalScreenOld2 : ScreenUnit() {
 
         dpd.show()
     }
+
+
+    private fun handleViewPagerBackStack(): Boolean {
+        val fragment: Fragment? = this
+        return fragment?.let {
+            handleNestedFragmentBackStack(fragment.childFragmentManager)
+        } ?: run {
+            false
+        }
+    }
+
+
+    private fun handleNestedFragmentBackStack(fragmentManager: FragmentManager): Boolean {
+        val childFragmentList = fragmentManager.fragments
+        if (childFragmentList.size > 0) {
+            for (index in childFragmentList.size - 1 downTo 0) {
+                val fragment = childFragmentList[index]
+                val isPopped = handleNestedFragmentBackStack(fragment.childFragmentManager)
+                return when {
+                    isPopped -> true
+                    fragmentManager.backStackEntryCount > 0 -> {
+                        fragmentManager.popBackStack()
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
+        return false
+    }
+
+
+
 
 }

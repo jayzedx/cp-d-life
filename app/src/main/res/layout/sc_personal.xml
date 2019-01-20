@@ -163,6 +163,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:id="@+id/tvTitleRecord"
                     android:text="@string/personal_title_record"
                     android:textStyle="bold"
                     style="@style/TextTint10"
@@ -170,6 +171,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/tvTitleStep"
                     android:text="@string/personal_title_step"
                     style="@style/TextTint10"
                     android:textStyle="bold"
@@ -178,6 +180,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/tvTitleDistance"
                     android:text="@string/personal_title_distance"
                     style="@style/TextTint10"
                     android:textStyle="bold"
