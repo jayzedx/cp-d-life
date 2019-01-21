@@ -2,8 +2,9 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:paddingBottom="@dimen/PaddingSpaceL"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
 
@@ -129,14 +130,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/tvMyRecordStep"
                         style="@style/TextTitle"
                         android:text="28,552,493"
+                        android:textStyle="bold"
                         android:textAlignment="textEnd"
                         android:layout_weight="1.7"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/tvMyRecordDistance"
                         android:text="8,565.74"
+                        android:textStyle="bold"
                         style="@style/TextTitle"
                         android:layout_weight="1"
                         android:textAlignment="textEnd"
@@ -177,15 +182,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/tvCompanyRecordStep"
                         style="@style/TextTitle"
                         android:text="28,552,493"
+                        android:textStyle="bold"
                         android:textAlignment="textEnd"
                         android:layout_weight="1.7"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/tvCompanyRecordDistance"
                         android:text="8,565.74"
                         style="@style/TextTitle"
+                        android:textStyle="bold"
                         android:layout_weight="1"
                         android:textAlignment="textEnd"
                         android:layout_width="0dp"
@@ -197,6 +206,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/tvCompanyRecordTotalStep"
                         style="@style/TextTitle10"
                         android:text="/ 100,000"
                         android:textAlignment="textEnd"
@@ -204,6 +214,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/tvCompanyRecordTotalDistance"
                         style="@style/TextTitle10"
                         android:text="/ 999 "
                         android:layout_weight="1"
@@ -245,15 +256,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/tvTotalRecordStep"
                         style="@style/TextTitle"
                         android:text="28,552,493"
+                        android:textStyle="bold"
                         android:textAlignment="textEnd"
                         android:layout_weight="1.7"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/tvTotalRecordDistance"
                         android:text="8,565.74"
                         style="@style/TextTitle"
+                        android:textStyle="bold"
                         android:layout_weight="1"
                         android:textAlignment="textEnd"
                         android:layout_width="0dp"
@@ -265,6 +280,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/tvTotalRecordTotalStep"
                         style="@style/TextTitle10"
                         android:text="/ 120,000,000"
                         android:textAlignment="textEnd"
@@ -272,6 +288,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/tvTotalRecordTotalDistance"
                         style="@style/TextTitle10"
                         android:text="/ 999,999"
                         android:layout_weight="1"

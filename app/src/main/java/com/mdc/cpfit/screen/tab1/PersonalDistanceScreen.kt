@@ -57,9 +57,21 @@ class PersonalDistanceScreen: ScreenUnit() {
         tvTitleRecord.setTypeface(null, Typeface.BOLD)
         tvTitleStep.setTypeface(null, Typeface.BOLD)
         tvTitleDistance.setTypeface(null, Typeface.BOLD)
-        tvTitleMyRecord.setTypeface(null, Typeface.BOLD)
-        tvTitleCompanyRecord.setTypeface(null, Typeface.BOLD)
-        tvTitleTotalRecord.setTypeface(null, Typeface.BOLD)
+        tvTitleMyRecord.setTypeface(null, Typeface.BOLD_ITALIC)
+        tvTitleCompanyRecord.setTypeface(null, Typeface.BOLD_ITALIC)
+        tvTitleTotalRecord.setTypeface(null, Typeface.BOLD_ITALIC)
+        tvMyRecordStep.setTypeface(null, Typeface.BOLD)
+        tvMyRecordDistance.setTypeface(null, Typeface.BOLD)
+        tvCompanyRecordStep.setTypeface(null, Typeface.BOLD)
+        tvCompanyRecordDistance.setTypeface(null, Typeface.BOLD)
+//        tvCompanyRecordTotalStep.setTypeface(null, Typeface.BOLD)
+//        tvCompanyRecordTotalDistance.setTypeface(null, Typeface.BOLD)
+        tvTotalRecordStep.setTypeface(null, Typeface.BOLD)
+        tvTotalRecordDistance.setTypeface(null, Typeface.BOLD)
+//        tvTotalRecordTotalStep.setTypeface(null, Typeface.BOLD)
+//        tvTotalRecordTotalDistance.setTypeface(null, Typeface.BOLD)
+
+
 
         imvAdd.setOnClickListener {
             showOrHiddenCallBack?.invoke()
