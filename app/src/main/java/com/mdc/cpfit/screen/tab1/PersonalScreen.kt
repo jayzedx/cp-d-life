@@ -1,6 +1,7 @@
 package com.mdc.cpfit.screen.tab1
 
 import android.app.DatePickerDialog
+import android.app.FragmentTransaction
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,19 +18,19 @@ import java.util.*
 
 
 
+
 class PersonalScreen : ScreenUnit() {
 
     val TAG = PersonalScreen::class.java.simpleName
     var rootView: View? = null
-    var type: String = ""
-    lateinit var header: TextView
-    lateinit var dialog: DialogBase
-    var flagDistanceShow = true
-    var datePicker = ""
+    var f1 : PersonalDistanceScreen? = null
+    var f2 : PersonalUpdateDistanceScreen? = null
+
 
     companion object {
         fun newInstance(): PersonalScreen {
             val fragment = PersonalScreen()
+
             val args = Bundle()
             fragment.setArguments(args)
             return fragment
@@ -44,7 +45,7 @@ class PersonalScreen : ScreenUnit() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setFrangment(PersonalScreen::class.simpleName.toString(), rootView)
-        //setValue()
+        setValue()
 
     }
 
@@ -56,48 +57,46 @@ class PersonalScreen : ScreenUnit() {
 
     private fun setComponent() {
         //set bold
-        tvStepUnit.setTypeface(null, Typeface.BOLD)
-        tvTitleRecord.setTypeface(null, Typeface.BOLD)
-        tvTitleStep.setTypeface(null, Typeface.BOLD)
-        tvTitleDistance.setTypeface(null, Typeface.BOLD)
-        tvTitleMyRecord.setTypeface(null, Typeface.BOLD)
-        tvTitleCompanyRecord.setTypeface(null, Typeface.BOLD)
-        tvTitleTotalRecord.setTypeface(null, Typeface.BOLD)
         tvPoint.setTypeface(null, Typeface.BOLD)
 
-
+        f1 = PersonalDistanceScreen.newInstance()
+        f1?.showOrHiddenCallBack = { showOrHiddenScreen() }
+        f2 = PersonalUpdateDistanceScreen.newInstance()
+        f2?.showOrHiddenCallBack = { showOrHiddenScreen() }
+        ReplaceScreen(f1, R.id.container)
 
     }
 
+    private fun showOrHiddenScreen() {
+        val manager = childFragmentManager
+        val currentFragment = childFragmentManager?.findFragmentById(R.id.container)
+        if (currentFragment != null) {
+            if (currentFragment is PersonalDistanceScreen) {
+                val transaction = manager.beginTransaction()
+                transaction.setCustomAnimations(
+                        R.anim.translate_from_right, R.anim.translate_to_left,
+                        R.anim.translate_from_left, R.anim.translate_to_right
+                )
+                transaction.replace(R.id.container, f2, "Update")
+                transaction.setTransition(FragmentTransaction.TRANSIT_NONE)
+                transaction.addToBackStack("ShowDistance")
+                transaction.commit()
+            } else {
+                val transaction = manager.beginTransaction()
+                transaction.setCustomAnimations(
+                        R.anim.translate_from_right, R.anim.translate_to_left,
+                        R.anim.translate_from_left, R.anim.translate_to_right
+                )
+                transaction.replace(R.id.container, f1, "ShowDistance")
+                transaction.setTransition(android.support.v4.app.FragmentTransaction.TRANSIT_NONE)
+                while (childFragmentManager.getBackStackEntryCount() > 0) {
+                    childFragmentManager.popBackStack()
+                    break
+                }
+                transaction.commit()
+            }
+        }
+    }
 
-//    private fun onClickDatePicker() {
-//        val c = Calendar.getInstance()
-//        val currentDate = c.get(Calendar.DAY_OF_MONTH).toString() + "-" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.YEAR)
-//        val dateArray = currentDate?.split("-")
-//        var yearPick = dateArray!![2].toInt()
-//        var monthPick = dateArray[1].toInt()
-//        var dayPick = dateArray[0].toInt()
-//
-//        datePicker = currentDate
-//
-//        var cal = Calendar.getInstance()
-//        val dpd = DatePickerDialog(activity, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-//            cal.set(Calendar.YEAR, year)
-//            cal.set(Calendar.MONTH, monthOfYear)
-//            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-//
-//            //val myFormat = "dd MMMM yyyy" // mention the format you need
-//            //val sdf = SimpleDateFormat(myFormat, Locale.US)
-//
-//            yearPick = year
-//            monthPick = monthOfYear + 1
-//            dayPick = dayOfMonth
-//            datePicker = "$dayPick-$monthPick-$yearPick"
-//            tvSelectDate.setText(datePicker)
-//
-//        }, yearPick, monthPick, dayPick)
-//
-//        dpd.show()
-//    }
 
 }
