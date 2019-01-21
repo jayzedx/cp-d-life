@@ -411,7 +411,7 @@
 
             <TextView
                 android:id="@+id/tvSelectDate"
-                style="@style/EditTextBlueStyle"
+                style="@style/EditTextPurpleStyle"
                 android:textAlignment="center"
                 android:layout_toRightOf="@+id/imvCalendar"
                 android:layout_alignRight="@+id/tvSelectUnitShow"
@@ -435,7 +435,7 @@
 
             <EditText
                 android:id="@+id/edtDistance"
-                style="@style/EditTextBlueStyle"
+                style="@style/EditTextPurpleStyle"
                 android:layout_toRightOf="@+id/imvWalking"
                 android:layout_toLeftOf="@+id/tvSelectUnitShow"
                 android:layout_alignLeft="@+id/tvSelectDate"

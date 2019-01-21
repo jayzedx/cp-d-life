@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<com.mdc.cpfit.util.view.ScrollDetect
+<ScrollView
     android:id="@+id/scroll_view"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/PaddingSpace"
         android:orientation="vertical">
         <RelativeLayout
             android:id="@+id/viewProfileContent"
@@ -385,4 +384,4 @@
 
 
     </LinearLayout>
-</com.mdc.cpfit.util.view.ScrollDetect>
+</ScrollView>

@@ -288,7 +288,7 @@
         <item name="android:textSize">@dimen/FontSizeS</item>
     </style>
 
-    <style name="EditTextBlueStyle" parent="android:Widget.EditText">
+    <style name="EditTextPurpleStyle" parent="android:Widget.EditText">
         <item name="backgroundTint">@color/blue_theme</item>
         <item name="android:textColor">@color/gray_theme</item>
         <item name="android:textSize">@dimen/FontSizeS</item>

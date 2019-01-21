@@ -29,7 +29,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="@dimen/MarginSpaceL"
         android:src="@drawable/ic_plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/viewImage" />
@@ -73,7 +73,7 @@
 
         <TextView
             android:id="@+id/tvSelectDate"
-            style="@style/EditTextBlueStyle"
+            style="@style/EditTextStyle"
             android:drawableRight="@drawable/ic_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
 
             <EditText
                 android:id="@+id/edtDistance"
-                style="@style/EditTextBlueStyle"
+                style="@style/EditTextStyle"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
