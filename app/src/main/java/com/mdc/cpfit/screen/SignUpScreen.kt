@@ -81,6 +81,15 @@ class SignUpScreen : ScreenUnit() {
         }
         cbAutoFill.setOnClickListener {
             cbAutoFill.isChecked = !cbAutoFill.isChecked
+            if (!cbAutoFill.isChecked) edtEmail.setText("")
+            else  {
+                var companys = ConfigServer.instance.arrCompany
+                companys?.let {
+                    if (it.size > companyId) {
+                        edtEmail.setText(it[companyId].companyName)
+                    }
+                }
+            }
         }
         cbAgree.setOnClickListener {
             cbAgree.isChecked = !cbAgree.isChecked
@@ -103,7 +112,9 @@ class SignUpScreen : ScreenUnit() {
         var companys = ConfigServer.instance.arrCompany
 
        companys?.let {
-            arrCompanyName.add(0, getString(R.string.login_select_company))
+            //arrCompanyName.add(0, getString(R.string.login_select_company))
+           companyId = companys[0].companyId
+
             for (i in 0 until it.size) {
                 arrCompanyName.add(it[i].companyName)
             }
@@ -112,20 +123,25 @@ class SignUpScreen : ScreenUnit() {
         }
 
         spnCompany.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(position: AdapterView<*>?) {
-            }
+            override fun onNothingSelected(position: AdapterView<*>?) {}
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
                 var oldCompanyId = companyId
-                if (position > 0) {
+                if (position >= 0) {
                     companyId = companys?.let {
-                        if (it.size > 0) {
-                            it[position-1].companyId
+                        if (companys.size > 0) {
+                            if (cbAutoFill.isChecked && position != companys.size-1) {
+                                edtEmail.setText(companys[position].companyName)
+                            }
+                            it[position].companyId
                         } else 0
                     }
                 } else {
                     companyId = -1
                 }
-                if (position-1 == companys.size-1) hideEditTextAnimation()
+                if (position == companys.size-1) {
+                    edtEmail.setText("")
+                    hideEditTextAnimation()
+                }
                 else if(oldCompanyId == companys.size-1) showEditTextAnimation()
             }
         }

@@ -1,10 +1,14 @@
 package com.mdc.cpfit.screen
 
+import android.animation.Animator
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.mdc.cpfit.R
@@ -64,6 +68,22 @@ class ForgotPasswordScreen : ScreenUnit() {
         btnSend.setAllCaps(false)
 
 
+        cbAutoFill.setOnClickListener {
+            cbAutoFill.isChecked = !cbAutoFill.isChecked
+            if (!cbAutoFill.isChecked) {
+                edtEmail.setText("")
+                hideEditTextAnimation()
+            } else  {
+                var companys = ConfigServer.instance.arrCompany
+                companys?.let {
+                    if (it.size > companyId) {
+                        edtEmail.setText(it[companyId].companyName)
+                    }
+                }
+                showEditTextAnimation()
+            }
+        }
+
         btnSend.setOnClickListener {
             activityMain.startActivityUnit(MainContainActivity::class.java, null)
             activityMain.finish()
@@ -81,7 +101,9 @@ class ForgotPasswordScreen : ScreenUnit() {
         var companys = ConfigServer.instance.arrCompany
 
         companys?.let {
-//            arrCompanyName.add(0, getString(R.string.login_select_company))
+            //arrCompanyName.add(0, getString(R.string.login_select_company))
+            companyId = companys[0].companyId
+
             for (i in 0 until it.size) {
                 arrCompanyName.add(it[i].companyName)
             }
@@ -90,24 +112,67 @@ class ForgotPasswordScreen : ScreenUnit() {
         }
 
         spnCompany.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(position: AdapterView<*>?) {
-            }
+            override fun onNothingSelected(position: AdapterView<*>?) {}
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
                 var oldCompanyId = companyId
-                if (position > 0) {
+                if (position >= 0) {
                     companyId = companys?.let {
-                        if (it.size > 0) {
-                            tvEmail.text = it[position].companyName
+                        if (companys.size > 0) {
+                            if (cbAutoFill.isChecked && position != companys.size-1) {
+                                edtEmail.setText(companys[position].companyName)
+                            }
                             it[position].companyId
                         } else 0
                     }
                 } else {
                     companyId = -1
                 }
-                if (position == companys.size-1) tvEmail.visibility = View.GONE
-                else if(oldCompanyId == companys.size-1) tvEmail.visibility = View.VISIBLE
+                if (position == companys.size-1) {
+                    edtEmail.setText("")
+                    hideEditTextAnimation()
+                }
+                else if(oldCompanyId == companys.size-1 && cbAutoFill.isChecked) showEditTextAnimation()
             }
         }
+    }
+
+    private fun hideEditTextAnimation() {
+        var animatorSet = AnimatorSet()
+//        animatorSet.setDuration(500)
+        animatorSet.setInterpolator(AccelerateDecelerateInterpolator())
+        animatorSet.addListener (object: Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {}
+            override fun onAnimationCancel(animation: Animator?) {}
+            override fun onAnimationStart(animation: Animator?) {}
+            override fun onAnimationEnd(animation: Animator?) {
+                viewInputAutoFill.visibility = View.GONE
+            }
+        })
+        var anim = AnimatorInflater.loadAnimator(context, R.animator.to_right) as AnimatorSet
+        anim.setTarget(viewInputAutoFill)
+        animatorSet.play(anim)
+        animatorSet.start()
+    }
+
+    private fun showEditTextAnimation() {
+        var animatorSet = AnimatorSet()
+//        animatorSet.setDuration(500)
+        animatorSet.setInterpolator(AccelerateDecelerateInterpolator())
+        animatorSet.addListener (object: Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {}
+            override fun onAnimationCancel(animation: Animator?) {}
+            override fun onAnimationStart(animation: Animator?) {
+                viewInputAutoFill.visibility = View.VISIBLE
+                cbAutoFill.visibility = View.VISIBLE
+
+            }
+            override fun onAnimationEnd(animation: Animator?) {}
+        })
+
+        var anim = AnimatorInflater.loadAnimator(context, R.animator.from_right) as AnimatorSet
+        anim.setTarget(viewInputAutoFill)
+        animatorSet.play(anim)
+        animatorSet.start()
     }
 
 
