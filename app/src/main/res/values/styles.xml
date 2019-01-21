@@ -110,7 +110,7 @@
 
 
     <style name="TextCaption">
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">@color/black_theme</item>
     </style>
     <style name="TextCaption10" parent="TextCaption">
         <!--<item name="android:textSize">@dimen/FontSizeSSS</item>-->

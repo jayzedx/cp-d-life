@@ -29,6 +29,7 @@
 
             <TextView
                 android:id="@+id/tvName"
+                style="@style/TextCaption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/MarginSpaceS"
@@ -39,6 +40,7 @@
 
             <TextView
                 android:id="@+id/tvWeight"
+                style="@style/TextCaption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tvName"
@@ -49,6 +51,7 @@
 
             <TextView
                 android:id="@+id/tvHeight"
+                style="@style/TextCaption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvName"
@@ -57,6 +60,7 @@
 
             <TextView
                 android:id="@+id/tvBmi"
+                style="@style/TextCaption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tvName"
@@ -67,6 +71,7 @@
 
             <TextView
                 android:id="@+id/tvBmiStatus"
+                style="@style/TextCaption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tvHeight"

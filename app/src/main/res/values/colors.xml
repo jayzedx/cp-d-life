@@ -367,6 +367,7 @@
 
     <color name="toolbar_bg">@color/White</color>ฃ
 
+    <color name="black_theme">#4A4A4A</color>
     <color name="gold_theme">#F5A623</color>
     <color name="main_theme">#9782E1</color>
     <color name="gray_theme">#807D7D</color>
