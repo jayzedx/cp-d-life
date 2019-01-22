@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -14,6 +15,7 @@ import com.mdc.cpfit.adapter.MainViewPagerAdapter
 import com.mdc.cpfit.screen.tab1.PersonalScreen
 import com.mdc.cpfit.screen.tab1.PersonalScreenOld2
 import com.mdc.cpfit.util.ScreenUnit
+import com.mdc.cpfit.util.view.CustomViewPager
 
 
 class MainPagerScreen : ScreenUnit() {
@@ -21,7 +23,7 @@ class MainPagerScreen : ScreenUnit() {
     val TAG = MainPagerScreen::class.java.simpleName
     var rootView: View? = null
 
-    lateinit var pager: ViewPager
+    lateinit var pager: CustomViewPager
     lateinit var tabView: TabLayout
 
 
@@ -91,13 +93,15 @@ class MainPagerScreen : ScreenUnit() {
         }
     }
 
-    private fun setupViewPager(pager: ViewPager?) {
+    private fun setupViewPager(pager: CustomViewPager?) {
         val f1 = PersonalScreen.newInstance()
         val f2 = PersonalScreenOld2.newInstance()
         var adapter = MainViewPagerAdapter(childFragmentManager)
         adapter.addFragment(f1, "TAB 1")
         adapter.addFragment(f2, "TAB 2")
+        pager?.setPagingEnabled(false)
         pager?.adapter = adapter
+
 
     }
 
