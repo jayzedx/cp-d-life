@@ -1,7 +1,9 @@
 package com.mdc.cpfit.screen.tab1
 
 import android.app.DatePickerDialog
+import android.graphics.Typeface
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +21,8 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
     val TAG = PersonalUpdateDistanceScreen::class.java.simpleName
     var rootView: View? = null
     var showOrHiddenCallBack:(()-> Unit)? = null
+
+    var stepUnitSelected = true
 
 
     lateinit var dialog: DialogBase
@@ -52,9 +56,31 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
     }
 
     private fun setComponent() {
-        imgBtnCancel.setOnClickListener {
-            showOrHiddenCallBack?.invoke()
+        tvDistanceSelectUnit.text =  getString(R.string.personal_separator_unit_selected) + getString(R.string.personal_distance_selected)
+        tvStepSelectUnit.setTypeface(null, Typeface.BOLD)
+
+        imgBtnCancel.setOnClickListener { showOrHiddenCallBack?.invoke() }
+        edtSelectDate.setOnClickListener { onClickDatePicker() }
+        tvStepSelectUnit.setOnClickListener { onClickChangeUnit()}
+        tvDistanceSelectUnit.setOnClickListener { onClickChangeUnit()}
+
+    }
+
+    private fun onClickChangeUnit() {
+        stepUnitSelected = if (stepUnitSelected) {
+            tvDistanceSelectUnit.text = getString(R.string.personal_distance_selected)
+            tvStepSelectUnit.text = getString(R.string.personal_step_selected) + getString(R.string.personal_separator_unit_selected)
+            tvStepSelectUnit.setTypeface(null, Typeface.NORMAL)
+            tvDistanceSelectUnit.setTypeface(null, Typeface.BOLD)
+            false
+        } else {
+            tvStepSelectUnit.text = getString(R.string.personal_step_selected)
+            tvDistanceSelectUnit.text =  getString(R.string.personal_separator_unit_selected) + getString(R.string.personal_distance_selected)
+            tvStepSelectUnit.setTypeface(null, Typeface.BOLD)
+            tvDistanceSelectUnit.setTypeface(null, Typeface.NORMAL)
+            true
         }
+
     }
 
 
@@ -81,10 +107,10 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
             monthPick = monthOfYear + 1
             dayPick = dayOfMonth
             datePicker = "$dayPick-$monthPick-$yearPick"
-            tvSelectDate.setText(datePicker)
+            edtSelectDate.setText(datePicker)
 
         }, yearPick, monthPick, dayPick)
-
+        dpd.datePicker.maxDate = Date().time
         dpd.show()
     }
 

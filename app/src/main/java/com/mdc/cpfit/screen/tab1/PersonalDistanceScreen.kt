@@ -48,7 +48,7 @@ class PersonalDistanceScreen : ScreenUnit() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setFrangment(PersonalDistanceScreen::class.simpleName.toString(), rootView)
-        setAnimation()
+//        setAnimation()
         setValue()
 
     }
@@ -125,7 +125,7 @@ class PersonalDistanceScreen : ScreenUnit() {
         }
 
         var animSet = AnimatorSet()
-        animSet.setDuration(800)
+        animSet.setDuration(1000)
         animSet.setInterpolator(OvershootInterpolator())
         animSet.playTogether(animItem1, animItem2, animItem3)
         animSet.start()

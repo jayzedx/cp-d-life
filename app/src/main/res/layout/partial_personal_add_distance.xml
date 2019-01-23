@@ -44,13 +44,14 @@
             android:id="@+id/imvCalendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/tvSelectDate"
-            android:layout_alignTop="@+id/tvSelectDate"
+            android:layout_alignBottom="@+id/edtSelectDate"
+            android:layout_alignTop="@+id/edtSelectDate"
             android:layout_marginRight="@dimen/MarginSpaceS"
             android:src="@drawable/ic_calendar" />
 
-        <TextView
-            android:id="@+id/tvSelectDate"
+        <EditText
+            android:id="@+id/edtSelectDate"
+            android:focusable="false"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,19 +88,19 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/tvSelectUnit"
+                android:id="@+id/tvStepSelectUnit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="STEP"
+                android:text="@string/personal_step_selected"
                 android:textColor="@color/blue_theme"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvUnSelectUnit"
+                android:id="@+id/tvDistanceSelectUnit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="/km"
+                android:text="@string/personal_distance_selected"
                 android:textColor="@color/blue_theme"
                 android:textSize="@dimen/_14sdp" />
         </LinearLayout>

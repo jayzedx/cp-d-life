@@ -64,6 +64,10 @@
     <string name="personal_title_my_record">My Record</string>
     <string name="personal_title_company_record">Company Record</string>
     <string name="personal_title_total_record">Total Record</string>
+    <string name="personal_step_selected">STEP</string>
+    <string name="personal_separator_unit_selected">/</string>
+    <string name="personal_distance_selected">km</string>
+
 
 
     <!-- S -->
