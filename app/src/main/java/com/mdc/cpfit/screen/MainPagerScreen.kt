@@ -16,6 +16,7 @@ import com.mdc.cpfit.screen.tab1.PersonalScreen
 import com.mdc.cpfit.screen.tab1.PersonalScreenOld2
 import com.mdc.cpfit.util.ScreenUnit
 import com.mdc.cpfit.util.view.CustomViewPager
+import kotlinx.android.synthetic.main.toolbar.*
 
 
 class MainPagerScreen : ScreenUnit() {
@@ -58,7 +59,13 @@ class MainPagerScreen : ScreenUnit() {
             setupViewPager(pager)
             setTabLayout(tabView, pager)
         }
+        toolbarMenu?.setOnClickListener { setBottomSheet() }
 
+    }
+
+    private fun setBottomSheet() {
+        var bottomSheet = MainMenuBottomSheetDialog()
+        bottomSheet.show(childFragmentManager, TAG)
     }
 
 

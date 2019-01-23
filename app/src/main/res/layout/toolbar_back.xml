@@ -14,7 +14,7 @@
         >
 
         <ImageView
-            android:id="@+id/ic_back"
+            android:id="@+id/imvBack"
             android:gravity="center_horizontal"
             android:layout_marginRight="@dimen/Margin10dp"
             android:layout_width="wrap_content"
@@ -22,17 +22,14 @@
             android:src="@drawable/ic_back" />
         <TextView
             android:layout_centerInParent="true"
-            android:id="@+id/toolbar_title"
+            android:id="@+id/toolbarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="@string/app_name"
-            style="@style/TextToolbar20"
-
-
-            />
+            style="@style/TextToolbar20" />
 
 
     </RelativeLayout>

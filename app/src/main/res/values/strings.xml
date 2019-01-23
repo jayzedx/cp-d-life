@@ -2,6 +2,11 @@
     <!--A-->
     <string name="app_name">cpfit_android</string>
     <!--B-->
+    <string name="menu_profile"><b>Profile</b></string>
+    <string name="menu_history"><b>History</b></string>
+    <string name="menu_logout"><b>Log out</b></string>
+    <string name="menu_cancel"><b>Cancel</b></string>
+
     <!--C-->
     <string name="cancel">Cancel</string>
     <string name="call">Tel</string>

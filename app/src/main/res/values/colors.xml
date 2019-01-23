@@ -359,6 +359,7 @@
 
 
     <color name="dialog_line">#CBCBCB</color>
+    <!--<color name="dialog_line">#F2F2F2</coหlor>-->
     <color name="dialog_tint">#979797</color>
     <color name="dialog_bg">#979797</color>
 

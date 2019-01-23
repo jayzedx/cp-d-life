@@ -29,7 +29,6 @@ class PersonalDistanceScreen : ScreenUnit() {
 
 
     lateinit var dialog: DialogBase
-    var datePicker = ""
 
     companion object {
         fun newInstance(): PersonalDistanceScreen {

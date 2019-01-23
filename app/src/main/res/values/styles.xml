@@ -318,7 +318,13 @@
     </style>
 
     <style name="CardViewNoElevationStyle" parent="CardView">
-        <item name="cardCornerRadius">4dp</item>
+        <item name="cardCornerRadius">8dp</item>
         <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="BottomSheetMenu">
+        <item name="android:textColor">@color/dialog_tint</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:background">@drawable/bg_bottom_sheet_menu</item>
     </style>
 </resources>
