@@ -10,10 +10,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.mdc.cpfit.R
 import com.mdc.cpfit.dialog.DialogBase
+import com.mdc.cpfit.util.DateUtil
 import com.mdc.cpfit.util.ScreenUnit
 import java.util.*
 import kotlinx.android.synthetic.main.partial_personal_add_distance.*
 import kotlinx.android.synthetic.main.partial_personal_distance.*
+import java.text.SimpleDateFormat
+
+
 
 
 class PersonalUpdateDistanceScreen: ScreenUnit() {
@@ -86,13 +90,23 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
 
     private fun onClickDatePicker() {
         val c = Calendar.getInstance()
-        val currentDate = c.get(Calendar.DAY_OF_MONTH).toString() + "-" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.YEAR)
-        val dateArray = currentDate?.split("-")
-        var yearPick = dateArray!![2].toInt()
-        var monthPick = dateArray[1].toInt()
-        var dayPick = dateArray[0].toInt()
+        val currentDate = c.get(Calendar.DAY_OF_MONTH).toString() + "/" + c.get(Calendar.MONTH) + "/" + c.get(Calendar.YEAR)
+        var dateArray : List<String>
+        var yearPick = 0
+        var monthPick = 0
+        var dayPick = 0
 
-        datePicker = currentDate
+        dateArray = if (datePicker.equals("")) {
+            currentDate?.split("/")
+        } else {
+            datePicker.split("/")
+        }
+        dayPick = dateArray[0].toInt()
+        monthPick = dateArray[1].toInt().let {month->
+            if (datePicker.equals("")) month
+            else month-1
+        }
+        yearPick = dateArray!![2].toInt()
 
         var cal = Calendar.getInstance()
         val dpd = DatePickerDialog(activity, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
@@ -100,14 +114,14 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
             cal.set(Calendar.MONTH, monthOfYear)
             cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-            //val myFormat = "dd MMMM yyyy" // mention the format you need
-            //val sdf = SimpleDateFormat(myFormat, Locale.US)
+//            val myFormat = "dd MMMM yyyy" // mention the format you need
+//            val sdf = SimpleDateFormat(myFormat, Locale.getDefault())
+//            c.set(year, monthOfYear, dayOfMonth)
+//            val dateString = sdf.format(c.time)
 
-            yearPick = year
-            monthPick = monthOfYear + 1
-            dayPick = dayOfMonth
-            datePicker = "$dayPick-$monthPick-$yearPick"
-            edtSelectDate.setText(datePicker)
+            var month = monthOfYear + 1
+            datePicker = "$dayOfMonth/$month/$year"
+            edtSelectDate.setText(DateUtil.convertDateFormatServer(datePicker))
 
         }, yearPick, monthPick, dayPick)
         dpd.datePicker.maxDate = Date().time

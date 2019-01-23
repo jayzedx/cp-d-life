@@ -48,7 +48,7 @@ class PersonalDistanceScreen : ScreenUnit() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setFrangment(PersonalDistanceScreen::class.simpleName.toString(), rootView)
-//        setAnimation()
+        setAnimation()
         setValue()
 
     }

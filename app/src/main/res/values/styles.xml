@@ -27,8 +27,8 @@
         <!--<item name="android:yearListSelectorColor">@color/colorAccent</item>-->
         <!--<item name="android:datePickerMode">calendar</item>-->
         <!--<item name="android:minDate">01/01/2000</item>-->
-        <!--<item name="android:layout_width">wrap_content</item>-->
-        <!--<item name="android:layout_height">wrap_content</item>-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="TextToolbar20" parent="TextBlack">
