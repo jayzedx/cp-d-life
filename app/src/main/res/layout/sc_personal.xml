@@ -6,10 +6,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
         <RelativeLayout
             android:id="@+id/viewProfileContent"
@@ -19,8 +19,7 @@
             android:paddingTop="@dimen/PaddingSpaceXL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal">
+            android:gravity="center">
             <ImageView
                 android:id="@+id/imvProfile"
                 android:layout_width="@dimen/_60sdp"
@@ -29,7 +28,7 @@
 
             <TextView
                 android:id="@+id/tvName"
-                style="@style/TextCaption"
+                style="@style/TextCaption12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/MarginSpaceS"
@@ -40,7 +39,7 @@
 
             <TextView
                 android:id="@+id/tvWeight"
-                style="@style/TextCaption"
+                style="@style/TextCaption12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tvName"
@@ -51,7 +50,7 @@
 
             <TextView
                 android:id="@+id/tvHeight"
-                style="@style/TextCaption"
+                style="@style/TextCaption12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvName"
@@ -60,7 +59,7 @@
 
             <TextView
                 android:id="@+id/tvBmi"
-                style="@style/TextCaption"
+                style="@style/TextCaption12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tvName"
@@ -71,7 +70,7 @@
 
             <TextView
                 android:id="@+id/tvBmiStatus"
-                style="@style/TextCaption"
+                style="@style/TextCaption12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tvHeight"
@@ -103,9 +102,12 @@
 
         <FrameLayout
             android:id="@+id/container"
+            android:layout_weight="4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp">
+            <!--<include layout="@layout/partial_personal_distance"/>-->
         </FrameLayout>
+
 
 
 

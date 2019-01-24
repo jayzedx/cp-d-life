@@ -114,8 +114,8 @@ class PersonalDistanceScreen : ScreenUnit() {
         var animItem3 = ObjectAnimator.ofFloat(cardViewItem3, "translationX", 1000F, 0F)
 
         animItem1.startDelay = 0
-        animItem2.startDelay = 90
-        animItem3.startDelay = 180
+        animItem2.startDelay = 120
+        animItem3.startDelay = 240
 
         if(reverse) {
             animItem1.repeatMode = ObjectAnimator.REVERSE
