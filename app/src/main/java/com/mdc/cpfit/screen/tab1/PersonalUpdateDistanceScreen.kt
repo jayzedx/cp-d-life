@@ -60,28 +60,28 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
     }
 
     private fun setComponent() {
-        tvDistanceSelectUnit.text =  getString(R.string.personal_separator_unit_selected) + getString(R.string.personal_distance_selected)
+        tvKmSelectUnit.text =  "/" + getString(R.string.personal_km_selected)
         tvStepSelectUnit.setTypeface(null, Typeface.BOLD)
 
         imgBtnCancel.setOnClickListener { showOrHiddenCallBack?.invoke() }
         edtSelectDate.setOnClickListener { onClickDatePicker() }
         tvStepSelectUnit.setOnClickListener { onClickChangeUnit()}
-        tvDistanceSelectUnit.setOnClickListener { onClickChangeUnit()}
+        tvKmSelectUnit.setOnClickListener { onClickChangeUnit()}
 
     }
 
     private fun onClickChangeUnit() {
         stepUnitSelected = if (stepUnitSelected) {
-            tvDistanceSelectUnit.text = getString(R.string.personal_distance_selected)
-            tvStepSelectUnit.text = getString(R.string.personal_step_selected) + getString(R.string.personal_separator_unit_selected)
+            tvKmSelectUnit.text = getString(R.string.personal_km_selected)
+            tvStepSelectUnit.text = getString(R.string.personal_step_selected) + "/"
             tvStepSelectUnit.setTypeface(null, Typeface.NORMAL)
-            tvDistanceSelectUnit.setTypeface(null, Typeface.BOLD)
+            tvKmSelectUnit.setTypeface(null, Typeface.BOLD)
             false
         } else {
             tvStepSelectUnit.text = getString(R.string.personal_step_selected)
-            tvDistanceSelectUnit.text =  getString(R.string.personal_separator_unit_selected) + getString(R.string.personal_distance_selected)
+            tvKmSelectUnit.text =  "/" + getString(R.string.personal_km_selected)
             tvStepSelectUnit.setTypeface(null, Typeface.BOLD)
-            tvDistanceSelectUnit.setTypeface(null, Typeface.NORMAL)
+            tvKmSelectUnit.setTypeface(null, Typeface.NORMAL)
             true
         }
 

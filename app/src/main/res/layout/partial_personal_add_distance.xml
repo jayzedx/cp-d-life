@@ -53,13 +53,15 @@
             android:id="@+id/edtSelectDate"
             android:focusable="false"
             style="@style/EditTextStyle"
+            android:textSize="@dimen/_14sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/imvCalendar"
             android:drawableRight="@drawable/ic_spinner"
             android:hint="03 May 2018"
             android:maxLines="1"
-            android:textAlignment="center" />
+            android:paddingLeft="@dimen/_20sdp"
+            android:textAlignment="textStart" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,30 +81,30 @@
             <EditText
                 android:id="@+id/edtDistance"
                 style="@style/EditTextStyle"
+                android:textSize="@dimen/_14sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/MarginSpaceS"
                 android:layout_weight="1"
                 android:hint="1.2"
                 android:maxLines="1"
-                android:textAlignment="center" />
+                android:paddingLeft="@dimen/_20sdp"
+                android:textAlignment="textStart" />
 
             <TextView
                 android:id="@+id/tvStepSelectUnit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/personal_step_selected"
-                android:textColor="@color/blue_theme"
-                android:textSize="@dimen/_14sdp"
+                style="@style/TextTint14"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvDistanceSelectUnit"
+                android:id="@+id/tvKmSelectUnit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/personal_distance_selected"
-                android:textColor="@color/blue_theme"
-                android:textSize="@dimen/_14sdp" />
+                android:text="@string/personal_unit_selected_default"
+                style="@style/TextTint14" />
         </LinearLayout>
 
     </RelativeLayout>
