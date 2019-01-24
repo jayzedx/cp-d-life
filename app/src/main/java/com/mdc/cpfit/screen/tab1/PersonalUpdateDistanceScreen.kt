@@ -60,6 +60,7 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
     }
 
     private fun setComponent() {
+        stepUnitSelected = true
         tvKmSelectUnit.text =  "/" + getString(R.string.personal_km_selected)
         tvStepSelectUnit.setTypeface(null, Typeface.BOLD)
 
@@ -71,17 +72,26 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
     }
 
     private fun onClickChangeUnit() {
+        val smallPx = context?.resources?.getDimension(R.dimen._12sdp)!!
+        val largePx = context?.resources?.getDimension(R.dimen._14sdp)!!
+        val smallSize = smallPx / getResources().displayMetrics.density
+        val largeSize = largePx / getResources().displayMetrics.density
+
         stepUnitSelected = if (stepUnitSelected) {
             tvKmSelectUnit.text = getString(R.string.personal_km_selected)
             tvStepSelectUnit.text = getString(R.string.personal_step_selected) + "/"
             tvStepSelectUnit.setTypeface(null, Typeface.NORMAL)
             tvKmSelectUnit.setTypeface(null, Typeface.BOLD)
+            tvKmSelectUnit.setTextSize(TypedValue.COMPLEX_UNIT_SP, largeSize)
+            tvStepSelectUnit.setTextSize(TypedValue.COMPLEX_UNIT_SP, smallSize)
             false
         } else {
             tvStepSelectUnit.text = getString(R.string.personal_step_selected)
             tvKmSelectUnit.text =  "/" + getString(R.string.personal_km_selected)
             tvStepSelectUnit.setTypeface(null, Typeface.BOLD)
             tvKmSelectUnit.setTypeface(null, Typeface.NORMAL)
+            tvStepSelectUnit.setTextSize(TypedValue.COMPLEX_UNIT_SP, largeSize)
+            tvKmSelectUnit.setTextSize(TypedValue.COMPLEX_UNIT_SP, smallSize)
             true
         }
 
