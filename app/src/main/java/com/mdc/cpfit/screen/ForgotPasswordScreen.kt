@@ -3,12 +3,14 @@ package com.mdc.cpfit.screen
 import android.animation.Animator
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.OvershootInterpolator
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.mdc.cpfit.R
@@ -175,6 +177,27 @@ class ForgotPasswordScreen : ScreenUnit() {
         animatorSet.start()
     }
 
-
+//    private fun showEditTextAnimation() {
+//
+//        val userCoords = intArrayOf(0, 0)
+//        tvBack.getLocationOnScreen(userCoords)
+//        val lp = tvBack?.getLayoutParams() as ViewGroup.MarginLayoutParams
+//        val deltaY = (userCoords[1] - edtEmail.y - tvBack.height - lp.bottomMargin).toFloat()
+//
+//        var animItem1 = ObjectAnimator.ofFloat(viewInputAutoFill, "alpha", 0F, 1F)
+//        var animItem2 = ObjectAnimator.ofFloat(edtEmail, "translationY", 0F, deltaY)
+//
+//        var animSet = AnimatorSet()
+//        animSet.setDuration(300)
+//        animSet.setInterpolator(OvershootInterpolator())
+//        animSet.addListener (object: Animator.AnimatorListener {
+//            override fun onAnimationEnd(p0: Animator?) {}
+//            override fun onAnimationRepeat(animation: Animator?) {}
+//            override fun onAnimationCancel(animation: Animator?) {}
+//            override fun onAnimationStart(animation: Animator?) {}
+//        })
+//        animSet.playTogether(animItem1,animItem2)
+//        animSet.start()
+//    }
 
 }

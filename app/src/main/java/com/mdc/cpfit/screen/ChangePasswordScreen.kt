@@ -10,7 +10,7 @@ import com.mdc.cpfit.activity.MainContainActivity
 import com.mdc.cpfit.dialog.DialogBase
 import com.mdc.cpfit.util.ScreenUnit
 import com.mdc.cpfit.util.view.MyPasswordTransformationMethod
-import kotlinx.android.synthetic.main.sc_chage_password.*
+import kotlinx.android.synthetic.main.sc_change_password.*
 
 
 class ChangePasswordScreen : ScreenUnit() {
@@ -39,7 +39,7 @@ class ChangePasswordScreen : ScreenUnit() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        rootView = inflater?.inflate(R.layout.sc_chage_password, container, false)
+        rootView = inflater?.inflate(R.layout.sc_change_password, container, false)
         return rootView
     }
 
