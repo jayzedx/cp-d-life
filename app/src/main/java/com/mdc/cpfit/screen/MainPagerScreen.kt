@@ -14,6 +14,7 @@ import com.mdc.cpfit.R
 import com.mdc.cpfit.adapter.MainViewPagerAdapter
 import com.mdc.cpfit.screen.tab1.PersonalScreen
 import com.mdc.cpfit.screen.tab1.PersonalScreenOld2
+import com.mdc.cpfit.screen.tab2.LeaderBoardScreen
 import com.mdc.cpfit.util.ScreenUnit
 import com.mdc.cpfit.util.view.CustomViewPager
 import kotlinx.android.synthetic.main.toolbar.*
@@ -102,13 +103,14 @@ class MainPagerScreen : ScreenUnit() {
 
     private fun setupViewPager(pager: CustomViewPager?) {
         val f1 = PersonalScreen.newInstance()
-        val f2 = PersonalScreenOld2.newInstance()
+        val f2 = LeaderBoardScreen.newInstance()
+        val f3 = PersonalScreenOld2.newInstance()
         var adapter = MainViewPagerAdapter(childFragmentManager)
         adapter.addFragment(f1, "TAB 1")
         adapter.addFragment(f2, "TAB 2")
+        adapter.addFragment(f3, "TAB 3")
         pager?.setPagingEnabled(false)
         pager?.adapter = adapter
-
 
     }
 
