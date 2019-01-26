@@ -12,8 +12,8 @@
 
     <com.viewpagerindicator.CirclePageIndicator
         android:id="@+id/indicator"
-        app:pageColor="@color/main_theme"
         app:strokeColor="@color/main_theme"
+        app:fillColor="@color/main_theme"
         android:layout_width="match_parent"
         android:layout_height="15dp"
         android:layout_alignParentBottom="true" />

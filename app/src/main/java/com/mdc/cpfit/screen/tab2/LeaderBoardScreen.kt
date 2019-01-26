@@ -52,11 +52,13 @@ class LeaderBoardScreen : ScreenUnit() {
     private fun setViewPager() {
         var model = null
         adapter = MainViewPagerAdapter(childFragmentManager)
-        adapter.addFragment(PersonalScreen.newInstance(), "TAB1")
-        adapter.addFragment(PersonalScreen.newInstance(), "TAB2")
-        adapter.addFragment(PersonalScreen.newInstance(), "TAB3")
+        adapter.addFragment(LeaderBoardPagerScreen.newInstance(), "TAB1")
+        adapter.addFragment(LeaderBoardPagerScreen.newInstance(), "TAB2")
+        adapter.addFragment(LeaderBoardPagerScreen.newInstance(), "TAB3")
         pager?.offscreenPageLimit = 3
         pager?.adapter = adapter
         indicator.setViewPager(pager)
     }
+
+
 }

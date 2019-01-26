@@ -45,7 +45,7 @@
 
                 <!--&lt;!&ndash;<RelativeLayout&ndash;&gt;-->
                 <!--&lt;!&ndash;android:id="@+id/viewImvProfile"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:background="@drawable/border_round"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:background="@drawable/border_top_rank"&ndash;&gt;-->
                 <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
                 <!--&lt;!&ndash;android:layout_height="wrap_content">&ndash;&gt;-->
                 <!--&lt;!&ndash;<ImageView&ndash;&gt;-->

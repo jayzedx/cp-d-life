@@ -138,6 +138,7 @@ class ForgotPasswordScreen : ScreenUnit() {
         }
     }
 
+
     private fun hideEditTextAnimation() {
         var animatorSet = AnimatorSet()
 //        animatorSet.setDuration(500)
@@ -150,6 +151,7 @@ class ForgotPasswordScreen : ScreenUnit() {
                 viewInputAutoFill.visibility = View.GONE
             }
         })
+
         var anim = AnimatorInflater.loadAnimator(context, R.animator.to_right) as AnimatorSet
         anim.setTarget(viewInputAutoFill)
         animatorSet.play(anim)
@@ -176,6 +178,7 @@ class ForgotPasswordScreen : ScreenUnit() {
         animatorSet.play(anim)
         animatorSet.start()
     }
+
 
 //    private fun showEditTextAnimation() {
 //

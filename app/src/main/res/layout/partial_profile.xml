@@ -18,7 +18,7 @@
 
         <!--<RelativeLayout-->
         <!--android:id="@+id/viewImvProfile"-->
-        <!--android:background="@drawable/border_round"-->
+        <!--android:background="@drawable/border_top_rank"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content">-->
         <!--<ImageView-->

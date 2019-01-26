@@ -17,17 +17,6 @@
         android:paddingEnd="@dimen/PaddingSpaceXL"
         android:paddingTop="@dimen/PaddingSpaceXL">
 
-        <!--<RelativeLayout-->
-            <!--android:id="@+id/viewImvProfile"-->
-            <!--android:background="@drawable/border_round"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content">-->
-            <!--<ImageView-->
-                <!--android:id="@+id/imvProfile"-->
-                <!--android:layout_centerInParent="true"-->
-                <!--android:layout_width="@dimen/_75sdp"-->
-                <!--android:layout_height="@dimen/_75sdp" />-->
-        <!--</RelativeLayout>-->
 
         <ImageView
             android:id="@+id/imvProfile"
