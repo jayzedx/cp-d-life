@@ -1,5 +1,6 @@
 package com.mdc.cpfit.screen.tab2
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -138,8 +139,8 @@ class TrophyScreen : ScreenUnit() {
 
         override fun onBindHeaderViewHolder(holder: RecyclerView.ViewHolder?) {
             val headerHolder = holder as HeaderViewHolder
+            headerHolder.tvTitle.setTypeface(null, Typeface.BOLD)
             headerHolder.tvTitle.text = title
-
         }
     }
 
