@@ -52,6 +52,7 @@ class TrophyScreen : ScreenUnit() {
     private fun setValue() {
         val args = arguments
         //type = args?.getString(MsgProperties.PERSON_TYPE, "")!!
+        tvName.setTypeface(null, Typeface.BOLD)
     }
     private fun setComponent() {
 

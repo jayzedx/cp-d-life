@@ -6,12 +6,12 @@
     android:layout_height="match_parent">
 
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/viewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/MarginSpaceXL"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,27 +19,31 @@
         <ImageView
             android:layout_width="@dimen/_75sdp"
             android:layout_height="@dimen/_75sdp"
+            android:layout_centerHorizontal="true"
             android:src="@drawable/ic_personal_profile" />
 
         <ImageView
             android:id="@+id/imvRank1"
             android:layout_width="@dimen/_75sdp"
             android:layout_height="@dimen/_75sdp"
+            android:layout_centerHorizontal="true"
             android:src="@drawable/border_profile" />
-    </FrameLayout>
 
-    <TextView
-        android:id="@+id/tvName"
-        style="@style/TextTint12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MarginSpace"
-        android:text="Abcdefghijklmn"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewProfile" />
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/TextTint12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imvRank1"
+            android:layout_marginTop="@dimen/MarginSpace"
+            android:text="Abcdefghijklmn opqurstuvwxyz"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
 
 
     <android.support.constraint.Guideline
@@ -72,6 +76,7 @@
 
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="@dimen/_130sdp"
         android:layout_height="@dimen/_25sdp"
         android:layout_marginBottom="@dimen/MarginSpaceL"
@@ -96,6 +101,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/MarginSpace"
+        android:paddingLeft="@dimen/PaddingSpaceXXL"
+        android:paddingRight="@dimen/PaddingSpaceXXL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
