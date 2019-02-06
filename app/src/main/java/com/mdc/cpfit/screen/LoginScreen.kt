@@ -63,7 +63,7 @@ class LoginScreen : ScreenUnit() {
         tvSignUp.setTypeface(null, Typeface.BOLD)
 
         btnSignIn.setAllCaps(false)
-        edtPassword.setTransformationMethod(MyPasswordTransformationMethod())
+        //edtPassword.setTransformationMethod(MyPasswordTransformationMethod())
 
         btnSignIn.setOnClickListener {
             activityMain.startActivityUnit(MainContainActivity::class.java, null)

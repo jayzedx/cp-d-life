@@ -5,117 +5,307 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="wrap_content"
+        android:id="@+id/viewRank1"
+        android:layout_width="@dimen/_85sdp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toStartOf="@+id/relativeLayout3"
-        app:layout_constraintStart_toEndOf="@+id/relativeLayout2"
-        app:layout_constraintTop_toTopOf="parent">
-        <ImageView
-            android:layout_width="@dimen/_75sdp"
-            android:layout_height="@dimen/_75sdp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/ic_personal_profile" />
-        <ImageView
-            android:layout_width="@dimen/_75sdp"
-            android:layout_height="@dimen/_75sdp"
-            android:src="@drawable/border_top_rank" />
-        <RelativeLayout
-            android:layout_marginLeft="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_2sdp"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:background="@drawable/tag_top_rank">
-            <TextView
-                android:text="1"
-                android:padding="0dp"
-                android:textStyle="bold"
-                style="@style/TextTitle14"
-                android:textSize="@dimen/_12sdp"
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/relativeLayout">
-        <ImageView
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/ic_personal_profile" />
-        <ImageView
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/border_second_rank" />
-        <RelativeLayout
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:background="@drawable/tag_second_rank">
-            <TextView
-                android:text="2"
-                android:padding="0dp"
-                android:textStyle="bold"
-                style="@style/TextTitle14"
-                android:textSize="@dimen/_12sdp"
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="43dp"
-        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+        android:layout_marginTop="@dimen/MarginSpaceXL"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/relativeLayout">
-        <ImageView
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/ic_personal_profile" />
-        <ImageView
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/border_third_rank" />
-        <RelativeLayout
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:background="@drawable/tag_third_rank">
+        app:layout_constraintStart_toStartOf="parent">
+
+        <FrameLayout
+            android:id="@+id/viewImvRank1"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:src="@drawable/ic_personal_profile" />
+
+            <ImageView
+                android:id="@+id/imvRank1"
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:src="@drawable/border_top_rank" />
+
             <TextView
-                android:text="3"
-                android:padding="0dp"
-                android:textStyle="bold"
                 style="@style/TextTitle14"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/tag_top_rank"
+                android:paddingTop="@dimen/_2sdp"
+                android:text="1"
+                android:layout_marginLeft="@dimen/MarginSpaceS"
+                android:textAlignment="center"
                 android:textSize="@dimen/_12sdp"
-                android:layout_centerInParent="true"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+
+        <!--Top Rank-->
+        <TextView
+            android:id="@+id/tvNameRank1"
+            style="@style/TextBlue10"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewImvRank1"
+            android:layout_centerHorizontal="true"
+            android:text="Abcdefghijklmn"
+            android:textAlignment="center" />
+
+        <RelativeLayout
+            android:layout_below="@+id/tvNameRank1"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvTitleRank1"
+                style="@style/TextSub10"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/MarginSpaceSS"
+                android:textAlignment="center"
+                android:text="Freewill Solutions Co,Ltd."/>
+
+            <TextView
+                android:id="@+id/tvDistanceRank1"
+                style="@style/TextSub10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitleRank1"
+                android:layout_marginTop="@dimen/MarginSpaceSS"
+                android:text="Abcdefghijklmno"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/viewRank2"
+        android:layout_width="@dimen/_85sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/MarginSpace"
+        app:layout_constraintEnd_toStartOf="@+id/viewRank1"
+        app:layout_constraintTop_toTopOf="@+id/viewRank1">
+
+        <FrameLayout
+            android:id="@+id/viewImvRank2"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/ic_personal_profile" />
+
+            <ImageView
+                android:id="@+id/imvRank2"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/border_second_rank" />
+
+            <TextView
+                style="@style/TextTitle14"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/tag_second_rank"
+                android:paddingTop="@dimen/_2sdp"
+                android:text="2"
+                android:textAlignment="center"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+
+
+        <!--Second Rank-->
+        <TextView
+            android:id="@+id/tvNameRank2"
+            style="@style/TextBlue10"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewImvRank2"
+            android:layout_centerHorizontal="true"
+            android:text="Abcdefghijklmn"
+            android:textAlignment="center" />
+
+        <RelativeLayout
+            android:layout_below="@+id/tvNameRank2"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvTitleRank2"
+                style="@style/TextSub10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/MarginSpaceSS"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:text="Freewill Solutions Co,Ltd."/>
+
+            <TextView
+                android:id="@+id/tvDistanceRank2"
+                style="@style/TextSub10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitleRank2"
+                android:layout_marginTop="@dimen/MarginSpaceSS"
+                android:text="Abcdefghijklmno"
+                android:layout_centerHorizontal="true" />
         </RelativeLayout>
     </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/viewRank3"
+        android:layout_width="@dimen/_85sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/MarginSpace"
+        app:layout_constraintStart_toEndOf="@+id/viewRank1"
+        app:layout_constraintTop_toTopOf="@+id/viewRank1">
+
+        <FrameLayout
+            android:id="@+id/viewImvRank3"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/ic_personal_profile" />
+
+            <ImageView
+                android:id="@+id/imvRank3"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/border_third_rank" />
+
+            <TextView
+                style="@style/TextTitle14"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/PaddingSpaceSS"
+                android:background="@drawable/tag_third_rank"
+                android:paddingTop="@dimen/_2sdp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+
+
+        <!--Third Rank-->
+        <TextView
+            android:id="@+id/tvNameRank3"
+            style="@style/TextBlue10"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewImvRank3"
+            android:layout_centerHorizontal="true"
+            android:text="sssss"
+            android:textAlignment="center" />
+
+        <RelativeLayout
+            android:layout_below="@+id/tvNameRank3"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvTitleRank3"
+                style="@style/TextSub10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/MarginSpaceSS"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:text="Freewill Solutions Co,Ltd." />
+
+            <TextView
+                android:id="@+id/tvDistanceRank3"
+                style="@style/TextSub10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitleRank3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
+                android:text="ssss" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.35" />
 
+
+
+    <FrameLayout
+        android:id="@+id/header"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/MarginSpaceL"
+        android:background="@drawable/bg_sub_head_leaderboard"
+        android:paddingEnd="@dimen/PaddingSpaceXXL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline">
+
+        <TextView
+            android:id="@+id/tvHeadDistance"
+            style="@style/TextTitle12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:text="5.4 km" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/MarginSpaceL"
+        android:background="@drawable/bg_main_head_leaderboard"
+        android:paddingStart="@dimen/PaddingSpaceXL"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvHeadName"
+            style="@style/TextTitle12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="start"
+            android:text="Member : 3" />
+    </FrameLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recLeaderboard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/MarginSpace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        tools:listitem="@layout/list_leaderboard" />
 
 </android.support.constraint.ConstraintLayout>

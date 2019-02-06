@@ -1,394 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:id="@+id/scroll_view"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:fillViewport="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/viewProfileContent"
+        android:paddingBottom="@dimen/PaddingSpaceXL"
+        android:paddingEnd="@dimen/PaddingSpaceXL"
+        android:paddingStart="@dimen/PaddingSpaceXL"
+        android:paddingTop="@dimen/PaddingSpaceXL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <RelativeLayout
-            android:id="@+id/viewProfileContent"
-            android:paddingBottom="@dimen/PaddingSpaceXL"
-            android:paddingEnd="@dimen/PaddingSpaceXL"
-            android:paddingStart="@dimen/PaddingSpaceXL"
-            android:paddingTop="@dimen/PaddingSpaceXL"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/imvProfile"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/ic_personal_profile" />
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/TextCaption12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/MarginSpaceS"
+            android:layout_marginLeft="@dimen/MarginSpaceXXL"
+            android:layout_toRightOf="@+id/imvProfile"
+            android:text="Firstname Surname" />
+
+
+        <TextView
+            android:id="@+id/tvWeight"
+            style="@style/TextCaption12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvName"
+            android:layout_below="@+id/tvName"
+            android:layout_marginBottom="@dimen/MarginSpaceS"
+            android:layout_marginRight="@dimen/MarginSpaceL"
+            android:text="Weight: 75" />
+
+        <TextView
+            android:id="@+id/tvHeight"
+            style="@style/TextCaption12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:layout_toRightOf="@+id/tvWeight"
+            android:text="Height: 178" />
+
+        <TextView
+            android:id="@+id/tvBmi"
+            style="@style/TextCaption12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvName"
+            android:layout_below="@+id/tvWeight"
+            android:layout_marginBottom="@dimen/MarginSpaceS"
+            android:layout_marginRight="@dimen/MarginSpaceL"
+            android:text="BMI: 23.7" />
+
+        <TextView
+            android:id="@+id/tvBmiStatus"
+            style="@style/TextCaption12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvHeight"
+            android:layout_alignTop="@+id/tvBmi"
+            android:layout_below="@+id/tvHeight"
+            android:text="Over weight" />
+    </RelativeLayout>
+
+    <!--Point-->
+    <RelativeLayout
+        android:id="@+id/viewPoint"
+        android:layout_below="@+id/viewProfileContent"
+        android:paddingStart="@dimen/PaddingSpaceXL"
+        android:paddingEnd="@dimen/PaddingSpaceXL"
+        android:paddingTop="@dimen/PaddingSpaceS"
+        android:paddingBottom="@dimen/PaddingSpaceS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_head">
+        <TextView
+            android:id="@+id/tvPoint"
+            android:textColor="@color/main_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
-            <ImageView
-                android:id="@+id/imvProfile"
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="@dimen/_60sdp"
-                android:src="@drawable/ic_personal_profile" />
-
-            <TextView
-                android:id="@+id/tvName"
-                style="@style/TextCaption12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/MarginSpaceS"
-                android:layout_marginLeft="@dimen/MarginSpaceXXL"
-                android:layout_toRightOf="@+id/imvProfile"
-                android:text="Firstname Surname" />
+            style="@style/TextTint10"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            android:text="0 Point"/>
+    </RelativeLayout>
 
 
-            <TextView
-                android:id="@+id/tvWeight"
-                style="@style/TextCaption12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tvName"
-                android:layout_below="@+id/tvName"
-                android:layout_marginBottom="@dimen/MarginSpaceS"
-                android:layout_marginRight="@dimen/MarginSpaceL"
-                android:text="Weight: 75" />
-
-            <TextView
-                android:id="@+id/tvHeight"
-                style="@style/TextCaption12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvName"
-                android:layout_toRightOf="@+id/tvWeight"
-                android:text="Height: 178" />
-
-            <TextView
-                android:id="@+id/tvBmi"
-                style="@style/TextCaption12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tvName"
-                android:layout_below="@+id/tvWeight"
-                android:layout_marginBottom="@dimen/MarginSpaceS"
-                android:layout_marginRight="@dimen/MarginSpaceL"
-                android:text="BMI: 23.7" />
-
-            <TextView
-                android:id="@+id/tvBmiStatus"
-                style="@style/TextCaption12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tvHeight"
-                android:layout_alignTop="@+id/tvBmi"
-                android:layout_below="@+id/tvHeight"
-                android:text="Over weight" />
-        </RelativeLayout>
-
-        <!--Point-->
-        <RelativeLayout
-            android:paddingStart="@dimen/PaddingSpaceXL"
-            android:paddingEnd="@dimen/PaddingSpaceXL"
-            android:paddingTop="@dimen/PaddingSpaceS"
-            android:paddingBottom="@dimen/PaddingSpaceS"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/bg_head">
-            <TextView
-                android:id="@+id/tvPoint"
-                android:textColor="@color/main_theme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/TextTint10"
-                android:textStyle="bold"
-                android:textAlignment="textEnd"
-                android:text="0 Point"/>
-        </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_below="@+id/viewPoint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--<include layout="@layout/partial_personal_distance"/>-->
+    </FrameLayout>
 
 
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_weight="4"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-            <!--<include layout="@layout/partial_personal_add_distance"/>-->
-        </FrameLayout>
+</RelativeLayout>
 
 
 
+
+
+
+
+<!--<ScrollView-->
+    <!--android:id="@+id/scroll_view"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:fillViewport="true"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
 
         <!--<RelativeLayout-->
-            <!--android:paddingStart="@dimen/_15sdp"-->
-            <!--android:paddingEnd="@dimen/_15sdp"-->
-            <!--android:paddingTop="@dimen/_15sdp"-->
+            <!--android:id="@+id/viewProfileContent"-->
+            <!--android:paddingBottom="@dimen/PaddingSpaceXL"-->
+            <!--android:paddingEnd="@dimen/PaddingSpaceXL"-->
+            <!--android:paddingStart="@dimen/PaddingSpaceXL"-->
+            <!--android:paddingTop="@dimen/PaddingSpaceXL"-->
             <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center">-->
             <!--<ImageView-->
-                <!--android:id="@+id/imvAdd"-->
-                <!--android:layout_alignParentRight="true"-->
-                <!--android:src="@drawable/ic_plus"-->
+                <!--android:id="@+id/imvProfile"-->
+                <!--android:layout_width="@dimen/_60sdp"-->
+                <!--android:layout_height="@dimen/_60sdp"-->
+                <!--android:src="@drawable/ic_personal_profile" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvName"-->
+                <!--style="@style/TextCaption12"-->
                 <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content" />-->
-            <!--<RelativeLayout-->
-                <!--android:id="@+id/viewDailyDistance"-->
-                <!--android:gravity="center"-->
-                <!--android:layout_marginTop="@dimen/MarginSpace"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
-                <!--<TextView-->
-                    <!--android:id="@+id/tvStepChallenge"-->
-                    <!--style="@style/TextTint44"-->
-                    <!--android:layout_marginRight="@dimen/MarginSpaceL"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="12,345" />-->
-
-                <!--<TextView-->
-                    <!--android:id="@+id/tvStepUnit"-->
-                    <!--android:textStyle="bold"-->
-                    <!--android:text="@string/personal_step"-->
-                    <!--style="@style/TextHead12"-->
-                    <!--android:layout_marginTop="@dimen/MarginSpace"-->
-                    <!--android:layout_toRightOf="@id/tvStepChallenge"-->
-                    <!--android:layout_alignTop="@+id/tvStepChallenge"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"/>-->
-
-                <!--<TextView-->
-                    <!--android:id="@+id/tvKmChallenge"-->
-                    <!--style="@style/TextSub16"-->
-                    <!--android:layout_alignBaseline="@+id/tvStepChallenge"-->
-                    <!--android:layout_toRightOf="@+id/tvStepChallenge"-->
-                    <!--android:layout_below="@+id/tvStepUnit"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="9.4 km"/>-->
-            <!--</RelativeLayout>-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="@dimen/MarginSpaceS"-->
+                <!--android:layout_marginLeft="@dimen/MarginSpaceXXL"-->
+                <!--android:layout_toRightOf="@+id/imvProfile"-->
+                <!--android:text="Firstname Surname" />-->
 
 
+            <!--<TextView-->
+                <!--android:id="@+id/tvWeight"-->
+                <!--style="@style/TextCaption12"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignLeft="@+id/tvName"-->
+                <!--android:layout_below="@+id/tvName"-->
+                <!--android:layout_marginBottom="@dimen/MarginSpaceS"-->
+                <!--android:layout_marginRight="@dimen/MarginSpaceL"-->
+                <!--android:text="Weight: 75" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvHeight"-->
+                <!--style="@style/TextCaption12"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/tvName"-->
+                <!--android:layout_toRightOf="@+id/tvWeight"-->
+                <!--android:text="Height: 178" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvBmi"-->
+                <!--style="@style/TextCaption12"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignLeft="@+id/tvName"-->
+                <!--android:layout_below="@+id/tvWeight"-->
+                <!--android:layout_marginBottom="@dimen/MarginSpaceS"-->
+                <!--android:layout_marginRight="@dimen/MarginSpaceL"-->
+                <!--android:text="BMI: 23.7" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvBmiStatus"-->
+                <!--style="@style/TextCaption12"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignLeft="@+id/tvHeight"-->
+                <!--android:layout_alignTop="@+id/tvBmi"-->
+                <!--android:layout_below="@+id/tvHeight"-->
+                <!--android:text="Over weight" />-->
         <!--</RelativeLayout>-->
-        <!--<LinearLayout-->
-            <!--android:layout_marginTop="@dimen/_10sdp"-->
-            <!--android:orientation="vertical"-->
+
+        <!--&lt;!&ndash;Point&ndash;&gt;-->
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/viewPoint"-->
+            <!--android:layout_below="@+id/viewProfileContent"-->
+            <!--android:paddingStart="@dimen/PaddingSpaceXL"-->
+            <!--android:paddingEnd="@dimen/PaddingSpaceXL"-->
+            <!--android:paddingTop="@dimen/PaddingSpaceS"-->
+            <!--android:paddingBottom="@dimen/PaddingSpaceS"-->
             <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
-
-            <!--<LinearLayout-->
-                <!--android:id="@+id/viewTitleDistance"-->
-                <!--android:layout_marginLeft="@dimen/MarginSpaceXL"-->
-                <!--android:layout_marginRight="@dimen/MarginSpaceXL"-->
-                <!--android:layout_marginBottom="@dimen/_15sdp"-->
-                <!--android:paddingLeft="@dimen/PaddingSpaceL"-->
-                <!--android:paddingRight="@dimen/PaddingSpaceL"-->
-                <!--android:orientation="horizontal"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/bg_head">-->
+            <!--<TextView-->
+                <!--android:id="@+id/tvPoint"-->
+                <!--android:textColor="@color/main_theme"-->
                 <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
-                <!--<TextView-->
-                    <!--android:id="@+id/tvTitleRecord"-->
-                    <!--android:text="@string/personal_title_record"-->
-                    <!--android:textStyle="bold"-->
-                    <!--style="@style/TextTint10"-->
-                    <!--android:layout_weight="2"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content" />-->
-                <!--<TextView-->
-                    <!--android:id="@+id/tvTitleStep"-->
-                    <!--android:text="@string/personal_title_step"-->
-                    <!--style="@style/TextTint10"-->
-                    <!--android:textStyle="bold"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:textAlignment="textEnd"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content" />-->
-                <!--<TextView-->
-                    <!--android:id="@+id/tvTitleDistance"-->
-                    <!--android:text="@string/personal_title_distance"-->
-                    <!--style="@style/TextTint10"-->
-                    <!--android:textStyle="bold"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:textAlignment="textEnd"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content" />-->
-            <!--</LinearLayout>-->
-
-            <!--&lt;!&ndash;my record&ndash;&gt;-->
-            <!--<android.support.v7.widget.CardView-->
-                <!--style="@style/CardViewNoElevationStyle"-->
-                <!--android:layout_marginLeft="@dimen/MarginSpaceXL"-->
-                <!--android:layout_marginRight="@dimen/MarginSpaceXL"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
-                <!--<RelativeLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:background="@drawable/bg_my_record"-->
-                    <!--android:paddingLeft="@dimen/PaddingSpaceL"-->
-                    <!--android:paddingRight="@dimen/PaddingSpaceL"-->
-                    <!--android:paddingBottom="@dimen/PaddingSpaceL"-->
-                    <!--android:paddingTop="@dimen/PaddingSpace"-->
-                    <!--android:layout_height="@dimen/_65sdp">-->
-                    <!--<TextView-->
-                        <!--android:id="@+id/tvTitleMyRecord"-->
-                        <!--style="@style/TextTitle"-->
-                        <!--android:textStyle="italic|bold"-->
-                        <!--android:text="@string/personal_title_my_record"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content" />-->
-                    <!--<LinearLayout-->
-                        <!--android:layout_below="@+id/tvTitleMyRecord"-->
-                        <!--android:orientation="horizontal"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content">-->
-                        <!--<TextView-->
-                            <!--style="@style/TextTitle"-->
-                            <!--android:text="28,552,493"-->
-                            <!--android:textAlignment="textEnd"-->
-                            <!--android:layout_weight="1.7"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content" />-->
-                        <!--<TextView-->
-                            <!--android:text="8,565.74"-->
-                            <!--style="@style/TextTitle"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:textAlignment="textEnd"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content" />-->
-                    <!--</LinearLayout>-->
-
-                <!--</RelativeLayout>-->
-            <!--</android.support.v7.widget.CardView>-->
-
-            <!--&lt;!&ndash;Company Record&ndash;&gt;-->
-            <!--<android.support.v7.widget.CardView-->
-                <!--style="@style/CardViewNoElevationStyle"-->
-                <!--android:layout_marginTop="@dimen/MarginSpaceS"-->
-                <!--android:layout_marginLeft="@dimen/MarginSpaceXL"-->
-                <!--android:layout_marginRight="@dimen/MarginSpaceXL"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
-                <!--<RelativeLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:background="@drawable/bg_company_record"-->
-                    <!--android:paddingLeft="@dimen/PaddingSpaceL"-->
-                    <!--android:paddingRight="@dimen/PaddingSpaceL"-->
-                    <!--android:paddingBottom="@dimen/PaddingSpaceL"-->
-                    <!--android:paddingTop="@dimen/PaddingSpace"-->
-                    <!--android:layout_height="@dimen/_65sdp">-->
-                    <!--<TextView-->
-                        <!--android:id="@+id/tvTitleCompanyRecord"-->
-                        <!--style="@style/TextTitle"-->
-                        <!--android:textStyle="italic|bold"-->
-                        <!--android:text="@string/personal_title_company_record"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content" />-->
-                    <!--<LinearLayout-->
-                        <!--android:id="@+id/viewCompanyDistance"-->
-                        <!--android:layout_below="@+id/tvTitleCompanyRecord"-->
-                        <!--android:orientation="horizontal"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content">-->
-                        <!--<TextView-->
-                            <!--style="@style/TextTitle"-->
-                            <!--android:text="28,552,493"-->
-                            <!--android:textAlignment="textEnd"-->
-                            <!--android:layout_weight="1.7"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content" />-->
-                        <!--<TextView-->
-                            <!--android:text="8,565.74"-->
-                            <!--style="@style/TextTitle"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:textAlignment="textEnd"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content" />-->
-                    <!--</LinearLayout>-->
-                    <!--<LinearLayout-->
-                        <!--android:layout_below="@+id/viewCompanyDistance"-->
-                        <!--android:orientation="horizontal"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content">-->
-                        <!--<TextView-->
-                            <!--style="@style/TextTitle10"-->
-                            <!--android:text="/ 100,000"-->
-                            <!--android:textAlignment="textEnd"-->
-                            <!--android:layout_weight="1.7"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content" />-->
-                        <!--<TextView-->
-                            <!--style="@style/TextTitle10"-->
-                            <!--android:text="/ 999 "-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:textAlignment="textEnd"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content" />-->
-                    <!--</LinearLayout>-->
-                <!--</RelativeLayout>-->
-            <!--</android.support.v7.widget.CardView>-->
+                <!--android:layout_height="wrap_content"-->
+                <!--style="@style/TextTint10"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textAlignment="textEnd"-->
+                <!--android:text="0 Point"/>-->
+        <!--</RelativeLayout>-->
 
 
-            <!--&lt;!&ndash;Total Record&ndash;&gt;-->
-            <!--<android.support.v7.widget.CardView-->
-                <!--style="@style/CardViewNoElevationStyle"-->
-                <!--android:layout_marginTop="@dimen/MarginSpaceS"-->
-                <!--android:layout_marginLeft="@dimen/MarginSpaceXL"-->
-                <!--android:layout_marginRight="@dimen/MarginSpaceXL"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
-                <!--<RelativeLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:background="@drawable/bg_total_record"-->
-                    <!--android:paddingLeft="@dimen/PaddingSpaceL"-->
-                    <!--android:paddingRight="@dimen/PaddingSpaceL"-->
-                    <!--android:paddingBottom="@dimen/PaddingSpaceL"-->
-                    <!--android:paddingTop="@dimen/PaddingSpace"-->
-                    <!--android:layout_height="@dimen/_65sdp">-->
-                    <!--<TextView-->
-                        <!--android:id="@+id/tvTitleTotalRecord"-->
-                        <!--style="@style/TextTitle"-->
-                        <!--android:text="@string/personal_title_total_record"-->
-                        <!--android:textStyle="italic|bold"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content" />-->
-                    <!--<LinearLayout-->
-                        <!--android:id="@+id/viewTotalDistance"-->
-                        <!--android:layout_below="@+id/tvTitleTotalRecord"-->
-                        <!--android:orientation="horizontal"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content">-->
-                        <!--<TextView-->
-                            <!--style="@style/TextTitle"-->
-                            <!--android:text="28,552,493"-->
-                            <!--android:textAlignment="textEnd"-->
-                            <!--android:layout_weight="1.7"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content" />-->
-                        <!--<TextView-->
-                            <!--android:text="8,565.74"-->
-                            <!--style="@style/TextTitle"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:textAlignment="textEnd"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content" />-->
-                    <!--</LinearLayout>-->
-                    <!--<LinearLayout-->
-                        <!--android:layout_below="@+id/viewTotalDistance"-->
-                        <!--android:orientation="horizontal"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content">-->
-                        <!--<TextView-->
-                            <!--style="@style/TextTitle10"-->
-                            <!--android:text="/ 120,000,000"-->
-                            <!--android:textAlignment="textEnd"-->
-                            <!--android:layout_weight="1.7"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content" />-->
-                        <!--<TextView-->
-                            <!--style="@style/TextTitle10"-->
-                            <!--android:text="/ 999,999"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:textAlignment="textEnd"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content" />-->
-                    <!--</LinearLayout>-->
-                <!--</RelativeLayout>-->
-            <!--</android.support.v7.widget.CardView>-->
-
-        <!--</LinearLayout>-->
+        <!--<FrameLayout-->
+            <!--android:id="@+id/container"-->
+            <!--android:layout_below="@+id/viewPoint"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+            <!--&lt;!&ndash;<include layout="@layout/partial_personal_distance"/>&ndash;&gt;-->
+        <!--</FrameLayout>-->
 
 
-
-    </LinearLayout>
-</ScrollView>
+    <!--</RelativeLayout>-->
+<!--</ScrollView>-->

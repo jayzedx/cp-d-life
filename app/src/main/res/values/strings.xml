@@ -46,6 +46,18 @@
     <string name="login_signup">Sign up</string>
 
 
+    <string name="leaderboard_head_company">Member : </string>
+    <string name="leaderboard_head_all_company">Company : </string>
+    <string name="leaderboard_head_all_member">Top 100 Ranking</string>
+    <string name="leaderboard_km_unit">km</string>
+
+
+    <string name="trophy_head_success">Success Ratings</string>
+    <string name="trophy_unit">trophy</string>
+    <string name="trophy_event_header">Special Events</string>
+    <string name="trophy_distance_header">Distance Trophy</string>
+
+
     <!--O-->
     <string name="otp_verify">Verifying your number</string>
     <string name="otp_verify_title">Please enter the validation code \nthat get from sms</string>

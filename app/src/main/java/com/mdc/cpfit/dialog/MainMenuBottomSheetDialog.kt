@@ -1,7 +1,5 @@
-package com.mdc.cpfit.screen
+package com.mdc.cpfit.dialog
 
-import android.R.id.button2
-import android.R.id.button1
 import android.os.Bundle
 import android.view.ViewGroup
 import android.view.LayoutInflater
@@ -14,10 +12,21 @@ class MainMenuBottomSheetDialog : BottomSheetDialogFragment() {
 
     private var mListener: BottomSheetListener? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater.inflate(R.layout.main_menu, container, false)
-        return v
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme)
+
     }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.main_menu, container, false)
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
 
     interface BottomSheetListener {
         fun onButtonClicked(text: String)

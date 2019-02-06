@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/PaddingSpaceXL">
-
+    android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/viewDailyDistance"
+        android:layout_weight="2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="18"
+        android:layout_height="wrap_content"
         android:paddingEnd="@dimen/_15sdp"
         android:paddingStart="@dimen/_15sdp"
         android:paddingTop="@dimen/_15sdp">
@@ -22,7 +23,6 @@
             android:src="@drawable/ic_plus" />
 
         <RelativeLayout
-            android:id="@+id/viewDailyDistance"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/MarginSpace"
@@ -62,32 +62,28 @@
     </RelativeLayout>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/viewTitleDistance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_15sdp"
-        android:layout_marginLeft="@dimen/MarginSpaceXL"
-        android:layout_marginRight="@dimen/MarginSpaceXL"
-        android:orientation="horizontal"
-        android:paddingLeft="@dimen/PaddingSpaceL"
-        android:paddingRight="@dimen/PaddingSpaceL">
+        android:layout_marginBottom="@dimen/MarginSpaceL"
+        android:paddingLeft="@dimen/PaddingSpace4XL"
+        android:paddingRight="@dimen/PaddingSpace4XL">
 
         <TextView
             android:id="@+id/tvTitleRecord"
             style="@style/TextTint10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
             android:text="@string/personal_title_record"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvTitleStep"
             style="@style/TextTint10"
+            android:layout_toLeftOf="@+id/tvTitleDistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="@string/personal_title_step"
             android:textAlignment="textEnd"
             android:textStyle="bold" />
@@ -95,247 +91,232 @@
         <TextView
             android:id="@+id/tvTitleDistance"
             style="@style/TextTint10"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_70sdp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="@string/personal_title_distance"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="@dimen/MarginSpace4XL"
             android:textAlignment="textEnd"
             android:textStyle="bold" />
-    </LinearLayout>
+    </RelativeLayout>
 
-    <!--my record-->
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardViewItem1"
-        style="@style/CardViewNoElevationStyle"
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recRecord"
+        android:layout_marginBottom="@dimen/MarginSpaceL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/MarginSpaceXL"
-        android:layout_marginRight="@dimen/MarginSpaceXL"
-        android:layout_weight="1">
+        android:layout_height="wrap_content" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_my_record"
-            android:paddingLeft="@dimen/PaddingSpaceL"
-            android:paddingRight="@dimen/PaddingSpaceL"
-            android:paddingTop="@dimen/PaddingSpace">
 
-            <TextView
-                android:id="@+id/tvTitleMyRecord"
-                style="@style/TextTitle12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/personal_title_my_record"
-                android:textStyle="italic|bold" />
 
-            <LinearLayout
-                android:id="@+id/viewMyRecordDistance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvTitleMyRecord"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvMyRecordStep"
-                    style="@style/TextTitle12"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.7"
-                    android:text="28,552,493"
-                    android:textAlignment="textEnd"
-                    android:textStyle="bold" />
+    <!--&lt;!&ndash;my record&ndash;&gt;-->
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:id="@+id/cardViewItem1"-->
+        <!--style="@style/CardViewNoElevationStyle"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="@dimen/MarginSpaceXL"-->
+        <!--android:layout_marginRight="@dimen/MarginSpaceXL">-->
 
-                <TextView
-                    android:id="@+id/tvMyRecordDistance"
-                    style="@style/TextTitle12"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="8,565.74"
-                    android:textAlignment="textEnd"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewMyRecordDistance"
-                android:orientation="horizontal">
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/bg_company_record"-->
+            <!--android:paddingLeft="@dimen/PaddingSpaceL"-->
+            <!--android:paddingRight="@dimen/PaddingSpaceL"-->
+            <!--android:paddingTop="@dimen/PaddingSpace"-->
+            <!--android:paddingBottom="@dimen/PaddingSpaceL">-->
 
-                <TextView
-                    style="@style/TextTitle12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textAlignment="textEnd" />
-            </LinearLayout>
+            <!--<TextView-->
+                <!--android:id="@+id/tvTitleMyRecord"-->
+                <!--style="@style/TextTitle12"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/personal_title_my_record"-->
+                <!--android:textStyle="italic|bold" />-->
 
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+            <!--<TextView-->
+                <!--android:id="@+id/tvMyRecordStep"-->
+                <!--style="@style/TextTitle12"-->
+                <!--android:layout_below="@+id/tvTitleMyRecord"-->
+                <!--android:layout_toLeftOf="@+id/tvMyRecordDistance"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="28,552,493"-->
+                <!--android:textAlignment="textEnd"-->
+                <!--android:textStyle="bold" />-->
 
-    <!--Company Record-->
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardViewItem2"
-        style="@style/CardViewNoElevationStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/MarginSpaceXL"
-        android:layout_marginRight="@dimen/MarginSpaceXL"
-        android:layout_marginTop="@dimen/MarginSpaceS"
-        android:layout_weight="1">
+            <!--<TextView-->
+                <!--android:id="@+id/tvMyRecordDistance"-->
+                <!--style="@style/TextTitle12"-->
+                <!--android:layout_below="@+id/tvTitleMyRecord"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_width="@dimen/_70sdp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="8,565.74"-->
+                <!--android:layout_marginLeft="@dimen/MarginSpace4XL"-->
+                <!--android:textAlignment="textEnd"-->
+                <!--android:textStyle="bold" />-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_company_record"
-            android:paddingLeft="@dimen/PaddingSpaceL"
-            android:paddingRight="@dimen/PaddingSpaceL"
-            android:paddingTop="@dimen/PaddingSpace">
+            <!--<TextView-->
+                <!--android:layout_below="@+id/tvMyRecordDistance"-->
+                <!--android:text=""-->
+                <!--style="@style/TextTitle12"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</RelativeLayout>-->
+    <!--</android.support.v7.widget.CardView>-->
 
-            <TextView
-                android:id="@+id/tvTitleCompanyRecord"
-                style="@style/TextTitle12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/personal_title_company_record"
-                android:textStyle="italic|bold" />
 
-            <LinearLayout
-                android:id="@+id/viewCompanyDistance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvTitleCompanyRecord"
-                android:orientation="horizontal">
+    <!--&lt;!&ndash;Company Record&ndash;&gt;-->
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:id="@+id/cardViewItem2"-->
+        <!--style="@style/CardViewNoElevationStyle"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="@dimen/MarginSpaceXL"-->
+        <!--android:layout_marginRight="@dimen/MarginSpaceXL"-->
+        <!--android:layout_marginTop="@dimen/MarginSpaceS">-->
 
-                <TextView
-                    android:id="@+id/tvCompanyRecordStep"
-                    style="@style/TextTitle12"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.7"
-                    android:text="28,552,493"
-                    android:textAlignment="textEnd"
-                    android:textStyle="bold" />
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/bg_all_company_record"-->
+            <!--android:paddingLeft="@dimen/PaddingSpaceL"-->
+            <!--android:paddingRight="@dimen/PaddingSpaceL"-->
+            <!--android:paddingTop="@dimen/PaddingSpace"-->
+            <!--android:paddingBottom="@dimen/PaddingSpaceL">-->
 
-                <TextView
-                    android:id="@+id/tvCompanyRecordDistance"
-                    style="@style/TextTitle12"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="8,565.74"
-                    android:textAlignment="textEnd"
-                    android:textStyle="bold" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewCompanyDistance"
-                android:orientation="horizontal">
+        <!--<TextView-->
+                <!--android:id="@+id/tvTitleCompanyRecord"-->
+                <!--style="@style/TextTitle12"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/personal_title_company_record"-->
+                <!--android:textStyle="italic|bold" />-->
 
-                <TextView
-                    android:id="@+id/tvCompanyRecordTotalStep"
-                    style="@style/TextTitle10"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.7"
-                    android:text="/ 100,000"
-                    android:textAlignment="textEnd" />
 
-                <TextView
-                    android:id="@+id/tvCompanyRecordTotalDistance"
-                    style="@style/TextTitle10"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="/ 999 "
-                    android:textAlignment="textEnd" />
-            </LinearLayout>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+            <!--<TextView-->
+                <!--android:id="@+id/tvCompanyRecordStep"-->
+                <!--style="@style/TextTitle12"-->
+                <!--android:layout_below="@+id/tvTitleCompanyRecord"-->
+                <!--android:layout_toLeftOf="@+id/tvCompanyRecordDistance"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="28,552,493"-->
+                <!--android:textAlignment="textEnd"-->
+                <!--android:textStyle="bold" />-->
 
-    <!--Total Record-->
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardViewItem3"
-        style="@style/CardViewNoElevationStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/MarginSpaceXL"
-        android:layout_marginRight="@dimen/MarginSpaceXL"
-        android:layout_marginTop="@dimen/MarginSpaceS"
-        android:layout_weight="1">
+            <!--<TextView-->
+                <!--android:id="@+id/tvCompanyRecordDistance"-->
+                <!--style="@style/TextTitle12"-->
+                <!--android:layout_below="@+id/tvTitleCompanyRecord"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_width="@dimen/_70sdp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="8,565.74"-->
+                <!--android:layout_marginLeft="@dimen/MarginSpace4XL"-->
+                <!--android:textAlignment="textEnd"-->
+                <!--android:textStyle="bold" />-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_total_record"
-            android:paddingLeft="@dimen/PaddingSpaceL"
-            android:paddingRight="@dimen/PaddingSpaceL"
-            android:paddingTop="@dimen/PaddingSpace">
+            <!--<TextView-->
+                <!--android:id="@+id/tvCompanyRecordTotalStep"-->
+                <!--style="@style/TextTitle10"-->
+                <!--android:layout_alignRight="@+id/tvCompanyRecordStep"-->
+                <!--android:layout_below="@+id/tvCompanyRecordStep"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="/ 100,000"-->
+                <!--android:textAlignment="textEnd" />-->
 
-            <TextView
-                android:id="@+id/tvTitleTotalRecord"
-                style="@style/TextTitle12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/personal_title_total_record"
-                android:textStyle="italic|bold" />
+            <!--<TextView-->
+                <!--android:id="@+id/tvCompanyRecordTotalDistance"-->
+                <!--style="@style/TextTitle10"-->
+                <!--android:layout_alignRight="@+id/tvCompanyRecordDistance"-->
+                <!--android:layout_below="@+id/tvCompanyRecordDistance"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="/ 999 "-->
+                <!--android:textAlignment="textEnd" />-->
+        <!--</RelativeLayout>-->
+    <!--</android.support.v7.widget.CardView>-->
 
-            <LinearLayout
-                android:id="@+id/viewTotalDistance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvTitleTotalRecord"
-                android:orientation="horizontal">
+    <!--&lt;!&ndash;Total Record&ndash;&gt;-->
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:id="@+id/cardViewItem3"-->
+        <!--style="@style/CardViewNoElevationStyle"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="@dimen/MarginSpaceXL"-->
+        <!--android:layout_marginRight="@dimen/MarginSpaceXL"-->
+        <!--android:layout_marginTop="@dimen/MarginSpaceS">-->
 
-                <TextView
-                    android:id="@+id/tvTotalRecordStep"
-                    style="@style/TextTitle12"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.7"
-                    android:text="28,552,493"
-                    android:textAlignment="textEnd"
-                    android:textStyle="bold" />
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/bg_total_record"-->
+            <!--android:paddingLeft="@dimen/PaddingSpaceL"-->
+            <!--android:paddingRight="@dimen/PaddingSpaceL"-->
+            <!--android:paddingTop="@dimen/PaddingSpace"-->
+            <!--android:paddingBottom="@dimen/PaddingSpaceL">-->
 
-                <TextView
-                    android:id="@+id/tvTotalRecordDistance"
-                    style="@style/TextTitle12"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="8,565.74"
-                    android:textAlignment="textEnd"
-                    android:textStyle="bold" />
-            </LinearLayout>
+        <!--<TextView-->
+                <!--android:id="@+id/tvTitleTotalRecord"-->
+                <!--style="@style/TextTitle12"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/personal_title_total_record"-->
+                <!--android:textStyle="italic|bold" />-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewTotalDistance"
-                android:orientation="horizontal">
+            <!--<TextView-->
+                <!--android:id="@+id/tvTotalRecordStep"-->
+                <!--style="@style/TextTitle12"-->
+                <!--android:layout_below="@+id/tvTitleTotalRecord"-->
+                <!--android:layout_toLeftOf="@+id/tvTotalRecordDistance"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="28,552,493"-->
+                <!--android:textAlignment="textEnd"-->
+                <!--android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/tvTotalRecordTotalStep"
-                    style="@style/TextTitle10"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.7"
-                    android:text="/ 120,000,000"
-                    android:textAlignment="textEnd" />
+            <!--<TextView-->
+                <!--android:id="@+id/tvTotalRecordDistance"-->
+                <!--style="@style/TextTitle12"-->
+                <!--android:layout_below="@+id/tvTitleTotalRecord"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_width="@dimen/_70sdp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="8,565.74"-->
+                <!--android:layout_marginLeft="@dimen/MarginSpace4XL"-->
+                <!--android:textAlignment="textEnd"-->
+                <!--android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/tvTotalRecordTotalDistance"
-                    style="@style/TextTitle10"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="/ 999,999"
-                    android:textAlignment="textEnd" />
-            </LinearLayout>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+            <!--<TextView-->
+                <!--android:id="@+id/tvTotalRecordTotalStep"-->
+                <!--style="@style/TextTitle10"-->
+                <!--android:layout_alignRight="@+id/tvTotalRecordStep"-->
+                <!--android:layout_below="@+id/tvTotalRecordStep"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="/ 100,000"-->
+                <!--android:textAlignment="textEnd" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvTotalRecordTotalDistance"-->
+                <!--style="@style/TextTitle10"-->
+                <!--android:layout_alignRight="@+id/tvTotalRecordDistance"-->
+                <!--android:layout_below="@+id/tvTotalRecordDistance"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="/ 999 "-->
+                <!--android:textAlignment="textEnd" />-->
+
+        <!--</RelativeLayout>-->
+    <!--</android.support.v7.widget.CardView>-->
 
 
 </LinearLayout>

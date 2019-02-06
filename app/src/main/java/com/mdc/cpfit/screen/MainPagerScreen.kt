@@ -6,12 +6,12 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.mdc.cpfit.R
 import com.mdc.cpfit.adapter.MainViewPagerAdapter
+import com.mdc.cpfit.dialog.MainMenuBottomSheetDialog
 import com.mdc.cpfit.screen.tab1.PersonalScreen
 import com.mdc.cpfit.screen.tab1.PersonalScreenOld2
 import com.mdc.cpfit.screen.tab2.LeaderBoardScreen
@@ -103,15 +103,25 @@ class MainPagerScreen : ScreenUnit() {
 
     private fun setupViewPager(pager: CustomViewPager?) {
         val f1 = PersonalScreen.newInstance()
-        val f2 = LeaderBoardScreen.newInstance()
-        val f3 = PersonalScreenOld2.newInstance()
+        val f2 = PersonalScreenOld2.newInstance()
+        val f3 = LeaderBoardScreen.newInstance()
         var adapter = MainViewPagerAdapter(childFragmentManager)
         adapter.addFragment(f1, "TAB 1")
         adapter.addFragment(f2, "TAB 2")
         adapter.addFragment(f3, "TAB 3")
         pager?.setPagingEnabled(false)
         pager?.adapter = adapter
+        pager?.offscreenPageLimit = 3
+        pager?.setPageTransformer(false, object: ViewPager.PageTransformer {
+            override fun transformPage(page: View, position: Float) {
+                //Consider animating view here
+                if (position >= -1 && position <= 1) {
+//                if (pager.currentItem == 0 && position == 0F) {
+                    f1?.f1?.setAnimation()
+                }
+            }
 
+        })
     }
 
 

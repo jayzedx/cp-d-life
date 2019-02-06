@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="@dimen/MarginSpace"
+    android:layout_marginLeft="@dimen/MarginSpace"
+    android:layout_marginRight="@dimen/MarginSpace"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tvRanking"
+        style="@style/TextBlue14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textAlignment="center"
+        android:padding="@dimen/PaddingSpace"
+        android:text="999" />
+
+
+    <android.support.v7.widget.CardView
+        android:layout_toRightOf="@id/tvRanking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        app:cardBackgroundColor="@color/tran00"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/PaddingSpace"
+            android:paddingRight="@dimen/PaddingSpace"
+            android:paddingTop="@dimen/PaddingSpace"
+            android:paddingBottom="@dimen/PaddingSpace"
+            android:background="@color/bg_cardview_leaderboard">
+
+            <View
+                android:id="@+id/viewLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:background="@color/White"
+                android:backgroundTint="@color/White" />
+
+
+            <ImageView
+                android:id="@+id/imvProfile"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/MarginSpace"
+                android:src="@drawable/ic_personal_profile" />
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/TextBlue10"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imvProfile"
+                android:layout_marginLeft="@dimen/MarginSpaceS"
+                android:layout_toRightOf="@id/imvProfile"
+                android:text="Apisit Thanomsook" />
+
+
+
+            <RelativeLayout
+                android:id="@+id/viewTrophy"
+                android:layout_width="wrap_content"
+                android:layout_alignBottom="@+id/tvDistance"
+                android:layout_alignLeft="@+id/tvName"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/imvDayTrophy"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/MarginSpaceS"
+                    android:src="@drawable/ic_trophy" />
+
+                <ImageView
+                    android:id="@+id/imvWeekTrophy"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/MarginSpaceS"
+                    android:layout_toRightOf="@+id/imvDayTrophy"
+                    android:src="@drawable/ic_trophy" />
+
+                <ImageView
+                    android:id="@+id/imvMonthTrophy"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/MarginSpaceS"
+                    android:layout_toRightOf="@+id/imvWeekTrophy"
+                    android:src="@drawable/ic_trophy" />
+
+                <ImageView
+                    android:id="@+id/imvSpecialTrophy"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/MarginSpaceS"
+                    android:layout_toRightOf="@+id/imvMonthTrophy"
+                    android:src="@drawable/ic_trophy" />
+
+                <ImageView
+                    android:id="@+id/imvSpecialTrophy2"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/MarginSpaceS"
+                    android:layout_toRightOf="@+id/imvSpecialTrophy"
+                    android:src="@drawable/ic_trophy" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tvCompany"
+                style="@style/TextHead10"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tvName"
+                android:layout_alignBottom="@+id/tvDistance"
+                android:text="Freewill Solutions" />
+
+
+            <TextView
+                android:id="@+id/tvDistance"
+                style="@style/TextSub10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@+id/tvName"
+                android:layout_marginRight="@dimen/PaddingSpaceS"
+                android:text="99,999.99 km"
+                android:textAlignment="textEnd" />
+
+        </RelativeLayout>
+
+
+        <!--</RelativeLayout>-->
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

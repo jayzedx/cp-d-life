@@ -7,6 +7,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.TextView
 import com.mdc.cpfit.R
 import com.mdc.cpfit.dialog.DialogBase
@@ -15,6 +16,7 @@ import com.mdc.cpfit.util.ScreenUnit
 import java.util.*
 import kotlinx.android.synthetic.main.partial_personal_add_distance.*
 import kotlinx.android.synthetic.main.partial_personal_distance.*
+import java.io.Serializable
 import java.text.SimpleDateFormat
 
 
@@ -31,6 +33,8 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
 
     lateinit var dialog: DialogBase
     var datePicker = ""
+    val KEY_CALLBACK = "key_callback"
+
 
     companion object {
         fun newInstance(): PersonalUpdateDistanceScreen {
@@ -39,6 +43,11 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
             fragment.setArguments(args)
             return fragment
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -51,6 +60,17 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
         setFrangment(PersonalUpdateDistanceScreen::class.simpleName.toString(), rootView)
         setValue()
 
+    }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        //if (savedInstanceState != null) {
+        //    showOrHiddenCallBack = savedInstanceState.getSerializable(KEY_CALLBACK) as () -> Unit
+        //}
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        //outState.putSerializable(KEY_CALLBACK, showOrHiddenCallBack as Serializable)
     }
 
 

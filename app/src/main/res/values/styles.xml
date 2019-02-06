@@ -269,6 +269,44 @@
 
 
 
+    <style name="TextBlue">
+        <item name="android:textColor">@color/blue_theme</item>
+    </style>
+    <style name="TextBlue10" parent="TextBlue">
+        <!--<item name="android:textSize">@dimen/FontSizeSSS</item>-->
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+    <style name="TextBlue12" parent="TextBlue">
+        <!--<item name="android:textSize">@dimen/FontSizeSS</item>-->
+        <item name="android:textSize">@dimen/_12sdp</item>
+    </style>
+    <style name="TextBlue14" parent="TextBlue">
+        <!--<item name="android:textSize">@dimen/FontSizeS</item>-->
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+    <style name="TextBlue16" parent="TextBlue">
+        <!--<item name="android:textSize">@dimen/FontSizeM</item>-->
+        <item name="android:textSize">@dimen/_16sdp</item>
+    </style>
+    <style name="TextBlue18" parent="TextBlue">
+        <!--<item name="android:textSize">@dimen/FontSize18XL</item>-->
+        <item name="android:textSize">@dimen/_18sdp</item>
+    </style>
+    <style name="TextBlue20" parent="TextBlue">
+        <!--<item name="android:teหxtSize">@dimen/FontSizeXL</item>-->
+        <item name="android:textSize">@dimen/_20sdp</item>
+    </style>
+    <style name="TextBlue22" parent="TextBlue">
+        <!--<item name="android:textSize">@dimen/FontSizeXXL</item>-->
+        <item name="android:textSize">@dimen/_22sdp</item>
+    </style>
+    <style name="TextBlue44" parent="TextBlue">
+        <!--<item name="android:textSize">@dimen/FontSize14XL</item>-->
+        <item name="android:textSize">@dimen/_44sdp</item>
+    </style>
+
+
+
 
     <!--Custom-->
     <style name="MyAlertDialogTheme">
@@ -294,6 +332,7 @@
     </style>
 
 
+    <!--EditText-->
     <style name="EditTextPinCode" parent="TextWhite">
         <item name="android:background">@color/blue_pin_code</item>
         <item name="android:textAlignment">center</item>
@@ -312,6 +351,8 @@
         <item name="android:textSize">@dimen/FontSizeS</item>
     </style>
 
+
+    <!--Card View-->
     <style name="CardViewStyle" parent="CardView">
         <item name="cardCornerRadius">4dp</item>
         <item name="cardElevation">4dp</item>
@@ -322,9 +363,20 @@
         <item name="cardElevation">0dp</item>
     </style>
 
+
+
+    <!--Bottom Sheet-->
     <style name="BottomSheetMenu">
         <item name="android:textColor">@color/dialog_tint</item>
         <item name="android:textSize">@dimen/_12sdp</item>
         <item name="android:background">@drawable/bg_bottom_sheet_menu</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
     </style>
 </resources>

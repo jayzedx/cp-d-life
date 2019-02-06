@@ -63,9 +63,9 @@ class ChangePasswordScreen : ScreenUnit() {
 
         btnSend.setAllCaps(false)
 
-        edtOldPassword.setTransformationMethod(MyPasswordTransformationMethod())
-        edtPassword.setTransformationMethod(MyPasswordTransformationMethod())
-        edtConfirmPassword.setTransformationMethod(MyPasswordTransformationMethod())
+        //edtOldPassword.setTransformationMethod(MyPasswordTransformationMethod())
+        //edtPassword.setTransformationMethod(MyPasswordTransformationMethod())
+        //edtConfirmPassword.setTransformationMethod(MyPasswordTransformationMethod())
 
 
 

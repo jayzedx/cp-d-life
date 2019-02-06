@@ -115,5 +115,14 @@ dependencies {
     //pager indicator
     implementation 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
 
+    //dialog for ios
+    implementation 'com.gdacciaro:iosdialog:1.0.3'
+
+    //parceler for parcelable
+    implementation 'org.parceler:parceler-api:1.1.11'
+    annotationProcessor 'org.parceler:parceler:1.1.11'
+
+    //SectionedRecyclerViewAdapter for header gridview
+    implementation 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:1.2.0'
 }
 apply plugin: 'com.google.gms.google-services'

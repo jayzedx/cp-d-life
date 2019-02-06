@@ -6,83 +6,84 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/White">
+    android:background="@color/tran00">
 
-    <LinearLayout
+
+
+    <RelativeLayout
         style="@style/BottomSheetMenu"
-        android:orientation="horizontal"
+        android:background="@drawable/border_top_menu"
+        android:layout_marginLeft="@dimen/MarginSpace"
+        android:layout_marginRight="@dimen/MarginSpace"
+        android:gravity="center"
         android:padding="@dimen/PaddingSpaceXL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/ic_pencil"
-            android:layout_gravity="center_vertical"
-            android:layout_width="18dp"
-            android:layout_height="18dp" />
+        android:layout_height="55dp">
         <TextView
-            android:layout_marginLeft="@dimen/MarginSpace6XL"
+            android:textColor="@color/blue_theme"
+            android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/menu_profile" />
-    </LinearLayout>
+    </RelativeLayout>
 
 
-
-    <LinearLayout
+    <RelativeLayout
         style="@style/BottomSheetMenu"
-        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/MarginSpace"
+        android:layout_marginRight="@dimen/MarginSpace"
+        android:gravity="center"
         android:padding="@dimen/PaddingSpaceXL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/ic_phone"
-            android:layout_gravity="center_vertical"
-            android:layout_width="18dp"
-            android:layout_height="18dp" />
+        android:layout_height="55dp">
         <TextView
-            android:layout_marginLeft="@dimen/MarginSpace6XL"
+            android:textColor="@color/blue_theme"
+            android:textSize="16sp"
+            android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/menu_history" />
-    </LinearLayout>
+    </RelativeLayout>
 
 
-    <LinearLayout
+    <RelativeLayout
         style="@style/BottomSheetMenu"
-        android:orientation="horizontal"
+        android:background="@drawable/border_bottom_menu"
+        android:layout_marginLeft="@dimen/MarginSpace"
+        android:layout_marginRight="@dimen/MarginSpace"
+        android:gravity="center"
         android:padding="@dimen/PaddingSpaceXL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/ic_email"
-            android:layout_gravity="center_vertical"
-            android:layout_width="18dp"
-            android:layout_height="18dp" />
+        android:layout_height="55dp">
         <TextView
-            android:layout_marginLeft="@dimen/MarginSpace6XL"
+            android:textSize="16sp"
+            android:textColor="#FE3E34"
+            android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/menu_logout" />
-    </LinearLayout>
+    </RelativeLayout>
 
 
-    <LinearLayout
+    <RelativeLayout
         style="@style/BottomSheetMenu"
-        android:orientation="horizontal"
+        android:background="@drawable/border_menu"
+        android:layout_marginTop="@dimen/MarginSpace"
+        android:layout_marginLeft="@dimen/MarginSpace"
+        android:layout_marginRight="@dimen/MarginSpace"
+        android:layout_marginBottom="@dimen/MarginSpace"
+        android:gravity="center"
         android:padding="@dimen/PaddingSpaceXL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/ic_lock"
-            android:layout_gravity="center_vertical"
-            android:layout_width="18dp"
-            android:layout_height="18dp" />
+        android:layout_height="55dp">
         <TextView
-            android:layout_marginLeft="@dimen/MarginSpace6XL"
+            android:textColor="@color/blue_theme"
+            android:textSize="16sp"
+            android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/menu_cancel" />
-    </LinearLayout>
+    </RelativeLayout>
 
 
 
