@@ -37,12 +37,12 @@
 
     <TextView
         android:id="@+id/tvTitleFirstName"
-        style="@style/TextTint12"
+        style="@style/TextTint10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewProfile"
         android:layout_marginLeft="@dimen/MarginSpace4XL"
-        android:layout_marginTop="@dimen/MarginSpace"
+        android:layout_marginTop="@dimen/MarginSpaceL"
         android:text="@string/signup_firstname_tint" />
 
     <ImageView
@@ -72,12 +72,12 @@
 
     <TextView
         android:id="@+id/tvTitleLastName"
-        style="@style/TextTint12"
+        style="@style/TextTint10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtFirstName"
         android:layout_marginLeft="@dimen/MarginSpace4XL"
-        android:layout_marginTop="@dimen/MarginSpace"
+        android:layout_marginTop="@dimen/MarginSpaceL"
         android:text="@string/signup_lastname_tint" />
 
     <ImageView
@@ -107,12 +107,12 @@
 
     <TextView
         android:id="@+id/tvTitleWeight"
-        style="@style/TextTint12"
+        style="@style/TextTint10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtLastName"
         android:layout_marginLeft="@dimen/MarginSpace4XL"
-        android:layout_marginTop="@dimen/MarginSpace"
+        android:layout_marginTop="@dimen/MarginSpaceL"
         android:text="@string/signup_weight_tint" />
 
 
@@ -158,12 +158,12 @@
 
     <TextView
         android:id="@+id/tvTitleHeight"
-        style="@style/TextTint12"
+        style="@style/TextTint10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtWeight"
         android:layout_marginLeft="@dimen/MarginSpace4XL"
-        android:layout_marginTop="@dimen/MarginSpace"
+        android:layout_marginTop="@dimen/MarginSpaceL"
         android:text="@string/signup_height_tint" />
 
 

@@ -2,6 +2,10 @@
     <!--A-->
     <string name="app_name">cpfit_android</string>
     <!--B-->
+    <string name="back">Back</string>
+
+
+
     <string name="menu_profile">Profile</string>
     <string name="menu_history">History</string>
     <string name="menu_logout">Log out</string>
@@ -96,7 +100,6 @@
     <string name="signup_lastname_tint">Last Name</string>
     <string name="signup_email_tint">Email</string>
     <string name="signup_autofill">Auto fill</string>
-    <string name="signup_back">Back</string>
     <string name="signup_create_account">Create</string>
     <string name="signup_policy">By signing up, you agree to our \nTerms &amp; Privacy Policy.</string>
     <string name="signup_agree">I Agree</string>

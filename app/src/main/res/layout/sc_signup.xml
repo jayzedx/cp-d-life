@@ -39,7 +39,7 @@
 
     <TextView
         android:id="@+id/tvTitleCompany"
-        style="@style/TextTint12"
+        style="@style/TextTint10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_company_tint"
@@ -94,7 +94,7 @@
 
         <TextView
             android:id="@+id/tvTitleFirstName"
-            style="@style/TextTint12"
+            style="@style/TextTint10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/edtFirstName"
@@ -127,7 +127,7 @@
 
         <TextView
             android:id="@+id/tvTitleLastName"
-            style="@style/TextTint12"
+            style="@style/TextTint10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/edtLastName"
@@ -163,7 +163,7 @@
     <!--Email-->
     <TextView
         android:id="@+id/tvTitleEmail"
-        style="@style/TextTint12"
+        style="@style/TextTint10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/MarginSpaceS"
@@ -255,7 +255,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/MarginSpaceXL"
         android:layout_marginStart="@dimen/MarginSpaceXL"
-        android:text="@string/signup_back"
+        android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

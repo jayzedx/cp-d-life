@@ -57,10 +57,9 @@ class LoginScreen : ScreenUnit() {
     private fun setComponents() {
         tvSignIn.setTypeface(null, Typeface.BOLD)
         tvTitle.setTypeface(null, Typeface.BOLD)
-//        tvTitleEmail.setTypeface(null, Typeface.BOLD)
-//        tvTitlePassword.setTypeface(null, Typeface.BOLD)
         tvForgotPassword.setTypeface(null, Typeface.BOLD)
         tvSignUp.setTypeface(null, Typeface.BOLD)
+
 
         btnSignIn.setAllCaps(false)
         //edtPassword.setTransformationMethod(MyPasswordTransformationMethod())

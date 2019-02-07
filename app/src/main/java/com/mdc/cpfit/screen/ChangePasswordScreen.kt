@@ -55,10 +55,6 @@ class ChangePasswordScreen : ScreenUnit() {
     private fun setComponents() {
         tvChangePassword.setTypeface(null, Typeface.BOLD)
         tvTitle.setTypeface(null, Typeface.BOLD)
-//        tvTitleCompany.setTypeface(null, Typeface.BOLD)
-//        tvTitleFirstName.setTypeface(null, Typeface.BOLD)
-//        tvTitleLastName.setTypeface(null, Typeface.BOLD)
-//        tvTitleEmail.setTypeface(null, Typeface.BOLD)
         tvBack.setTypeface(null, Typeface.BOLD)
 
         btnSend.setAllCaps(false)

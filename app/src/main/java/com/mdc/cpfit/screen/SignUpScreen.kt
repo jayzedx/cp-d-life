@@ -68,7 +68,6 @@ class SignUpScreen : ScreenUnit() {
     private fun setComponents() {
         tvSignUp.setTypeface(null, Typeface.BOLD)
         tvTitle.setTypeface(null, Typeface.BOLD)
-//        cbAutoFill.setTypeface(null, Typeface.BOLD)
         tvBack.setTypeface(null, Typeface.BOLD)
 
         btnSignUp.setAllCaps(false)

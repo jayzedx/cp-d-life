@@ -43,13 +43,13 @@
 
     <TextView
         android:id="@+id/tvTitleEmail"
-        style="@style/TextTint12"
+        style="@style/TextTint10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/MarginSpaceS"
+        android:layout_marginTop="@dimen/MarginSpace4XL"
         android:text="@string/login_email_tint"
-        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
-        app:layout_constraintStart_toStartOf="@+id/tvTitle" />
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
 
     <ImageView
@@ -68,27 +68,27 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/MarginSpace4XL"
         android:layout_marginStart="@dimen/MarginSpace"
-        android:layout_marginTop="@dimen/MarginSpace6XL"
+        android:layout_marginTop="@dimen/MarginSpaceS"
         android:hint="@string/login_email_hint"
-        android:inputType="text"
         android:imeOptions="actionNext"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imvEmail"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleEmail" />
 
 
     <!-- Password -->
 
     <TextView
         android:id="@+id/tvTitlePassword"
-        style="@style/TextTint12"
+        style="@style/TextTint10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MarginSpaceXL"
         android:text="@string/login_password_tint"
         app:layout_constraintStart_toStartOf="@+id/tvTitleEmail"
-        app:layout_constraintBottom_toTopOf="@+id/edtPassword"
-       />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
     <ImageView
         android:id="@+id/imvPassword"
@@ -105,14 +105,14 @@
         style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MarginSpace4XL"
+        android:layout_marginTop="@dimen/MarginSpaceS"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="@+id/edtEmail"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitlePassword" />
 
 
     <TextView
@@ -120,7 +120,7 @@
         style="@style/TextTint12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MarginSpaceL"
+        android:layout_marginTop="@dimen/MarginSpaceXXL"
         android:text="@string/login_forgot_password_tint"
         app:layout_constraintEnd_toEndOf="@+id/edtPassword"
         app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
