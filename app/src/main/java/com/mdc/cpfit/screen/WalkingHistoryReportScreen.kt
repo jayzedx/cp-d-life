@@ -57,7 +57,7 @@ class WalkingHistoryReportScreen : ScreenUnit() {
     private fun setComponent() {
 
         //set recycler view
-        var adapter = WalkingHistoryReportAdapter(activityMain)
+        var adapter = WalkingHistoryReportAdapter(activityMain, this)
         recHistory.setLayoutManager(LinearLayoutManager(context))
         recHistory.adapter = adapter
 

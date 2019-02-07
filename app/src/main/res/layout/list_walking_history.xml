@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/viewWalkingHistory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:paddingLeft="@dimen/PaddingSpaceXXL"
     android:paddingRight="@dimen/PaddingSpaceL"
     android:paddingTop="@dimen/PaddingSpaceL"
-    android:paddingBottom="@dimen/PaddingSpaceL"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:paddingBottom="@dimen/PaddingSpaceL">
+
 
     <ImageView
         android:id="@+id/imvWalkingHistory"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        />
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_walk" />
+
     <TextView
         android:id="@+id/tvDetail"
+        style="@style/TextCaption12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/imvWalkingHistory"
-        style="@style/TextCaption16"
         android:layout_marginLeft="@dimen/MarginSpaceXL"
-        android:text="2,270 step | 1.0 km"
-        />
+        android:layout_toRightOf="@+id/imvWalkingHistory"
+        android:text="2,270 step | 1.0 km" />
+
     <TextView
         android:id="@+id/tvDate"
+        style="@style/TextSub10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/imvWalkingHistory"
-        style="@style/TextSub12"
-        android:layout_below="@+id/tvDetail"
         android:layout_alignLeft="@+id/tvDetail"
-        android:text="03 may 2018"
-        />
+        android:layout_below="@+id/tvDetail"
+        android:layout_toRightOf="@+id/imvWalkingHistory"
+        android:text="03 may 2018" />
 
 
 </RelativeLayout>

@@ -1,9 +1,6 @@
 package com.mdc.cpfit.screen.tab1.adapter
 
-import android.content.Context
-import android.graphics.Color
 import android.graphics.Typeface
-import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -13,16 +10,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.mdc.cpfit.R
-import com.mdc.cpfit.activity.TabOneContainActivity
 import com.mdc.cpfit.model.WalkingHistoryReportBody
-import com.mdc.cpfit.msg.MsgProperties
+import com.mdc.cpfit.screen.WalkingHistoryScreen
 import com.mdc.cpfit.util.ActivityUnit
 import com.mdc.cpfit.util.ImageUtil
+import com.mdc.cpfit.util.ScreenUnit
 import java.text.DateFormatSymbols
 import java.util.*
 
 
-class WalkingHistoryReportAdapter(var activity: ActivityUnit) : RecyclerView.Adapter<WalkingHistoryReportAdapter.ViewHolder>() {
+class WalkingHistoryReportAdapter(var activity: ActivityUnit, var screen: ScreenUnit? = null) : RecyclerView.Adapter<WalkingHistoryReportAdapter.ViewHolder>() {
     var array = ArrayList<WalkingHistoryReportBody>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -65,12 +62,13 @@ class WalkingHistoryReportAdapter(var activity: ActivityUnit) : RecyclerView.Ada
 
 
         holder.viewWalkingHistoryReport?.setOnClickListener {
-            var mp: HashMap<String, Bundle>? = HashMap()
-            var bunble = Bundle()
-            bunble.putSerializable(MsgProperties.SCEEN_INTENT, MsgProperties.DISTANCE_HISTORY)
-            bunble.putSerializable(MsgProperties.MODEL, null)
-            mp?.put(MsgProperties.ARGUMENT, bunble)
-            activity?.startActivityUnit(TabOneContainActivity::class.java, mp)
+//            var mp: HashMap<String, Bundle>? = HashMap()
+//            var bunble = Bundle()
+//            bunble.putSerializable(MsgProperties.SCEEN_INTENT, MsgProperties.DISTANCE_HISTORY)
+//            bunble.putSerializable(MsgProperties.MODEL, null)
+//            mp?.put(MsgProperties.ARGUMENT, bunble)
+//            activity?.startActivityUnit(TabOneContainActivity::class.java, mp)
+            screen?.IntentFragment(WalkingHistoryScreen.newInstance())
         }
     }
 

@@ -46,9 +46,9 @@ class WalkingHistoryAdapter(var activity: ActivityUnit) : RecyclerView.Adapter<W
 
 
         if(position %2 == 1) {
-            holder?.itemView?.setBackgroundColor(ContextCompat.getColor(activity, R.color.bg_head))
+            holder?.itemView?.setBackgroundColor(ContextCompat.getColor(activity, R.color.bg_list))
         } else {
-            holder?.itemView?.setBackgroundColor(ContextCompat.getColor(activity, R.color.tran00))
+            holder?.itemView?.setBackgroundColor(ContextCompat.getColor(activity, R.color.White))
         }
 
     }
