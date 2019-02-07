@@ -364,10 +364,11 @@
     <color name="dialog_bg">#979797</color>
 
 
-    <color name="bg_cardview_leaderboard">#F6F6F6</color>
+    <color name="bg_list">#F6F6F6</color>
+    <color name="bg_line">#CBCBCB</color>
+    <color name="bg_head">#EAEAEA</color>
+    <color name="bg_toolbar">@color/White</color>
 
-
-    <color name="toolbar_bg">@color/White</color>
 
     <color name="black_theme">#4A4A4A</color>
     <color name="gold_theme">#F5A623</color>
@@ -377,8 +378,7 @@
     <color name="blue_theme">#4A90E2</color>
     <color name="blue_pin_code">#62A1E6 </color>
 
-    <color name="bg_tint">#CBCBCB</color>
-    <color name="bg_head">#EAEAEA</color>
+
 
     <color name="top_rank">#F5A623</color>
     <color name="second_rank">#C0C0C0</color>

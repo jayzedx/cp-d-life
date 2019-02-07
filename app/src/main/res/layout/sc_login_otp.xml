@@ -153,7 +153,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
-            android:background="@color/bg_tint"
+            android:background="@color/bg_line"
             app:layout_constraintBottom_toBottomOf="@+id/spnCompany"
             app:layout_constraintEnd_toEndOf="@+id/spnCompany"
             app:layout_constraintHorizontal_bias="0.0"

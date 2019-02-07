@@ -76,7 +76,7 @@
         android:layout_marginBottom="@dimen/MarginSpaceL"
         android:layout_marginEnd="@dimen/MarginSpaceS"
         android:layout_marginStart="@dimen/MarginSpaceS"
-        android:background="@color/bg_tint"
+        android:background="@color/bg_line"
         app:layout_constraintTop_toBottomOf="@+id/spnCompany"
         app:layout_constraintEnd_toEndOf="@+id/spnCompany"
         app:layout_constraintStart_toStartOf="@+id/spnCompany" />

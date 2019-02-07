@@ -36,7 +36,7 @@
             android:paddingRight="@dimen/PaddingSpace"
             android:paddingTop="@dimen/PaddingSpace"
             android:paddingBottom="@dimen/PaddingSpace"
-            android:background="@color/bg_cardview_leaderboard">
+            android:background="@color/bg_list">
 
             <View
                 android:id="@+id/viewLine"

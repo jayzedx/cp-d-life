@@ -2,6 +2,7 @@ package com.mdc.cpfit.screen.tab1.adapter
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
@@ -36,6 +37,18 @@ class WalkingHistoryReportAdapter(var activity: ActivityUnit) : RecyclerView.Ada
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var model = array!!.get(position)
 
+
+        holder.tvMonth?.setTypeface(null, Typeface.BOLD)
+        holder.tvStatusBmi?.setTypeface(null, Typeface.BOLD)
+
+
+        if(position %2 == 1) {
+            holder?.itemView?.setBackgroundColor(ContextCompat.getColor(activity, R.color.bg_list))
+        } else {
+            holder?.itemView?.setBackgroundColor(ContextCompat.getColor(activity, R.color.White))
+        }
+
+
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.MONTH, model?.month)
 //        var month = DateFormatSymbols().getShortMonths()[model?.month]
@@ -45,16 +58,11 @@ class WalkingHistoryReportAdapter(var activity: ActivityUnit) : RecyclerView.Ada
         holder.tvDetail?.text = "Weight : ${model?.weight} kg | BMI : ${model?.bmi}"
         holder.tvStatusBmi?.text = model?.bmi.toString()
 
+
         Glide.with(activity).load(R.drawable.ic_personal_profile)
                 .apply(ImageUtil.getImageCirclePersonnalProfile())
                 .into(holder.imvWalkingHistory!!)
 
-
-        if(position %2 == 1) {
-            holder?.itemView?.setBackgroundColor(ContextCompat.getColor(activity, R.color.bg_head))
-        } else {
-            holder?.itemView?.setBackgroundColor(ContextCompat.getColor(activity, R.color.tran00))
-        }
 
         holder.viewWalkingHistoryReport?.setOnClickListener {
             var mp: HashMap<String, Bundle>? = HashMap()

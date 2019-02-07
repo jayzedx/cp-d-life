@@ -10,15 +10,17 @@
 
     <ImageView
         android:id="@+id/imvWalkingHistory"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:src="@drawable/ic_walk"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_centerVertical="true"
         />
     <TextView
         android:id="@+id/tvMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imvWalkingHistory"
-        style="@style/TextTint16"
+        style="@style/TextTint12"
         android:textStyle="bold"
         android:layout_marginLeft="@dimen/MarginSpaceXL"
         android:text="January"
@@ -28,14 +30,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imvWalkingHistory"
-        style="@style/TextSub12"
+        style="@style/TextSub10"
+        android:layout_marginTop="@dimen/MarginSpaceS"
         android:layout_below="@+id/tvMonth"
         android:layout_alignLeft="@+id/tvMonth"
         android:text="Weight : 75 kg  |  BMI : 23.7"
         />
     <TextView
         android:id="@+id/tvStatusBmi"
-        style="@style/TextSub12"
+        android:textSize="@dimen/_12sdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -44,5 +47,17 @@
         android:textStyle="bold"
         android:textColor="#F27181"
         />
+    <TextView
+        android:id="@+id/tvBmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextSub10"
+        android:layout_alignBottom="@+id/tvDetail"
+        android:layout_alignTop="@+id/tvDetail"
+        android:layout_below="@id/tvStatusBmi"
+        android:text="BMI :  27.5"
+        android:layout_alignRight="@+id/tvStatusBmi"
+        />
+
 
 </RelativeLayout>

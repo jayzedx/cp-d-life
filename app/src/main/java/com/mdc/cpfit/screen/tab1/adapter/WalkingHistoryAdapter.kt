@@ -11,10 +11,8 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.mdc.cpfit.R
 import com.mdc.cpfit.model.WalkingHistoryBody
-import com.mdc.cpfit.screen.tab1.WalkingHistoryScreen
 import com.mdc.cpfit.util.ActivityUnit
 import com.mdc.cpfit.util.ImageUtil
-import java.text.DateFormatSymbols
 import java.util.*
 
 

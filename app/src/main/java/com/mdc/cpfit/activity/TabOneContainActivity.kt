@@ -3,7 +3,7 @@ package com.mdc.cpfit.activity
 import android.os.Bundle
 import com.mdc.cpfit.R
 import com.mdc.cpfit.msg.MsgProperties
-import com.mdc.cpfit.screen.tab1.WalkingHistoryScreen
+import com.mdc.cpfit.screen.WalkingHistoryScreen
 import com.mdc.cpfit.util.ActivityUnit
 
 class TabOneContainActivity : ActivityUnit() {

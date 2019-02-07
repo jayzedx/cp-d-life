@@ -14,7 +14,6 @@ import com.mdc.cpfit.adapter.MainViewPagerAdapter
 import com.mdc.cpfit.dialog.MainMenuBottomSheetDialog
 import com.mdc.cpfit.screen.tab1.PersonalScreen
 import com.mdc.cpfit.screen.tab1.PersonalScreenOld2
-import com.mdc.cpfit.screen.tab1.WalkingHistoryScreen
 import com.mdc.cpfit.screen.tab2.LeaderBoardScreen
 import com.mdc.cpfit.util.ScreenUnit
 import com.mdc.cpfit.util.view.CustomViewPager
@@ -86,7 +85,7 @@ class MainPagerScreen : ScreenUnit() {
             bottomSheet?.dismiss()
         }
         bottomSheetView?.historyMenu?.setOnClickListener {
-            IntentFragment(WalkingHistoryScreen.newInstance())
+            IntentFragment(WalkingHistoryReportScreen.newInstance())
             bottomSheet?.dismiss()
         }
         bottomSheetView?.logoutMenu?.setOnClickListener {

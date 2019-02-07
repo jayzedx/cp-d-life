@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     app:layout_scrollFlags="scroll|enterAlways"
-    android:background="@color/toolbar_bg">
+    android:background="@color/bg_toolbar">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.mdc.cpfit.screen.tab1
+package com.mdc.cpfit.screen
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
