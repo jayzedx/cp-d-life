@@ -35,14 +35,12 @@ public class ScreenUnit extends Fragment {
     private ScreenUnit currentIntentScreen;
     protected ArrayList<Runnable> TaskUIWorker = new ArrayList<>();
     protected ArrayList<Runnable> TaskUIWorkerLogic = new ArrayList<>();
-    private View currentFrangmentView;
     HandlerThread backgroundhandlerThread;
     Handler backgroundhandler;
     CompositeDisposable disposable = new CompositeDisposable();
 
     public void setFrangment(String FragmentName, View view) {
         this.FragmentName = FragmentName;
-        this.currentFrangmentView = view;
         this.activity = getActivity();
         ImageView gifFile = view.findViewById(R.id.gifFile);
         if (gifFile != null)
@@ -314,9 +312,5 @@ public class ScreenUnit extends Fragment {
                 UpdateUI(UIWorker);
             }
         }
-    }
-
-    public View getCurrentFrangmentView() {
-        return currentFrangmentView;
     }
 }

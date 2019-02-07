@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--Company Record-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        style="@style/CardViewNoElevationStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/MarginSpaceXL"
+        android:layout_marginRight="@dimen/MarginSpaceXL"
+        android:layout_marginBottom="@dimen/MarginSpaceS">
+
+        <RelativeLayout
+            android:id="@+id/viewRecord"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_all_company_record"
+            android:paddingBottom="@dimen/PaddingSpaceL"
+            android:paddingLeft="@dimen/PaddingSpaceL"
+            android:paddingRight="@dimen/PaddingSpaceL"
+            android:paddingTop="@dimen/PaddingSpace">
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/TextTitle12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvStepGoal"
+                android:text="@string/personal_title_company_record"
+                android:textStyle="italic|bold" />
+
+
+            <TextView
+                android:id="@+id/tvStep"
+                style="@style/TextTitle12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tvKm"
+                android:text="28,552,493"
+                android:textAlignment="textEnd"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvKm"
+                style="@style/TextTitle12"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="@dimen/MarginSpace4XL"
+                android:text="8,565.74"
+                android:textAlignment="textEnd"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvStepGoal"
+                style="@style/TextTitle10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/tvStep"
+                android:layout_below="@+id/tvStep"
+                android:text="/ 100,000"
+                android:textAlignment="textEnd" />
+
+            <TextView
+                android:id="@+id/tvKmGoal"
+                style="@style/TextTitle10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/tvKm"
+                android:layout_below="@+id/tvKm"
+                android:text="/ 999 "
+                android:textAlignment="textEnd" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

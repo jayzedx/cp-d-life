@@ -22,11 +22,11 @@ class MainContainActivity : ActivityUnit() {
 //    lateinit var pager: ViewPager
 //    lateinit var tabView: TabLayout
 
-    var mainPager = MainPagerScreen()
+    var mainPager = MainPagerScreen.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_list)
+        setContentView(R.layout.activity_main)
         containView = R.id.contian_view
         setValue()
         ReplaceFragment(mainPager)

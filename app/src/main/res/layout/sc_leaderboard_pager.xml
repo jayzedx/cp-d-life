@@ -247,12 +247,12 @@
 
 
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+    <!--<android.support.constraint.Guideline-->
+        <!--android:id="@+id/guideline"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--app:layout_constraintGuide_percent="0.35" />-->
 
 
 
@@ -260,11 +260,11 @@
         android:id="@+id/header"
         android:layout_width="@dimen/_230sdp"
         android:layout_height="@dimen/_25sdp"
-        android:layout_marginTop="@dimen/MarginSpaceL"
+        android:layout_marginTop="@dimen/MarginSpaceXXL"
         android:background="@drawable/bg_sub_head_leaderboard"
         android:paddingEnd="@dimen/PaddingSpaceXXL"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline">
+        app:layout_constraintTop_toBottomOf="@+id/viewRank1">
 
         <TextView
             android:id="@+id/tvHeadDistance"

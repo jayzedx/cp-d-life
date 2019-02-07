@@ -9,13 +9,12 @@ import com.mdc.cpfit.R
 import com.mdc.cpfit.util.ScreenUnit
 import android.support.v7.widget.LinearLayoutManager
 import android.util.TypedValue
-import android.widget.EditText
 import android.widget.TextView
 import com.mdc.cpfit.model.LeaderBoardBody
 import com.mdc.cpfit.model.LeaderBoardTrophyBody
 import com.mdc.cpfit.msg.MsgProperties
 import com.mdc.cpfit.screen.tab2.adapter.LeaderBoardAdapter
-import kotlinx.android.synthetic.main.pager_leaderboard.*
+import kotlinx.android.synthetic.main.sc_leaderboard_pager.*
 
 
 class LeaderBoardPagerScreen : ScreenUnit() {
@@ -41,7 +40,7 @@ class LeaderBoardPagerScreen : ScreenUnit() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        rootView = inflater?.inflate(R.layout.pager_leaderboard, container, false)
+        rootView = inflater?.inflate(R.layout.sc_leaderboard_pager, container, false)
         return rootView
     }
 

@@ -133,12 +133,14 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_35sdp"
+            android:padding="@dimen/PaddingSpace"
             android:background="@color/main_theme"
             android:src="@drawable/ic_correct" />
         <ImageButton
             android:id="@+id/imgBtnCancel"
             android:layout_weight="1"
             android:layout_width="wrap_content"
+            android:padding="@dimen/PaddingSpace"
             android:layout_height="@dimen/_35sdp"
             android:background="@color/red_theme"
             android:src="@drawable/ic_incorrect" />

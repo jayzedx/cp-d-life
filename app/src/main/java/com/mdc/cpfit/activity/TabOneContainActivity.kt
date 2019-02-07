@@ -1,7 +1,6 @@
 package com.mdc.cpfit.activity
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import com.mdc.cpfit.R
 import com.mdc.cpfit.msg.MsgProperties
 import com.mdc.cpfit.screen.tab1.WalkingHistoryScreen
@@ -11,7 +10,7 @@ class TabOneContainActivity : ActivityUnit() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second_cotain)
+        setContentView(R.layout.activity_main)
         containView = R.id.contian_view
 
         val extras = intent.extras

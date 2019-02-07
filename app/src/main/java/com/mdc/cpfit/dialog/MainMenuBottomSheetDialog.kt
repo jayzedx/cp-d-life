@@ -1,6 +1,8 @@
 package com.mdc.cpfit.dialog
 
+import android.content.Context
 import android.os.Bundle
+import android.support.annotation.LayoutRes
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.support.design.widget.BottomSheetDialogFragment
@@ -10,26 +12,27 @@ import com.mdc.cpfit.R
 
 class MainMenuBottomSheetDialog : BottomSheetDialogFragment() {
 
-    private var mListener: BottomSheetListener? = null
-
+    var rootView: View? = null
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme)
-
+        super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.main_menu, container, false)
-        return view
+        return rootView
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    fun setContentView(view: View) {
+        rootView = view
     }
 
-
-    interface BottomSheetListener {
-        fun onButtonClicked(text: String)
+    override fun onDestroyView() {
+        super.onDestroyView()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
 
 }

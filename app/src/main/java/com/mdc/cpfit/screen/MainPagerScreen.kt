@@ -14,9 +14,11 @@ import com.mdc.cpfit.adapter.MainViewPagerAdapter
 import com.mdc.cpfit.dialog.MainMenuBottomSheetDialog
 import com.mdc.cpfit.screen.tab1.PersonalScreen
 import com.mdc.cpfit.screen.tab1.PersonalScreenOld2
+import com.mdc.cpfit.screen.tab1.WalkingHistoryScreen
 import com.mdc.cpfit.screen.tab2.LeaderBoardScreen
 import com.mdc.cpfit.util.ScreenUnit
 import com.mdc.cpfit.util.view.CustomViewPager
+import kotlinx.android.synthetic.main.main_menu.view.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
@@ -29,16 +31,17 @@ class MainPagerScreen : ScreenUnit() {
     lateinit var tabView: TabLayout
 
 
-//    companion object {
-//        fun newInstance(): MainPagerScreen {
-//            val fragment = MainPagerScreen()
-//            val args = Bundle()
-////            args.putString(MsgProperties.PERSON_TYPE, typeBd)
-//            fragment.setArguments(args)
-//            return fragment
-//        }
-//
-//    }
+
+    companion object {
+        fun newInstance(): MainPagerScreen {
+            val fragment = MainPagerScreen()
+            val args = Bundle()
+//            args.putString(MsgProperties.PERSON_TYPE, typeBd)
+            fragment.setArguments(args)
+            return fragment
+        }
+
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         rootView = inflater?.inflate(R.layout.activity_main_list, container, false)
@@ -51,7 +54,6 @@ class MainPagerScreen : ScreenUnit() {
         setValue()
     }
 
-
     private fun setValue() {
         rootView?.let {view ->
             tabView = view?.findViewById(R.id.tabView)
@@ -59,14 +61,41 @@ class MainPagerScreen : ScreenUnit() {
 
             setupViewPager(pager)
             setTabLayout(tabView, pager)
+            setToolbar()
         }
-        toolbarMenu?.setOnClickListener { setBottomSheet() }
+
 
     }
 
-    private fun setBottomSheet() {
+    private fun setToolbar() {
+        toolbarMenu?.setOnClickListener {
+            showBottomSheet()
+        }
+    }
+
+
+    private fun showBottomSheet() {
+        val bottomSheetView = layoutInflater.inflate(R.layout.main_menu, null)
         var bottomSheet = MainMenuBottomSheetDialog()
-        bottomSheet.show(childFragmentManager, TAG)
+
+        bottomSheet?.setContentView(bottomSheetView)
+        bottomSheet?.show(childFragmentManager, TAG)
+
+        bottomSheetView?.profileMenu?.setOnClickListener {
+            IntentFragment(ProfileScreen.newInstance())
+            bottomSheet?.dismiss()
+        }
+        bottomSheetView?.historyMenu?.setOnClickListener {
+            IntentFragment(WalkingHistoryScreen.newInstance())
+            bottomSheet?.dismiss()
+        }
+        bottomSheetView?.logoutMenu?.setOnClickListener {
+
+        }
+        bottomSheetView?.cancelMenu?.setOnClickListener {
+            bottomSheet?.dismiss()
+        }
+
     }
 
 
@@ -129,7 +158,6 @@ class MainPagerScreen : ScreenUnit() {
         val fragment: Fragment? = getCurrentFragment(childFragmentManager, pager)
         return fragment?.let {
             return handleNestedFragmentBackStack(fragment.childFragmentManager)
-
         } ?: run {
             false
         }

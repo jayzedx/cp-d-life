@@ -10,6 +10,7 @@ import com.mdc.cpfit.model.WalkingHistoryBody
 import com.mdc.cpfit.screen.tab1.adapter.WalkingHistoryAdapter
 import com.mdc.cpfit.util.ScreenUnit
 import kotlinx.android.synthetic.main.sc_walking_history.*
+import kotlinx.android.synthetic.main.toolbar_back.*
 import java.util.ArrayList
 
 
@@ -42,9 +43,15 @@ class WalkingHistoryScreen : ScreenUnit() {
 
     private fun setValue() {
         val args = arguments
+        setToolbar()
         setComponent()
     }
 
+    private fun setToolbar() {
+        backMenu?.setOnClickListener {
+            goback(false)
+        }
+    }
     private fun setComponent() {
 
         var adapter = WalkingHistoryAdapter(activityMain)

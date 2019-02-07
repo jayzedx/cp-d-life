@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_menu_back" />
+
+    <RelativeLayout
+        android:id="@+id/viewProfile"
+        android:layout_below="@id/toolbar"
+        android:background="@drawable/bg_profile"
+        android:paddingBottom="@dimen/PaddingSpace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imvProfile"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/MarginSpaceXXL"
+            android:src="@drawable/ic_personal_profile" />
+
+        <ImageView
+            android:id="@+id/imvBorderProfile"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/MarginSpaceXXL"
+            android:src="@drawable/border_profile" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tvTitleFirstName"
+        style="@style/TextTint12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewProfile"
+        android:layout_marginLeft="@dimen/MarginSpace4XL"
+        android:layout_marginTop="@dimen/MarginSpace"
+        android:text="@string/signup_firstname_tint" />
+
+    <ImageView
+        android:id="@+id/imvFirstName"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/edtFirstName"
+        android:layout_alignLeft="@+id/tvTitleFirstName"
+        android:layout_alignTop="@+id/edtFirstName"
+        android:src="@drawable/ic_pencil" />
+
+    <EditText
+        android:id="@+id/edtFirstName"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitleFirstName"
+        android:layout_marginLeft="@dimen/MarginSpace"
+        android:layout_marginRight="@dimen/MarginSpace4XL"
+        android:layout_marginTop="@dimen/MarginSpaceS"
+        android:layout_toRightOf="@+id/imvFirstName"
+        android:hint="@string/signup_firstname_tint"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1" />
+
+
+    <TextView
+        android:id="@+id/tvTitleLastName"
+        style="@style/TextTint12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtFirstName"
+        android:layout_marginLeft="@dimen/MarginSpace4XL"
+        android:layout_marginTop="@dimen/MarginSpace"
+        android:text="@string/signup_lastname_tint" />
+
+    <ImageView
+        android:id="@+id/imvLastName"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/edtLastName"
+        android:layout_alignLeft="@+id/tvTitleLastName"
+        android:layout_alignTop="@+id/edtLastName"
+        android:src="@drawable/ic_pencil" />
+
+    <EditText
+        android:id="@+id/edtLastName"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitleLastName"
+        android:layout_marginLeft="@dimen/MarginSpace"
+        android:layout_marginRight="@dimen/MarginSpace4XL"
+        android:layout_marginTop="@dimen/MarginSpaceS"
+        android:layout_toRightOf="@+id/imvLastName"
+        android:hint="@string/signup_lastname_tint"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1" />
+
+
+    <TextView
+        android:id="@+id/tvTitleWeight"
+        style="@style/TextTint12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtLastName"
+        android:layout_marginLeft="@dimen/MarginSpace4XL"
+        android:layout_marginTop="@dimen/MarginSpace"
+        android:text="@string/signup_weight_tint" />
+
+
+    <ImageView
+        android:id="@+id/imvWeight"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/edtWeight"
+        android:layout_alignLeft="@+id/tvTitleWeight"
+        android:layout_alignTop="@+id/edtWeight"
+        android:src="@drawable/ic_weight" />
+
+    <EditText
+        android:id="@+id/edtWeight"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitleWeight"
+        android:layout_marginLeft="@dimen/MarginSpace"
+        android:layout_marginTop="@dimen/MarginSpaceS"
+        android:layout_toRightOf="@+id/imvLastName"
+        android:layout_marginRight="@dimen/MarginSpace4XL"
+        android:layout_alignRight="@+id/edtLastName"
+        android:hint="@string/signup_weight_tint"
+        android:imeOptions="actionNext"
+        android:inputType="numberDecimal"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tvWeightUnit"
+        style="@style/TextSub12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/edtWeight"
+        android:layout_alignBottom="@+id/edtWeight"
+        android:layout_alignRight="@+id/edtLastName"
+        android:gravity="center_vertical|right"
+        android:text="@string/signup_weight_unit" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/tvTitleHeight"
+        style="@style/TextTint12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtWeight"
+        android:layout_marginLeft="@dimen/MarginSpace4XL"
+        android:layout_marginTop="@dimen/MarginSpace"
+        android:text="@string/signup_height_tint" />
+
+
+    <ImageView
+        android:id="@+id/imvHeight"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/edtHeight"
+        android:layout_alignLeft="@+id/tvTitleHeight"
+        android:layout_alignTop="@+id/edtHeight"
+        android:src="@drawable/ic_height" />
+
+    <EditText
+        android:id="@+id/edtHeight"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitleHeight"
+        android:layout_marginLeft="@dimen/MarginSpace"
+        android:layout_marginTop="@dimen/MarginSpaceS"
+        android:layout_toRightOf="@+id/imvLastName"
+        android:layout_marginRight="@dimen/MarginSpace4XL"
+        android:layout_alignRight="@+id/edtLastName"
+        android:hint="@string/signup_height_tint"
+        android:imeOptions="actionNext"
+        android:inputType="numberDecimal"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tvHeightUnit"
+        style="@style/TextSub12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/edtHeight"
+        android:layout_alignBottom="@+id/edtHeight"
+        android:layout_alignRight="@+id/edtLastName"
+        android:gravity="center_vertical|right"
+        android:text="@string/signup_height_unit" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        style="@style/TextTitle14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_create_right"
+        android:text="@string/signup_save"
+        android:layout_marginBottom="@dimen/MarginSpace4XL"
+        android:layout_marginTop="@dimen/MarginSpaceXL"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="@dimen/_40sdp"/>
+
+
+</RelativeLayout>

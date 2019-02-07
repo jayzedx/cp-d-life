@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <FrameLayout
             android:id="@+id/backMenu"
@@ -23,17 +23,31 @@
                 android:src="@drawable/ic_back" />
         </FrameLayout>
 
-
         <TextView
-            android:layout_centerInParent="true"
             android:id="@+id/toolbarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:text="@string/app_name"
             style="@style/TextToolbar20" />
+
+
+        <RelativeLayout
+            android:id="@+id/toolbarMenu"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/ic_more"
+                android:padding="@dimen/PaddingSpaceXL"
+                android:layout_marginRight="@dimen/Margin10dp"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
 
 
     </RelativeLayout>
