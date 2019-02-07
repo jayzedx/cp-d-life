@@ -130,10 +130,16 @@ class ForgotPasswordScreen : ScreenUnit() {
                     companyId = -1
                 }
                 if (position == companys.size-1) {
+                    cbAutoFill.visibility = View.GONE
                     edtEmail.setText("")
                     hideEditTextAnimation()
                 }
-                else if(oldCompanyId == companys.size-1 && cbAutoFill.isChecked) showEditTextAnimation()
+                else {
+                    if (cbAutoFill.visibility != View.VISIBLE)
+                        showEditTextAnimation()
+                    cbAutoFill.visibility = View.VISIBLE
+
+                }
             }
         }
     }

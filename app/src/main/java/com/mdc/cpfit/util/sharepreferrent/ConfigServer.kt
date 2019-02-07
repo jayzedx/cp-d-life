@@ -36,7 +36,7 @@ class ConfigServer {
         arrCompany.add(data)
         var data2 = CompanyBody(1, "CPF")
         arrCompany.add(data2)
-        var data3 = CompanyBody(2, "ETC")
+        var data3 = CompanyBody(2, "Other")
         arrCompany.add(data3)
     }
 
