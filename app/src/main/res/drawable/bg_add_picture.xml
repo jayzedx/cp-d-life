@@ -2,13 +2,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="#EAEAEA" />
 
-    <padding
-        android:bottom="@dimen/MarginSpaceXL"
-        android:left="@dimen/MarginSpaceXL"
-        android:right="@dimen/MarginSpaceXL"
-        android:top="@dimen/MarginSpaceXL"
-        />
-
     <corners
         android:bottomRightRadius="@dimen/MarginSpace"
         android:topRightRadius="@dimen/MarginSpace"

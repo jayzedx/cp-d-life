@@ -26,6 +26,8 @@ class ConfigServer {
     var arraySex: ArrayList<DataSex> = ArrayList()
     */
 
+    var agreement: String? = "https://www.apple.com/legal/sla/docs/macOS1014.pdf"
+
 
     var arrCompany: ArrayList<CompanyBody> = ArrayList()
 

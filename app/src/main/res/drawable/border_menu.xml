@@ -4,7 +4,7 @@
     <corners
         android:topLeftRadius="@dimen/MarginSpace"
         android:topRightRadius="@dimen/MarginSpace"
-        android:bottomRightRadius="@dimen/MarginSpaceS"
+        android:bottomRightRadius="@dimen/MarginSpace"
         android:bottomLeftRadius="@dimen/MarginSpace" />
     <solid  android:color="@color/White"/>
     <stroke android:color="#F2F2F2" android:width="0.5dp"/>

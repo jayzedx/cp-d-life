@@ -1,6 +1,10 @@
 <resources>
     <!--A-->
     <string name="app_name">cpfit_android</string>
+
+
+
+
     <!--B-->
     <string name="back">Back</string>
 
@@ -90,6 +94,7 @@
     <string name="personal_step_selected">STEP</string>
     <string name="personal_km_selected">km</string>
     <string name="personal_unit_selected_default">/km</string>
+    <string name="personal_select_picture">Select Picture</string>
 
 
 
@@ -108,6 +113,9 @@
     <string name="signup_weight_unit">kg</string>
     <string name="signup_height_unit">cm</string>
     <string name="signup_save">Save</string>
+
+    <string name="webview_policy">Agreement</string>
+    <string name="webview_error">Cannot open file, Please try again</string>
 
 
 

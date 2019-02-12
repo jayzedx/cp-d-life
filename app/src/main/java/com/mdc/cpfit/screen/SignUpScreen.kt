@@ -101,6 +101,10 @@ class SignUpScreen : ScreenUnit() {
             }
         }
 
+        tvPolicy.setOnClickListener {
+            IntentFragment(WebViewScreen.newInstance(ConfigServer.instance.agreement))
+        }
+
         initSpinner()
     }
 

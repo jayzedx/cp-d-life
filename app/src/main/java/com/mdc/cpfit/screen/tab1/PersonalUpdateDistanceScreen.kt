@@ -1,6 +1,8 @@
 package com.mdc.cpfit.screen.tab1
 
+import android.app.Activity
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.TypedValue
@@ -8,18 +10,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.TextView
 import com.mdc.cpfit.R
 import com.mdc.cpfit.dialog.DialogBase
 import com.mdc.cpfit.util.DateUtil
 import com.mdc.cpfit.util.ScreenUnit
 import java.util.*
 import kotlinx.android.synthetic.main.partial_personal_add_distance.*
-import kotlinx.android.synthetic.main.partial_personal_distance.*
-import java.io.Serializable
+import android.graphics.Bitmap
+import android.net.Uri
+import android.os.Environment
+import android.os.Parcelable
+import android.provider.MediaStore
+import android.support.v4.content.FileProvider
+import android.util.Log
+import android.widget.RelativeLayout
+import com.bumptech.glide.Glide
+import com.mdc.cpfit.dialog.ImagePickerDialog
+import com.mdc.cpfit.util.ImageUtil
+import com.mdc.cpfit.util.Permission
+import com.mdc.cpfit.util.Permission.*
+import java.io.File
 import java.text.SimpleDateFormat
-
-
 
 
 class PersonalUpdateDistanceScreen: ScreenUnit() {
@@ -33,7 +44,17 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
 
     lateinit var dialog: DialogBase
     var datePicker = ""
-    val KEY_CALLBACK = "key_callback"
+
+
+
+    var imageBitmap: Bitmap? = null
+    var imgstring = ""
+    var uriSavedImageProfile: Uri? = null
+    var timeonGellaryProfile: String? = null
+//    val REQ_CODE_CAMERA = 100
+//    val REQ_CODE_GALLERY = 200
+    val REQ_IMAGE = 300
+
 
 
     companion object {
@@ -88,7 +109,12 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
         edtSelectDate.setOnClickListener { onClickDatePicker() }
         tvStepSelectUnit.setOnClickListener { onClickChangeUnit()}
         tvKmSelectUnit.setOnClickListener { onClickChangeUnit()}
+        imvAdd.setOnClickListener { onClickPickImage() }
 
+        imgBtnOk.setOnClickListener {
+            var dialogFragment: ImagePickerDialog = ImagePickerDialog.newInstance()
+            dialogFragment.show(activity?.supportFragmentManager, ImagePickerDialog::class.java.simpleName)
+        }
     }
 
     private fun onClickChangeUnit() {
@@ -116,7 +142,6 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
         }
 
     }
-
 
     private fun onClickDatePicker() {
         val c = Calendar.getInstance()
@@ -158,4 +183,121 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
         dpd.show()
     }
 
+
+
+
+
+
+
+
+
+    private fun onClickPickImage() {
+        val chooseImageIntent = onChooseImageIntent()
+        startActivityForResult(chooseImageIntent, REQ_IMAGE)
+    }
+
+
+    fun getTakePhotoIntent(): Intent? {
+        val permis = Camera(activityMain)
+
+        val timeStamp = SimpleDateFormat("yyyyHHmmss").format(Date())
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        if (intent.resolveActivity(context?.packageManager) != null) {
+            val root = Environment.getExternalStorageDirectory().absolutePath + "/"
+            val photo = File(root + "cp_d_life" + File.separator)
+            if (!photo.exists()) {
+                photo.mkdir()
+            } else {
+                for (file in photo.listFiles())
+                    if (!file.isDirectory)
+                        file.delete()
+            }
+
+            val image = File(photo.path + File.separator, "$timeStamp.jpg")
+            imgstring = image.toString()
+
+            if (permis) {
+                uriSavedImageProfile = FileProvider.getUriForFile(activity!!, "com.mdc.cpfit.provider", image)
+                return intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImageProfile)
+            }
+
+        }
+
+        return null
+    }
+
+    private fun onChooseImageIntent(): Intent? {
+        var chooserIntent: Intent? = null
+        var intentList: MutableList<Intent> = ArrayList()
+        /** GALLERY **/
+        val pickIntent = Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+
+        /** CAMERA **/
+        val intentTakePhoto = getTakePhotoIntent()
+
+        if (intentTakePhoto != null) {
+            intentList = addIntentsToList(intentList, intentTakePhoto, isCamera = true)
+        }
+        intentList = addIntentsToList(intentList, pickIntent)
+
+        if (intentList.size > 0) {
+            chooserIntent = Intent.createChooser(intentList.removeAt(intentList.size - 1),
+                    context?.getString(R.string.personal_select_picture))
+            chooserIntent!!.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentList.toTypedArray<Parcelable>())
+        }
+        return chooserIntent
+    }
+
+
+    private fun addIntentsToList(list: MutableList<Intent>, intent: Intent, isCamera: Boolean = false): MutableList<Intent> {
+        val resInfo = context?.getPackageManager()?.queryIntentActivities(intent, 0)
+        if (resInfo != null) {
+            for (resolveInfo in resInfo) {
+                val packageName = resolveInfo.activityInfo.packageName
+                if ((packageName.contains(".android") && isCamera) || !isCamera) { //use only official camera
+                    val targetedIntent = Intent(intent)
+                    targetedIntent.setPackage(packageName)
+                    list.add(targetedIntent)
+                }
+            }
+        }
+        return list
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val time = SimpleDateFormat("yyyyHHmmss").format(Date())
+        var imageFile = getTempFile()
+        when (requestCode) {
+            REQ_IMAGE -> {
+                if (resultCode == Activity.RESULT_OK) {
+                    if (data == null || data.action == MediaStore.ACTION_IMAGE_CAPTURE) {
+                        /** CAMERA **/
+                        imageBitmap = ImageUtil.onCameraResult(uriSavedImageProfile, context)
+                    } else {
+                        /** ALBUM **/
+                        imageBitmap = ImageUtil.onGalleryResult(time, data, activityMain)
+                    }
+                    imageBitmap
+
+                    UpdateUI {
+                        imvPreview.layoutParams = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT)
+                        Glide.with(context!!).load(imageBitmap)
+                                //.apply(ImageUtil.getImageCirclePartientProfile())
+                                .into(imvPreview)
+                    }
+                    //imageEncode = ImageUtil.BitMapToString(imageBitmap)!!
+                }
+            }
+            else -> super.onActivityResult(requestCode, resultCode, data)
+
+        }
+    }
+
+    private fun getTempFile(): File {
+        val imageFile = File(context?.externalCacheDir, "tempImage")
+        imageFile.parentFile.mkdirs()
+        return imageFile
+    }
 }

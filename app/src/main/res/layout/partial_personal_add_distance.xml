@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,36 +8,47 @@
 
     <RelativeLayout
         android:id="@+id/viewImage"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_130sdp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/MarginSpace"
         android:layout_marginEnd="@dimen/MarginSpaceXL"
         android:layout_marginStart="@dimen/MarginSpaceXL"
         android:layout_marginTop="@dimen/MarginSpaceXL"
         android:background="@drawable/bg_add_picture"
-        android:layout_centerHorizontal="true">
+        app:layout_constraintBottom_toTopOf="@+id/viewInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imvAdd"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/imvPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:src="@drawable/ic_gallery" />
     </RelativeLayout>
 
     <ImageView
+        android:id="@+id/imvAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/MarginSpaceL"
+        android:layout_marginEnd="@dimen/MarginSpaceXL"
+        android:layout_marginTop="@dimen/MarginSpace"
         android:src="@drawable/ic_plus"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/viewImage"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <RelativeLayout
         android:id="@+id/viewInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/viewImage"
+        android:layout_marginBottom="16dp"
         android:padding="@dimen/MarginSpaceXL"
-        android:layout_below="@+id/viewImage">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/imvCalendar"
@@ -50,17 +61,17 @@
 
         <EditText
             android:id="@+id/edtSelectDate"
-            android:focusable="false"
             style="@style/EditTextStyle"
-            android:textSize="@dimen/_14sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/imvCalendar"
             android:drawableRight="@drawable/ic_spinner"
+            android:focusable="false"
             android:hint="03 May 2018"
             android:maxLines="1"
             android:paddingLeft="@dimen/_20sdp"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_12sdp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -80,41 +91,42 @@
             <EditText
                 android:id="@+id/edtDistance"
                 style="@style/EditTextStyle"
-                android:textSize="@dimen/_14sdp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/MarginSpaceS"
                 android:layout_weight="2.5"
-                android:hint="1.299999999999999"
-                android:maxLines="1"
                 android:ems="10"
-                android:inputType="numberDecimal"
+                android:hint="1.299999999999999"
                 android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
                 android:nextFocusDown="@+id/edtDistance1"
                 android:paddingLeft="@dimen/_20sdp"
-                android:textAlignment="textStart" />
+                android:textAlignment="textStart"
+                android:textSize="@dimen/_12sdp" />
 
             <RelativeLayout
-                android:layout_weight="1"
-                android:gravity="right"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right">
+
                 <TextView
                     android:id="@+id/tvStepSelectUnit"
+                    style="@style/TextTint14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/personal_step_selected"
-                    style="@style/TextTint14"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvKmSelectUnit"
+                    style="@style/TextTint12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/tvStepSelectUnit"
                     android:layout_alignBaseline="@+id/tvStepSelectUnit"
-                    android:text="@string/personal_unit_selected_default"
-                    style="@style/TextTint12" />
+                    android:layout_toRightOf="@id/tvStepSelectUnit"
+                    android:text="@string/personal_unit_selected_default" />
             </RelativeLayout>
 
         </LinearLayout>
@@ -122,30 +134,36 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_below="@+id/viewInput"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_below="@+id/viewInput"
         android:gravity="bottom"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
         <ImageButton
             android:id="@+id/imgBtnOk"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_35sdp"
-            android:padding="@dimen/PaddingSpace"
+            android:layout_weight="1"
             android:background="@color/main_theme"
+            android:padding="@dimen/PaddingSpace"
             android:src="@drawable/ic_correct" />
+
         <ImageButton
             android:id="@+id/imgBtnCancel"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
-            android:padding="@dimen/PaddingSpace"
             android:layout_height="@dimen/_35sdp"
+            android:layout_weight="1"
             android:background="@color/red_theme"
+            android:padding="@dimen/PaddingSpace"
             android:src="@drawable/ic_incorrect" />
 
     </LinearLayout>
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

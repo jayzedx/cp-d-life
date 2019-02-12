@@ -5,6 +5,7 @@ class MsgProperties {
     companion object {
         val FontFamily = "fonts/Prompt-Light.ttf"
         val URL = "https://healthmate.ddns.net"
+        val GOOGLEDOC_PATH = "https://docs.google.com/viewer?url="
 
 
         val SCEEN_INTENT = "SCREEN_INTENT"

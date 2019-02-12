@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.gdacciaro.iOSDialog.iOSDialogBuilder
 import com.mdc.cpfit.R
 import com.mdc.cpfit.dialog.DialogBase
 import com.mdc.cpfit.dialog.MainMenuBottomSheetDialog
 import com.mdc.cpfit.util.ScreenUnit
 import kotlinx.android.synthetic.main.profile_menu.view.*
+import kotlinx.android.synthetic.main.sc_profile.*
 import kotlinx.android.synthetic.main.toolbar_menu_back.*
 
 
@@ -59,7 +61,29 @@ class ProfileScreen : ScreenUnit() {
 
     private fun setComponents() {
 
+        viewProfile.setOnClickListener {
+            val dialogBuilder = iOSDialogBuilder(context)
+            dialogBuilder.setTitle("ยืนการทำการการ")
+            dialogBuilder.setSubtitle("Enter ยืนยันการขออนุมัติการทำงานล่วงหน้า Below")
+            dialogBuilder.setBoldPositiveLabel(true)
+            dialogBuilder.setCancelable(false)
+            dialogBuilder.setPositiveListener("ยืนยัน") { dialog ->
+                //do something with edt.getText().toString();
+                dialog.dismiss()
+
+            }
+            dialogBuilder.setNegativeListener("ยกเลิก", { dialog ->
+
+                dialog.dismiss()
+                //pass
+            })
+
+            dialogBuilder.build().show()
+        }
+
     }
+
+
 
     private fun showBottomSheet() {
         val bottomSheetView = layoutInflater.inflate(R.layout.profile_menu, null)

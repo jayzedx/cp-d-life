@@ -15,8 +15,14 @@ import com.gdacciaro.iOSDialog.iOSDialogBuilder
 import com.mdc.cpfit.R
 import com.mdc.cpfit.dialog.DialogBase
 import com.mdc.cpfit.util.ScreenUnit
+import com.mdc.cpfit.util.listener.iNetwork
 import kotlinx.android.synthetic.main.sc_personal.*
 import java.util.*
+import android.provider.MediaStore
+import android.content.Intent
+import android.content.pm.PackageManager
+
+
 
 
 
@@ -28,6 +34,7 @@ class PersonalScreen : ScreenUnit() {
     var f1 : PersonalDistanceScreen? = null
     var f2 : PersonalUpdateDistanceScreen? = null
 
+    lateinit var dialog: DialogBase
 
     companion object {
         fun newInstance(): PersonalScreen {
@@ -86,22 +93,38 @@ class PersonalScreen : ScreenUnit() {
         tvPoint.setTypeface(null, Typeface.BOLD)
 
         imvProfile.setOnClickListener {
-            val dialogBuilder = iOSDialogBuilder(context)
-            dialogBuilder.setTitle("ยืนการทำการการ")
-            dialogBuilder.setSubtitle("Enter ยืนยันการขออนุมัติการทำงานล่วงหน้า Below")
-            dialogBuilder.setBoldPositiveLabel(true)
-            dialogBuilder.setCancelable(false)
-            dialogBuilder.setPositiveListener("ยืนยัน") { dialog ->
-                //do something with edt.getText().toString();
-                dialog.dismiss()
 
-            }
-            dialogBuilder.setNegativeListener("ยกเลิก", { dialog ->
-                dialog.dismiss()
-            })
-
-            dialogBuilder.build().show()
         }
+
+
+        NetworkCheckStatus(object : iNetwork {
+            override fun CannotUseInternet() {
+//                dialog.DialogRefesh("", "", object : DialogBase.OnClickDialogSimple {
+//                    override fun onClickOK() {
+//
+//                    }
+//                })
+                val dialogBuilder = iOSDialogBuilder(context)
+                dialogBuilder.setTitle("ยืนการทำการการ")
+                dialogBuilder.setSubtitle("Enter ยืนยันการขออนุมัติการทำงานล่วงหน้า Below")
+                dialogBuilder.setBoldPositiveLabel(true)
+                dialogBuilder.setCancelable(false)
+                dialogBuilder.setPositiveListener("ยืนยัน") { dialog ->
+                    //do something with edt.getText().toString();
+                    dialog.dismiss()
+
+                }
+                dialogBuilder.setNegativeListener("ยกเลิก", { dialog ->
+                    dialog.dismiss()
+                })
+
+                dialogBuilder.build().show()
+            }
+            override fun CanUseInternet() {
+            }
+            override fun NetworkChange(NetworkType: Int) {
+            }
+        })
 
     }
 
