@@ -15,6 +15,7 @@ import com.mdc.cpfit.model.PersonalDistanceAdapterModel
 import com.mdc.cpfit.screen.tab1.adapter.PersonalDistanceAdapter
 import com.mdc.cpfit.util.ScreenUnit
 import kotlinx.android.synthetic.main.partial_personal_distance.*
+import org.parceler.Parcels
 import java.io.Serializable
 
 
@@ -23,12 +24,10 @@ class PersonalDistanceScreen : ScreenUnit() {
     val TAG = PersonalDistanceScreen::class.java.simpleName
     var rootView: View? = null
     var type: String = ""
-//    var showOrHiddenCallBack: (() -> Unit)? = null
     var showOrHiddenCallBack: (() -> Unit)? = null
 
 
     lateinit var dialog: DialogBase
-    val KEY_CALLBACK = "key_callback"
 
     companion object {
         fun newInstance(): PersonalDistanceScreen {
@@ -55,15 +54,11 @@ class PersonalDistanceScreen : ScreenUnit() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        //if (savedInstanceState != null) {
-        //    showOrHiddenCallBack = savedInstanceState.getSerializable(KEY_CALLBACK) as () -> Unit
-        //}
+       super.onActivityCreated(savedInstanceState)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        //outState.putSerializable(KEY_CALLBACK, showOrHiddenCallBack as Serializable)
     }
 
     private fun setValue() {

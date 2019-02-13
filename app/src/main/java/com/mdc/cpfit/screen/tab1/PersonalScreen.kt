@@ -92,39 +92,35 @@ class PersonalScreen : ScreenUnit() {
         //set bold
         tvPoint.setTypeface(null, Typeface.BOLD)
 
-        imvProfile.setOnClickListener {
-
-        }
-
-
-        NetworkCheckStatus(object : iNetwork {
-            override fun CannotUseInternet() {
-//                dialog.DialogRefesh("", "", object : DialogBase.OnClickDialogSimple {
-//                    override fun onClickOK() {
 //
-//                    }
+//        NetworkCheckStatus(object : iNetwork {
+//            override fun CannotUseInternet() {
+////                dialog.DialogRefesh("", "", object : DialogBase.OnClickDialogSimple {
+////                    override fun onClickOK() {
+////
+////                    }
+////                })
+//                val dialogBuilder = iOSDialogBuilder(context)
+//                dialogBuilder.setTitle("ยืนการทำการการ")
+//                dialogBuilder.setSubtitle("Enter ยืนยันการขออนุมัติการทำงานล่วงหน้า Below")
+//                dialogBuilder.setBoldPositiveLabel(true)
+//                dialogBuilder.setCancelable(false)
+//                dialogBuilder.setPositiveListener("ยืนยัน") { dialog ->
+//                    //do something with edt.getText().toString();
+//                    dialog.dismiss()
+//
+//                }
+//                dialogBuilder.setNegativeListener("ยกเลิก", { dialog ->
+//                    dialog.dismiss()
 //                })
-                val dialogBuilder = iOSDialogBuilder(context)
-                dialogBuilder.setTitle("ยืนการทำการการ")
-                dialogBuilder.setSubtitle("Enter ยืนยันการขออนุมัติการทำงานล่วงหน้า Below")
-                dialogBuilder.setBoldPositiveLabel(true)
-                dialogBuilder.setCancelable(false)
-                dialogBuilder.setPositiveListener("ยืนยัน") { dialog ->
-                    //do something with edt.getText().toString();
-                    dialog.dismiss()
-
-                }
-                dialogBuilder.setNegativeListener("ยกเลิก", { dialog ->
-                    dialog.dismiss()
-                })
-
-                dialogBuilder.build().show()
-            }
-            override fun CanUseInternet() {
-            }
-            override fun NetworkChange(NetworkType: Int) {
-            }
-        })
+//
+//                dialogBuilder.build().show()
+//            }
+//            override fun CanUseInternet() {
+//            }
+//            override fun NetworkChange(NetworkType: Int) {
+//            }
+//        })
 
     }
 
@@ -132,7 +128,6 @@ class PersonalScreen : ScreenUnit() {
         val manager = childFragmentManager
         val currentFragment = childFragmentManager?.findFragmentById(R.id.container)
         if (currentFragment != null) {
-
             if (currentFragment is PersonalDistanceScreen) {
                 val transaction = manager.beginTransaction()
                 transaction.setCustomAnimations(

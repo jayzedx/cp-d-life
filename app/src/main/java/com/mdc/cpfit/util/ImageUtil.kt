@@ -112,17 +112,28 @@ class ImageUtil {
         }
 
         fun onCameraResult(uriSavedImage: Uri?, context: Context?, size: Int): Bitmap? {
-
             val selectedImage = uriSavedImage
             context?.getContentResolver()?.notifyChange(selectedImage, null)
-            val cr = context?.getContentResolver()
             var resizedBitmap: Bitmap? = null
 
             try {
 //                bitmap = android.provider.MediaStore.Images.Media
 //                        .getBitmap(cr, selectedImage)
                 var bitmap = BitmapFactory.decodeStream(context!!.getContentResolver().openInputStream(selectedImage))
-                resizedBitmap = Bitmap.createScaledBitmap(bitmap, size, size, false)
+
+                var outWidth: Int
+                var outHeight: Int
+                val inWidth = bitmap.width
+                val inHeight = bitmap.height
+                if (inWidth > inHeight) {
+                    outWidth = size
+                    outHeight = (inHeight * size) / inWidth
+                } else {
+                    outHeight = size
+                    outWidth = (inWidth * size) / inHeight
+                }
+
+                resizedBitmap = Bitmap.createScaledBitmap(bitmap, outWidth, outHeight, false)
 
                 //                        viewHolder.imageView.setImageBitmap(bitmap);
                 //            Toast.makeText(context, selectedImage.toString(),
@@ -178,16 +189,64 @@ class ImageUtil {
 
         }
 
+
+        fun onGalleryResult(timeStamp: String?, data: Intent?, context: Context, size: Int): Bitmap? {
+            var bitmap: Bitmap? = null
+            var resizedBitmap: Bitmap? = null
+
+            if (data != null && context != null) {
+                val path = data.getData()
+                try {
+                    bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), path)
+//                    saveBitmapToFile(bitmap, timeStamp)
+
+                    var outWidth: Int
+                    var outHeight: Int
+                    val inWidth = bitmap.width
+                    val inHeight = bitmap.height
+                    if (inWidth > inHeight) {
+                        outWidth = size
+                        outHeight = (inHeight * size) / inWidth
+                    } else {
+                        outHeight = size
+                        outWidth = (inWidth * size) / inHeight
+                    }
+
+                    resizedBitmap = Bitmap.createScaledBitmap(bitmap, outWidth, outHeight, false)
+
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+            return resizedBitmap
+
+        }
+
+
+
+//
+//        fun getBitmapCompress(bitmap: Bitmap) : Bitmap {
+//            var byteArrayOutputStream =   ByteArrayOutputStream()
+//            bitmap?.compress(Bitmap.CompressFormat.JPEG, 60, byteArrayOutputStream)
+//            val bitmapData = byteArrayOutputStream.toByteArray()
+//            return BitmapFactory.decodeByteArray(bitmapData, 0, bitmapData.size)
+//        }
+
+
         ///////////////////////////////////////////////////////////////////////////
         fun saveBitmapToFile(bitmap: Bitmap?, timeStamp: String?): File {
 
 
             val root = Environment.getExternalStorageDirectory().getAbsolutePath() + "/"
-            val file = File(root + "tankoonNu" + File.separator)
-            if (!file.exists()) {
-                file.mkdir()
+            val files = File(root + "cp_d_life" + File.separator)
+            if (!files.exists()) {
+                files.mkdir()
+            } else {
+                for (file in files.listFiles())
+                    if (!file.isDirectory)
+                        file.delete()
             }
-            val image = File(file, "$timeStamp.jpg")
+            val image = File(files, "$timeStamp.jpg")
 //            var uriSavedImage = Uri.fromFile(image)
             var outputStream: OutputStream
             try {

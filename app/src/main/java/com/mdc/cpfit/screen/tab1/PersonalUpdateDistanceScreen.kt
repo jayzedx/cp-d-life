@@ -17,10 +17,12 @@ import com.mdc.cpfit.util.ScreenUnit
 import java.util.*
 import kotlinx.android.synthetic.main.partial_personal_add_distance.*
 import android.graphics.Bitmap
+import android.media.Image
 import android.net.Uri
 import android.os.Environment
 import android.os.Parcelable
 import android.provider.MediaStore
+import android.support.v4.app.DialogFragment
 import android.support.v4.content.FileProvider
 import android.util.Log
 import android.widget.RelativeLayout
@@ -29,7 +31,9 @@ import com.mdc.cpfit.dialog.ImagePickerDialog
 import com.mdc.cpfit.util.ImageUtil
 import com.mdc.cpfit.util.Permission
 import com.mdc.cpfit.util.Permission.*
+import org.parceler.Parcels
 import java.io.File
+import java.io.Serializable
 import java.text.SimpleDateFormat
 
 
@@ -47,15 +51,15 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
 
 
 
+    val KEY_BITMAP = "KEY_BITMAP"
+    val KEY_SELECTED_UNIT = "KEY_SELECTED_UNIT"
+
+
+
     var imageBitmap: Bitmap? = null
     var imgstring = ""
-    var uriSavedImageProfile: Uri? = null
-    var timeonGellaryProfile: String? = null
-//    val REQ_CODE_CAMERA = 100
-//    val REQ_CODE_GALLERY = 200
+    var uriSavedImage: Uri? = null
     val REQ_IMAGE = 300
-
-
 
     companion object {
         fun newInstance(): PersonalUpdateDistanceScreen {
@@ -79,49 +83,74 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setFrangment(PersonalUpdateDistanceScreen::class.simpleName.toString(), rootView)
-        setValue()
-
     }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //if (savedInstanceState != null) {
-        //    showOrHiddenCallBack = savedInstanceState.getSerializable(KEY_CALLBACK) as () -> Unit
-        //}
+        if (savedInstanceState != null) {
+            stepUnitSelected = savedInstanceState.getBoolean(KEY_SELECTED_UNIT)
+            imageBitmap = Parcels.unwrap(savedInstanceState.getParcelable(KEY_BITMAP)) as Bitmap
+            setRestoreState()
+        } else {
+            setInitialState()
+        }
+        setValue()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
+        outState.putBoolean(KEY_BITMAP, stepUnitSelected)
+        outState.putParcelable(KEY_BITMAP, Parcels.wrap(imageBitmap))
         super.onSaveInstanceState(outState)
-        //outState.putSerializable(KEY_CALLBACK, showOrHiddenCallBack as Serializable)
     }
 
 
     private fun setValue() {
-        val args = arguments
         setComponent()
     }
 
-    private fun setComponent() {
-        stepUnitSelected = true
-        tvKmSelectUnit.text =  "/" + getString(R.string.personal_km_selected)
-        tvStepSelectUnit.setTypeface(null, Typeface.BOLD)
-
-        imgBtnCancel.setOnClickListener { showOrHiddenCallBack?.invoke() }
-        edtSelectDate.setOnClickListener { onClickDatePicker() }
-        tvStepSelectUnit.setOnClickListener { onClickChangeUnit()}
-        tvKmSelectUnit.setOnClickListener { onClickChangeUnit()}
-        imvAdd.setOnClickListener { onClickPickImage() }
-
-        imgBtnOk.setOnClickListener {
-            var dialogFragment: ImagePickerDialog = ImagePickerDialog.newInstance()
-            dialogFragment.show(activity?.supportFragmentManager, ImagePickerDialog::class.java.simpleName)
+    private fun setInitialState() {
+        UpdateUI {
+            imageBitmap = null
+            uriSavedImage = null
+            imgstring = ""
+            datePicker = ""
+            stepUnitSelected = true
+            edtDistance.setText("")
+            edtSelectDate.setText("")
+            imvPreview.setImageResource(R.drawable.ic_gallery)
+            onChangeUnit(initial = true)
         }
     }
 
-    private fun onClickChangeUnit() {
+    private fun setRestoreState() {
+        onChangeUnit(initial = true)
+        if (imageBitmap != null) {
+            Glide.with(context!!).load(imageBitmap).into(imvPreview)
+        }
+    }
+
+    private fun setComponent() {
+        imgBtnCancel.setOnClickListener { showOrHiddenCallBack?.invoke() }
+        edtSelectDate.setOnClickListener { onClickDatePicker() }
+        tvStepSelectUnit.setOnClickListener { onChangeUnit()}
+        tvKmSelectUnit.setOnClickListener { onChangeUnit()}
+        imvAdd.setOnClickListener { onClickPickImage() }
+
+        imgBtnOk.setOnClickListener {
+            imageBitmap?.run {
+                var dialogFragment: ImagePickerDialog = ImagePickerDialog.newInstance(this)
+                dialogFragment.show(activity?.supportFragmentManager, ImagePickerDialog::class.java.simpleName)
+            }
+        }
+    }
+
+    private fun onChangeUnit(initial:Boolean = false) {
         val smallPx = context?.resources?.getDimension(R.dimen._12sdp)!!
         val largePx = context?.resources?.getDimension(R.dimen._14sdp)!!
         val smallSize = smallPx / getResources().displayMetrics.density
         val largeSize = largePx / getResources().displayMetrics.density
+
+        if (initial) stepUnitSelected = !stepUnitSelected
 
         stepUnitSelected = if (stepUnitSelected) {
             tvKmSelectUnit.text = getString(R.string.personal_km_selected)
@@ -140,7 +169,6 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
             tvKmSelectUnit.setTextSize(TypedValue.COMPLEX_UNIT_SP, smallSize)
             true
         }
-
     }
 
     private fun onClickDatePicker() {
@@ -199,7 +227,6 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
 
     fun getTakePhotoIntent(): Intent? {
         val permis = Camera(activityMain)
-
         val timeStamp = SimpleDateFormat("yyyyHHmmss").format(Date())
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if (intent.resolveActivity(context?.packageManager) != null) {
@@ -212,13 +239,12 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
                     if (!file.isDirectory)
                         file.delete()
             }
-
             val image = File(photo.path + File.separator, "$timeStamp.jpg")
             imgstring = image.toString()
 
             if (permis) {
-                uriSavedImageProfile = FileProvider.getUriForFile(activity!!, "com.mdc.cpfit.provider", image)
-                return intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImageProfile)
+                uriSavedImage = FileProvider.getUriForFile(activity!!, "com.mdc.cpfit.provider", image)
+                return intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage)
             }
 
         }
@@ -267,19 +293,20 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        val time = SimpleDateFormat("yyyyHHmmss").format(Date())
-        var imageFile = getTempFile()
         when (requestCode) {
             REQ_IMAGE -> {
                 if (resultCode == Activity.RESULT_OK) {
+                    val time = SimpleDateFormat("yyyyHHmmss").format(Date())
+                    val displaymetrics = getResources().getDisplayMetrics()
+                    val maxHeight = displaymetrics.heightPixels
                     if (data == null || data.action == MediaStore.ACTION_IMAGE_CAPTURE) {
                         /** CAMERA **/
-                        imageBitmap = ImageUtil.onCameraResult(uriSavedImageProfile, context)
+//                        imageBitmap = ImageUtil.onCameraResult(uriSavedImage, context)
+                        imageBitmap = ImageUtil.onCameraResult(uriSavedImage, context, maxHeight)
                     } else {
                         /** ALBUM **/
-                        imageBitmap = ImageUtil.onGalleryResult(time, data, activityMain)
+                        imageBitmap = ImageUtil.onGalleryResult(time, data, activityMain, maxHeight)
                     }
-                    imageBitmap
 
                     UpdateUI {
                         imvPreview.layoutParams = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT)
