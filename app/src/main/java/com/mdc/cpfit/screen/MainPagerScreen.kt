@@ -142,9 +142,8 @@ class MainPagerScreen : ScreenUnit() {
         pager?.offscreenPageLimit = 3
         pager?.setPageTransformer(false, object: ViewPager.PageTransformer {
             override fun transformPage(page: View, position: Float) {
-                //Consider animating view here
-                if (position >= -1 && position <= 1) {
-//                if (pager.currentItem == 0 && position == 0F) {
+//                if (position >= -1 && position <= 1) {
+                if (pager.currentItem == 0 && position < 0) {
                     f1?.f1?.setAnimation()
                 }
             }

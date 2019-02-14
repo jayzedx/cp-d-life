@@ -26,7 +26,6 @@ class PersonalDistanceScreen : ScreenUnit() {
     var type: String = ""
     var showOrHiddenCallBack: (() -> Unit)? = null
 
-
     lateinit var dialog: DialogBase
 
     companion object {
@@ -51,6 +50,7 @@ class PersonalDistanceScreen : ScreenUnit() {
         super.onViewCreated(view, savedInstanceState)
         setFrangment(PersonalDistanceScreen::class.simpleName.toString(), rootView)
         setValue()
+        setAnimation()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

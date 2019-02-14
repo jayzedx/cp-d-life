@@ -106,7 +106,7 @@
     <string name="signup_email_tint">Email</string>
     <string name="signup_autofill">Auto fill</string>
     <string name="signup_create_account">Create</string>
-    <string name="signup_policy">By signing up, you agree to our \nTerms &amp; Privacy Policy.</string>
+    <string name="signup_policy">By signing up, you agree to our \nTerms &amp; Privacy Policy.</string>
     <string name="signup_agree">I Agree</string>
     <string name="signup_weight_tint">Weight</string>
     <string name="signup_height_tint">Height</string>

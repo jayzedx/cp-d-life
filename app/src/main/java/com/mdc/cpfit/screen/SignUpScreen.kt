@@ -151,43 +151,45 @@ class SignUpScreen : ScreenUnit() {
     }
 
     private fun hideEditTextAnimation() {
-        var animatorSet = AnimatorSet()
-//        animatorSet.setDuration(500)
-        animatorSet.setInterpolator(AccelerateDecelerateInterpolator())
-        animatorSet.addListener (object: Animator.AnimatorListener {
-            override fun onAnimationRepeat(animation: Animator?) {}
-            override fun onAnimationCancel(animation: Animator?) {}
-            override fun onAnimationStart(animation: Animator?) {}
-            override fun onAnimationEnd(animation: Animator?) {
-                viewInputAutoFill.visibility = View.GONE
-                cbAutoFill.visibility = View.GONE
-            }
-        })
-        var anim = AnimatorInflater.loadAnimator(context, R.animator.to_right) as AnimatorSet
-        anim.setTarget(viewInputAutoFill)
-        animatorSet.play(anim)
-        animatorSet.start()
+//        var animatorSet = AnimatorSet()
+////        animatorSet.setDuration(500)
+//        animatorSet.setInterpolator(AccelerateDecelerateInterpolator())
+//        animatorSet.addListener (object: Animator.AnimatorListener {
+//            override fun onAnimationRepeat(animation: Animator?) {}
+//            override fun onAnimationCancel(animation: Animator?) {}
+//            override fun onAnimationStart(animation: Animator?) {}
+//            override fun onAnimationEnd(animation: Animator?) {
+//                viewInputAutoFill.visibility = View.GONE
+//                cbAutoFill.visibility = View.GONE
+//            }
+//        })
+//        var anim = AnimatorInflater.loadAnimator(context, R.animator.to_right) as AnimatorSet
+//        anim.setTarget(viewInputAutoFill)
+//        animatorSet.play(anim)
+//        animatorSet.start()
+        viewInputAutoFill.visibility = View.GONE
     }
 
     private fun showEditTextAnimation() {
-        var animatorSet = AnimatorSet()
-//        animatorSet.setDuration(500)
-        animatorSet.setInterpolator(AccelerateDecelerateInterpolator())
-        animatorSet.addListener (object: Animator.AnimatorListener {
-            override fun onAnimationRepeat(animation: Animator?) {}
-            override fun onAnimationCancel(animation: Animator?) {}
-            override fun onAnimationStart(animation: Animator?) {
-                viewInputAutoFill.visibility = View.VISIBLE
-                cbAutoFill.visibility = View.VISIBLE
-
-            }
-            override fun onAnimationEnd(animation: Animator?) {}
-        })
-
-        var anim = AnimatorInflater.loadAnimator(context, R.animator.from_right) as AnimatorSet
-        anim.setTarget(viewInputAutoFill)
-        animatorSet.play(anim)
-        animatorSet.start()
+//        var animatorSet = AnimatorSet()
+////        animatorSet.setDuration(500)
+//        animatorSet.setInterpolator(AccelerateDecelerateInterpolator())
+//        animatorSet.addListener (object: Animator.AnimatorListener {
+//            override fun onAnimationRepeat(animation: Animator?) {}
+//            override fun onAnimationCancel(animation: Animator?) {}
+//            override fun onAnimationStart(animation: Animator?) {
+//                viewInputAutoFill.visibility = View.VISIBLE
+//                cbAutoFill.visibility = View.VISIBLE
+//
+//            }
+//            override fun onAnimationEnd(animation: Animator?) {}
+//        })
+//
+//        var anim = AnimatorInflater.loadAnimator(context, R.animator.from_right) as AnimatorSet
+//        anim.setTarget(viewInputAutoFill)
+//        animatorSet.play(anim)
+//        animatorSet.start()
+        viewInputAutoFill.visibility = View.VISIBLE
     }
 
 

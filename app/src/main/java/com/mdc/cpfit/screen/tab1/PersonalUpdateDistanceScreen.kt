@@ -322,9 +322,4 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
         }
     }
 
-    private fun getTempFile(): File {
-        val imageFile = File(context?.externalCacheDir, "tempImage")
-        imageFile.parentFile.mkdirs()
-        return imageFile
-    }
 }
