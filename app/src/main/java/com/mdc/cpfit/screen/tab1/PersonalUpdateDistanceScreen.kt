@@ -23,11 +23,13 @@ import android.os.Environment
 import android.os.Parcelable
 import android.provider.MediaStore
 import android.support.v4.app.DialogFragment
+import android.support.v4.content.ContextCompat
 import android.support.v4.content.FileProvider
 import android.util.Log
 import android.widget.RelativeLayout
 import com.bumptech.glide.Glide
 import com.mdc.cpfit.dialog.ImagePickerDialog
+import com.mdc.cpfit.dialog.PopupDialog
 import com.mdc.cpfit.util.ImageUtil
 import com.mdc.cpfit.util.Permission
 import com.mdc.cpfit.util.Permission.*
@@ -130,17 +132,25 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
     }
 
     private fun setComponent() {
-        imgBtnCancel.setOnClickListener { showOrHiddenCallBack?.invoke() }
         edtSelectDate.setOnClickListener { onClickDatePicker() }
         tvStepSelectUnit.setOnClickListener { onChangeUnit()}
         tvKmSelectUnit.setOnClickListener { onChangeUnit()}
         imvAdd.setOnClickListener { onClickPickImage() }
 
-        imgBtnOk.setOnClickListener {
+        imvPreview.setOnClickListener {
             imageBitmap?.run {
                 var dialogFragment: ImagePickerDialog = ImagePickerDialog.newInstance(this)
                 dialogFragment.show(activity?.supportFragmentManager, ImagePickerDialog::class.java.simpleName)
             }
+        }
+        imvBtnCancel.setOnClickListener { showOrHiddenCallBack?.invoke() }
+        imvBtnOk.setOnClickListener {
+            var dialogFragment: PopupDialog = PopupDialog.newInstance()
+            dialogFragment.setTextHead("Yo Yo")
+            dialogFragment.setTextTitle("this is title")
+            dialogFragment.setTextDetail("this is detail dasdsa das dsad asdas dasd asd asd asd asdas dasd asdasdasdasdsa")
+            dialogFragment.setImageHead(R.drawable.ic_trophy)
+            dialogFragment.show(activity?.supportFragmentManager, PopupDialog::class.java.simpleName)
         }
     }
 

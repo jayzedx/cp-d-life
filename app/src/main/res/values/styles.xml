@@ -319,7 +319,7 @@
         <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
         <item name="android:windowIsFloating">true</item>
         <!-- If you don't want your own button bar style use
-                @android:style/Holo.Light.ButtonBar.AlertDialog
+                @android:style/Holo.Light.ButtonBar.PopupDialog
                 and
                 ?android:attr/borderlessButtonStyle
              instead of @style/MyButtonBar and @style/MyBorderlessButton -->
@@ -382,6 +382,19 @@
         <item name="android:windowExitAnimation">@anim/move_to_down</item>
     </style>
 
+    <style name="PopupDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@color/tran30</item>
+        <!-- Additionally if you want animations when dialog opening -->
+        <item name="android:windowEnterAnimation">@anim/move_to_top</item>
+        <item name="android:windowExitAnimation">@anim/move_to_down</item>
+    </style>
 
 
     <!--Bottom Sheet-->

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="@dimen/PaddingSpace6XL"
+    android:paddingRight="@dimen/PaddingSpace6XL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/viewContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/PaddingSpaceXL"
+        android:background="@drawable/border_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvHead"
+            style="@style/TextCaption14"
+            android:layout_marginTop="@dimen/MarginSpaceXL"
+            android:text="Congratulations"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:text="dialog title"
+            style="@style/TextSub12"
+            android:layout_marginTop="@dimen/MarginSpaceL"
+            android:textAlignment="center"
+            android:layout_below="@+id/tvHead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvDetail"
+            android:text="dialog detail"
+            style="@style/TextSub12"
+            android:textAlignment="center"
+            android:layout_below="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_marginTop="@dimen/MarginSpaceL"
+            style="@style/TextTitle12"
+            android:text="Ok"
+            android:background="@drawable/border_button"
+            android:layout_below="@id/tvDetail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/viewImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/viewContent"
+        app:layout_constraintEnd_toEndOf="@+id/viewContent"
+        app:layout_constraintStart_toStartOf="@+id/viewContent"
+        app:layout_constraintTop_toTopOf="@+id/viewContent">
+
+        <ImageView
+            android:id="@+id/imvBorder"
+            android:layout_centerInParent="true"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/border_image_dialog" />
+
+        <ImageView
+            android:id="@+id/imvTopic"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_trophy" />
+
+    </RelativeLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
