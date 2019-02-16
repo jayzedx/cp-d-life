@@ -53,7 +53,7 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
 
 
 
-    val KEY_BITMAP = "KEY_BITMAP"
+    val KEY_IMAGE_URI = "KEY_IMAGE_URI"
     val KEY_SELECTED_UNIT = "KEY_SELECTED_UNIT"
 
 
@@ -91,7 +91,8 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
         super.onActivityCreated(savedInstanceState)
         if (savedInstanceState != null) {
             stepUnitSelected = savedInstanceState.getBoolean(KEY_SELECTED_UNIT)
-            imageBitmap = Parcels.unwrap(savedInstanceState.getParcelable(KEY_BITMAP)) as Bitmap
+//            imageBitmap = Parcels.unwrap(savedInstanceState.getParcelable(KEY_IMAGE_URI)) as Bitmap
+            uriSavedImage = Uri.parse(savedInstanceState.getString(KEY_IMAGE_URI))
             setRestoreState()
         } else {
             setInitialState()
@@ -100,8 +101,9 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        outState.putBoolean(KEY_BITMAP, stepUnitSelected)
-        outState.putParcelable(KEY_BITMAP, Parcels.wrap(imageBitmap))
+        outState.putBoolean(KEY_SELECTED_UNIT, stepUnitSelected)
+//        outState.putParcelable(KEY_IMAGE_URI, Parcels.wrap(imageBitmap))
+        outState.putString(KEY_IMAGE_URI, uriSavedImage.toString())
         super.onSaveInstanceState(outState)
     }
 
@@ -126,8 +128,8 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
 
     private fun setRestoreState() {
         onChangeUnit(initial = true)
-        if (imageBitmap != null) {
-            Glide.with(context!!).load(imageBitmap).into(imvPreview)
+        if (uriSavedImage != null) {
+            Glide.with(context!!).load(uriSavedImage).into(imvPreview)
         }
     }
 
@@ -315,7 +317,9 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
                         imageBitmap = ImageUtil.onCameraResult(uriSavedImage, context, maxHeight)
                     } else {
                         /** ALBUM **/
-                        imageBitmap = ImageUtil.onGalleryResult(time, data, activityMain, maxHeight)
+                        val pair = ImageUtil.onGalleryResult(time, data, activityMain, maxHeight)
+                        imageBitmap = pair.first
+                        uriSavedImage = pair.second
                     }
 
                     UpdateUI {

@@ -139,7 +139,7 @@ class MainPagerScreen : ScreenUnit() {
         adapter.addFragment(f3, "TAB 3")
         pager?.setPagingEnabled(false)
         pager?.adapter = adapter
-        pager?.offscreenPageLimit = 3
+//        pager?.offscreenPageLimit = 3
         pager?.setPageTransformer(false, object: ViewPager.PageTransformer {
             override fun transformPage(page: View, position: Float) {
 //                if (position >= -1 && position <= 1) {

@@ -105,6 +105,8 @@ class ProfileScreen : ScreenUnit() {
             imageBitmap?.run {
                 var dialogFragment: ImagePickerDialog = ImagePickerDialog.newInstance(this)
                 dialogFragment.show(activity?.supportFragmentManager, ImagePickerDialog::class.java.simpleName)
+            } ?: run {
+                onClickPickImage()
             }
         }
 
@@ -220,7 +222,9 @@ class ProfileScreen : ScreenUnit() {
                         imageBitmap = ImageUtil.onCameraResult(uriSavedImage, context, maxHeight)
                     } else {
                         /** ALBUM **/
-                        imageBitmap = ImageUtil.onGalleryResult(time, data, activityMain, maxHeight)
+                        val pair = ImageUtil.onGalleryResult(time, data, activityMain, maxHeight)
+                        imageBitmap = pair.first
+                        uriSavedImage = pair.second
                     }
 
                     UpdateUI {

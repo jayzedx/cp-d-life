@@ -94,7 +94,7 @@ class PopupDialog : DialogFragment(), View.OnTouchListener {
                     .into(object: SimpleTarget<Bitmap>() {
                         override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                             //set sizing of image
-                            val notOvalSize = context?.resources?.getDimension(R.dimen._42sdp)!!.toInt()
+                            val notOvalSize = context?.resources?.getDimension(R.dimen._35sdp)!!.toInt()
                             val ovalSize = context?.resources?.getDimension(R.dimen._55sdp)!!.toInt()
                             var width = resource.width
                             var height = resource.height

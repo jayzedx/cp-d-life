@@ -190,12 +190,12 @@ class ImageUtil {
         }
 
 
-        fun onGalleryResult(timeStamp: String?, data: Intent?, context: Context, size: Int): Bitmap? {
+        fun onGalleryResult(timeStamp: String?, data: Intent?, context: Context, size: Int): Pair<Bitmap?, Uri?> {
             var bitmap: Bitmap? = null
             var resizedBitmap: Bitmap? = null
-
+            var path: Uri? = null
             if (data != null && context != null) {
-                val path = data.getData()
+                path = data.getData()
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), path)
 //                    saveBitmapToFile(bitmap, timeStamp)
@@ -218,7 +218,7 @@ class ImageUtil {
                     e.printStackTrace()
                 }
             }
-            return resizedBitmap
+            return Pair(resizedBitmap, path)
 
         }
 
