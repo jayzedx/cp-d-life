@@ -198,6 +198,9 @@ class ImageUtil {
                 path = data.getData()
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), path)
+                    if (bitmap == null) {
+                        return Pair(null, null)
+                    }
 //                    saveBitmapToFile(bitmap, timeStamp)
 
                     var outWidth: Int

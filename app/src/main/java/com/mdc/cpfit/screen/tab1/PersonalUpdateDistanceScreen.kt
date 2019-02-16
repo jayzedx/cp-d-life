@@ -3,6 +3,8 @@ package com.mdc.cpfit.screen.tab1
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.TypedValue
@@ -19,6 +21,7 @@ import kotlinx.android.synthetic.main.partial_personal_add_distance.*
 import android.graphics.Bitmap
 import android.media.Image
 import android.net.Uri
+import android.os.Build
 import android.os.Environment
 import android.os.Parcelable
 import android.provider.MediaStore
@@ -28,6 +31,7 @@ import android.support.v4.content.FileProvider
 import android.util.Log
 import android.widget.RelativeLayout
 import com.bumptech.glide.Glide
+import com.google.android.gms.common.wrappers.Wrappers
 import com.mdc.cpfit.dialog.ImagePickerDialog
 import com.mdc.cpfit.dialog.PopupDialog
 import com.mdc.cpfit.util.ImageUtil
@@ -289,18 +293,52 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
 
 
     private fun addIntentsToList(list: MutableList<Intent>, intent: Intent, isCamera: Boolean = false): MutableList<Intent> {
-        val resInfo = context?.getPackageManager()?.queryIntentActivities(intent, 0)
+        var resInfo = context?.getPackageManager()?.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY)
         if (resInfo != null) {
             for (resolveInfo in resInfo) {
                 val packageName = resolveInfo.activityInfo.packageName
-                if ((packageName.contains(".android") && isCamera) || !isCamera) { //use only official camera
-                    val targetedIntent = Intent(intent)
+                val targetedIntent = Intent(intent)
+                if (isCamera) {
+                    targetedIntent.setPackage(findSystemCamera())
+                    list.add(targetedIntent)
+                    break //use one camera for default
+
+                } else {
                     targetedIntent.setPackage(packageName)
                     list.add(targetedIntent)
                 }
+
             }
         }
         return list
+    }
+
+
+    private fun findSystemCamera(): String? {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        val listCam = context?.packageManager?.queryIntentActivities(intent, 0)
+        if (listCam != null) {
+            for (info in listCam) {
+                if (isSystemApp(info.activityInfo.packageName)) {
+                    return info.activityInfo.packageName
+                }
+            }
+        }
+        return null
+    }
+
+
+    fun isSystemApp(packageName: String): Boolean {
+        val ai: ApplicationInfo
+        try {
+            ai = context?.packageManager?.getApplicationInfo(packageName, 0)!!
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+            return false
+        }
+
+        val mask = ApplicationInfo.FLAG_SYSTEM or ApplicationInfo.FLAG_UPDATED_SYSTEM_APP
+        return ai.flags and mask != 0
     }
 
 
@@ -311,29 +349,35 @@ class PersonalUpdateDistanceScreen: ScreenUnit() {
                     val time = SimpleDateFormat("yyyyHHmmss").format(Date())
                     val displaymetrics = getResources().getDisplayMetrics()
                     val maxHeight = displaymetrics.heightPixels
+                    var bitmap: Bitmap? = null
+                    var url: Uri? = null
                     if (data == null || data.action == MediaStore.ACTION_IMAGE_CAPTURE) {
                         /** CAMERA **/
 //                        imageBitmap = ImageUtil.onCameraResult(uriSavedImage, context)
-                        imageBitmap = ImageUtil.onCameraResult(uriSavedImage, context, maxHeight)
+                        bitmap = ImageUtil.onCameraResult(uriSavedImage, context, maxHeight)
                     } else {
                         /** ALBUM **/
                         val pair = ImageUtil.onGalleryResult(time, data, activityMain, maxHeight)
-                        imageBitmap = pair.first
-                        uriSavedImage = pair.second
+                        bitmap = pair.first
+                        url = pair.second
+                    }
+                    bitmap?.run {
+                        imageBitmap = bitmap
+                        uriSavedImage = url
+                        UpdateUI {
+                            imvPreview.layoutParams = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT)
+                            Glide.with(context!!).load(imageBitmap)
+                                    .into(imvPreview)
+                        }
+                        //imageEncode = ImageUtil.BitMapToString(imageBitmap)!!
                     }
 
-                    UpdateUI {
-                        imvPreview.layoutParams = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT)
-                        Glide.with(context!!).load(imageBitmap)
-                                //.apply(ImageUtil.getImageCirclePartientProfile())
-                                .into(imvPreview)
-                    }
-                    //imageEncode = ImageUtil.BitMapToString(imageBitmap)!!
                 }
             }
             else -> super.onActivityResult(requestCode, resultCode, data)
 
         }
     }
+
 
 }

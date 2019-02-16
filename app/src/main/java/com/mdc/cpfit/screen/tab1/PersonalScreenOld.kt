@@ -18,6 +18,12 @@ import com.mdc.cpfit.util.ImageUtil
 import com.mdc.cpfit.util.ScreenUnit
 import kotlinx.android.synthetic.main.sc_personal_old.*
 import retrofit2.Response
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
+import android.content.pm.ResolveInfo
+import android.provider.MediaStore
+
+
 
 
 
@@ -91,5 +97,6 @@ class PersonalScreenOld : ScreenUnit() {
 
 
     }
+
 
 }
