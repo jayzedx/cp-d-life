@@ -1,15 +1,16 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt' //annotation
+
+
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion rootProject.targetSdkVersion
     defaultConfig {
-        applicationId "com.mdc.cpfit"
-        minSdkVersion 17
-        targetSdkVersion 27
+        applicationId "com.mdc.cp.dlife"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,96 +18,164 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+//    dataBinding {
+//        enabled = true
+//    }
+
 }
 
-android {
-    lintOptions {
-        checkReleaseBuilds false
-        // Or, if you prefer, you can continue to check for errors in release builds,
-        // but continue the build even when errors are found:
-        abortOnError false
-    }
-}
 dependencies {
-    ext.supportLibraryGroup = '27.1.1'
-    ext.firebaseServiceGroup = '15.0.2'
-    ext.googleServiceGroup = '15.0.1'
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    implementation 'com.android.support:support-v4:27.1.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "com.google.firebase:firebase-core:$firebaseServiceGroup"
-    implementation "com.google.firebase:firebase-messaging:$firebaseServiceGroup"
-    implementation 'com.firebaseui:firebase-ui-auth:4.0.1'
-    implementation "com.google.firebase:firebase-auth:$firebaseServiceGroup"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation "com.android.support:appcompat-v7:$supportLibraryGroup"
-    implementation "com.android.support:design:$supportLibraryGroup"
-    implementation "com.android.support:support-v4:$supportLibraryGroup"
-    implementation "com.android.support:cardview-v7:$supportLibraryGroup"
-    implementation "com.android.support:recyclerview-v7:$supportLibraryGroup"
+    /**
+     * App Compat
+     */
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryGroup"
+    implementation "com.android.support:design:$rootProject.supportLibraryGroup"
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryGroup"
+    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryGroup"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryGroup"
+//    implementation "androidx.appcompat:appcompat:$rootProject.supportLibraryVersion"
 
-    //Rx Java, Rx Android
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    /**
+     * Kotlin
+     */
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.kotlinVersion"
+    //    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
+
+
+    /**
+     * Live Data
+     */
+    // live data with view model
+//    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+
+
+    /**
+     * Component
+     */
+//    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+//    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+//    implementation "com.google.android.material:material:$rootProject.materialVersion"
+
+
+    /**
+     * Firebase
+     */
+//    ext.firebaseServiceGroup = '15.0.2'
+//    ext.googleServiceGroup = '15.0.1'
+//    implementation "com.google.firebase:firebase-core:$firebaseServiceGroup"
+//    implementation "com.google.firebase:firebase-messaging:$firebaseServiceGroup"
+//    implementation 'com.firebaseui:firebase-ui-auth:4.0.1'
+//    implementation "com.google.firebase:firebase-auth:$firebaseServiceGroup"
+
+
+    /**
+     * RxJava
+     */
+    implementation "io.reactivex.rxjava2:rxjava:2.1.16"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     implementation 'com.github.tbruyelle:rxpermissions:0.10.1'
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
-
-    //OkHTTP
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
-
-    //retrofit2
-    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
 
-    //gson converter by retrofit
-    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    /**
+     * Retrofit
+     */
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+
+
+    /**
+     * Ok Http
+     */
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+
+    /**
+     * Gson
+     */
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
     implementation 'com.google.code.gson:gson:2.8.5'
 
-    //ReactiveNetwork
-    implementation 'com.github.pwittchen:reactivenetwork-rx2:0.12.3'
+    /**
+     * Room
+     */
+//    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+//    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    // optional - RxJava support for Room
+//    implementation "android.arch.persistence.room:rxjava2:$roomVersion"
+    def room_version = "1.1.1"
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version"
+    // optional - RxJava support for Room
+    implementation "android.arch.persistence.room:rxjava2:$room_version"
 
-    //Swipe
-    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+    /**
+     * Glide
+     */
+    def glide_version = "4.8.0"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
 
-    //Calendar
-    implementation 'com.github.sundeepk:compact-calendar-view:3.0.0'
-
-    //Indicaator
-    implementation 'com.wang.avi:library:2.1.3'
-
-    //glide
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
-
-    //Stickylist
-    implementation 'ca.barrenechea.header-decor:header-decor:0.2.8'
-    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
-
+    /**
+     * Map
+     */
     //MAP
+    def googleServiceGroup = "15.0.1"
     implementation "com.google.android.gms:play-services-maps:$googleServiceGroup"
     implementation "com.google.android.gms:play-services-location:$googleServiceGroup"
     implementation "com.google.android.gms:play-services-places:$googleServiceGroup"
     implementation "com.google.android.gms:play-services-auth:$googleServiceGroup"
 
-    //    implementation 'com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1'
+    /**
+     * Firebase
+     */
+    def firebaseServiceGroup = '15.0.2'
+    implementation "com.google.firebase:firebase-core:$firebaseServiceGroup"
+    implementation "com.google.firebase:firebase-messaging:$firebaseServiceGroup"
+    implementation 'com.firebaseui:firebase-ui-auth:4.0.1'
+    implementation "com.google.firebase:firebase-auth:$firebaseServiceGroup"
 
-    //    implementation 'com.github.stfalcon:chatkit:0.3.1'
+
+    /**
+     * ButterKnife
+     */
+//    implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
+//    kapt "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
+
+
+
+    /**
+     * Dependency
+     */
+    //
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    //Progressing
+    implementation 'com.wang.avi:library:2.1.3'
+
+    //Swipe
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+
+    //Stickylist
+//    implementation 'ca.barrenechea.header-decor:header-decor:0.2.8'
+//    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
 
     //sdp for scale dp
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
@@ -118,13 +187,31 @@ dependencies {
     implementation 'com.gdacciaro:iosdialog:1.0.3'
 
     //parceler for parcelable
-    implementation 'org.parceler:parceler-api:1.1.11'
-    annotationProcessor 'org.parceler:parceler:1.1.11'
+    implementation 'org.parceler:parceler-api:1.1.12'
+//    annotationProcessor 'org.parceler:parceler:1.1.11'
+    kapt 'org.parceler:parceler:1.1.12' //androidx
+
 
     //SectionedRecyclerViewAdapter for header gridview
     implementation 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:1.2.0'
 
     //zoom for image view
     implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+
+    /**
+     * Testing
+     */
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.runnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+
+
+
+
+    /**
+     * Not used
+     */
+//    implementation 'com.github.pwittchen:reactivenetwork-rx2:0.12.3'
+
+
 }
-apply plugin: 'com.google.gms.google-services'

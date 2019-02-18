@@ -55,7 +55,7 @@ class LeaderBoardAdapter(var activity: ActivityUnit, var page: String) : Recycle
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvRanking = itemView?.findViewById<TextView>(R.id.tvRanking)
         var imvProfile = itemView?.findViewById<ImageView>(R.id.imvProfile)
         var tvName = itemView?.findViewById<TextView>(R.id.tvName)

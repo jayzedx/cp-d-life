@@ -58,7 +58,7 @@ class PersonalDistanceAdapter(var activity: ActivityUnit) : RecyclerView.Adapter
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvTitle = itemView?.findViewById<TextView>(R.id.tvTitle)
         var tvStep = itemView?.findViewById<TextView>(R.id.tvStep)
         var tvKm = itemView?.findViewById<TextView>(R.id.tvKm)

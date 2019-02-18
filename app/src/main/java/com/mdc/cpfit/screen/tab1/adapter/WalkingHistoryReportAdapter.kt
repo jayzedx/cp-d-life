@@ -78,7 +78,7 @@ class WalkingHistoryReportAdapter(var activity: ActivityUnit, var screen: Screen
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imvWalkingHistory = itemView?.findViewById<ImageView>(R.id.imvWalkingHistory)
         var tvMonth = itemView?.findViewById<TextView>(R.id.tvMonth)
         var tvDetail = itemView?.findViewById<TextView>(R.id.tvDetail)

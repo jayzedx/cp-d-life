@@ -21,10 +21,7 @@ import java.util.*
 import android.provider.MediaStore
 import android.content.Intent
 import android.content.pm.PackageManager
-
-
-
-
+import android.support.v4.app.Fragment
 
 
 class PersonalScreen : ScreenUnit() {
@@ -134,7 +131,7 @@ class PersonalScreen : ScreenUnit() {
                         R.anim.translate_from_right, R.anim.translate_to_left,
                         R.anim.translate_from_left, R.anim.translate_to_right
                 )
-                transaction.replace(R.id.container, f2, f2?.TAG)
+                transaction.replace(R.id.container, f2 as Fragment, f2?.TAG)
                 transaction.setTransition(FragmentTransaction.TRANSIT_NONE)
                 transaction.addToBackStack(f1?.TAG)
                 transaction.commit()
@@ -145,7 +142,7 @@ class PersonalScreen : ScreenUnit() {
                         R.anim.translate_from_right, R.anim.translate_to_left,
                         R.anim.translate_from_left, R.anim.translate_to_right
                 )
-                transaction.replace(R.id.container, f1, f1?.TAG)
+                transaction.replace(R.id.container, f1 as Fragment, f1?.TAG)
                 transaction.setTransition(android.support.v4.app.FragmentTransaction.TRANSIT_NONE)
                 while (childFragmentManager.getBackStackEntryCount() > 0) {
                     childFragmentManager.popBackStack()
